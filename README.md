@@ -45,6 +45,106 @@ The other boards are very similar to each other showing a clear design progressi
 | 11647-502   | STEP LOGIC    | 20629, 20938 | MFM interface logic. |
 | 80118-502   | R1512-12      | 20938 | Rockwell R6518(?) 6502-core microcontroller. |
 
+### 10188-501 "SSI257.2"
+
+This device drives the center tap connections of the R/W heads, and also provides two outputs to drive the write current resistor divider.
+
+**Pin Description**
+
+| Pin | Name    | Direction | Description                                      |
+|-----|---------|-----------|--------------------------------------------------|
+| 18  |  5V     | Power In  | Main 5V supply input.                            |
+| 11  |  GND    | Ground    | Ground connection.                               |
+| 17  | HDSEL1# | Input     | Head 1 select input. Active low.                 |
+| 16  | HDSEL2# | Input     | Head select bit 2 input. Active low.             |
+| 15  | HDSEL4# | Input     | Head select bit 3 input. Active low.             |
+| 12  | WRT\_FAULT\_IN| Input | Goes high if there is a write fault, which disables all center tap outputs. |
+| 20  | VHS     | Input     | Head center tap resistor divider supply. Provides termination voltage. |
+| 1   | VCTAP   | Input     | Head center tap active voltage. The selected head's center tap gets driven to this voltage - 0.25V. |
+| 9   | HDC1    | Output    | Head 1 center tap output. |
+| 8   | HDC2    | Output    | Head 2 center tap output. |
+| 7   | HDC3    | Output    | Head 3 center tap output. |
+| 6   | HDC4    | Output    | Head 4 center tap output. |
+| 5   | HDC5    | Output    | Head 5 center tap output. |
+| 4   | HDC6    | Output    | Head 6 center tap output. |
+| 10  |  12V    | Power In  | 12V supply used for write current drive outputs. |
+| 2   | RIWR1   | Input     | Write current drive 1 input. |
+| 19  | IWR1    | Output    | Write current output drive 1. |
+| 13  | RIWR2   | Input     | Write current drive 2 input. |
+| 14  | IWR2    | Output    | Write current output drive 2. |
+
+**Functional Description**
+
+The center tap driver chip drives the center tap of each head coil depending on the head select input state. During a write fault
+(WRT\_FAULT\_IN = 1) all heads are deselected.
+
+| WRT\_FAULT\_IN  | HDSEL4# | HDSEL2# | HDSEL1# | HDC1 | HDC2 | HDC3 | HDC4 | HDC5 | HDC6 |
+|-----------------|---------|---------|---------|------|------|------|------|------|------|
+|               0 |       1 |       1 |       1 | VCTAP|   VT |   VT |   VT |   VT |   VT |
+|               0 |       1 |       1 |       0 |   VT | VCTAP|   VT |   VT |   VT |   VT |
+|               0 |       1 |       0 |       1 |   VT |   VT | VCTAP|   VT |   VT |   VT |
+|               0 |       1 |       0 |       0 |   VT |   VT |   VT | VCTAP|   VT |   VT |
+|               0 |       0 |       1 |       1 |   VT |   VT |   VT |   VT | VCTAP|   VT |
+|               0 |       0 |       1 |       0 |   VT |   VT |   VT |   VT |   VT | VCTAP|
+|               1 |       x |       x |       x |   VT |   VT |   VT |   VT |   VT |   VT |
+
+(VT is 0.86 * VHS. VCTAP in the table is actually VCTAP - 0.25V.)
+
+Unselected heads are driven to VHS * 0.86. There may be an internal voltage divider but this is buffered with a low (0.3 ohm) impedance driver before being switched onto the head output.
+
+The voltage provided to VCTAP must be higher than the voltage provided to VHS.
+
+The chip also includes a very simple two-transistor driver for the write current selection. This is used for up to 4-zone recording.
+
+When RIWR1 is driven high, IWR1 is driven to +12V. Otherwise, IWR1 floats.
+When RIWR2 is driven high, IWR2 is driven to +12V. Otherwise, IWR2 floats.
+
+### 10189-521 "SSI257"
+
+This is the head select steering matrix and read preamplifier.
+
+**Pin Description**
+
+| Pin | Name    | Direction | Description                                      |
+|-----|---------|-----------|--------------------------------------------------|
+| 12  |  12V    | Power In  | Main 12V supply input.                           |
+| 11  |  GND    | Ground    | Ground connection.  |
+| 1   |  HD1+   |           | Connection to head coil 1 (positive). |
+| 2   |  HD1-   |           | Connection to head coil 1 (negative). |
+| 3   |  HD2+   |           | Connection to head coil 2 (positive). |
+| 4   |  HD2-   |           | Connection to head coil 2 (negative). |
+| 20  |  HD3+   |           | Connection to head coil 3 (positive). |
+| 19  |  HD3-   |           | Connection to head coil 3 (negative). |
+| 18  |  HD4+   |           | Connection to head coil 4 (positive). |
+| 17  |  HD4-   |           | Connection to head coil 4 (negative). |
+| 16  |  HD5+   |           | Connection to head coil 5 (positive). |
+| 15  |  HD5-   |           | Connection to head coil 5 (negative). |
+| 14  |  HD6+   |           | Connection to head coil 6 (positive). |
+| 13  |  HD6-   |           | Connection to head coil 6 (negative). |
+| 8   |  DI+    | Input     | Write data input (positive).|
+| 7   |  DI-    | Input     | Write data input (negative).|
+| 10  |  DO+    | Output    | Read data output (positive).|
+| 9   |  DO-    | Output    | Read data output (negative).|
+| 6   | GAIN+   |           | Gain connection. |
+| 5   | GAIN-   |           | Gain connection. |
+
+**Functional Description**
+
+The currently selected read/write head has the common (center tap) winding brought to a voltage higher than the center tap windings
+of all the other heads. This forward biases internal steering diodes, while reverse biasing the internal diodes connected to deselected heads.
+
+A differential signal placed on the DI inputs appears on the connection of the currently selected head. This is used to write track data. Leave the inputs high to avoid writing data--an output only sinks current when a DI input sinks current.
+
+Differential signals from the currently selected read/write head gets amplified by the internal read preamp and driven out to the DO outputs. A gain network (R, C, or RLC) can be attached to the two GAIN pins. Lower impedances increase the gain, as shown approximately in this table.
+
+|  R  | Gain |
+|-----|------|
+| 10K | 24   |
+|  1K | 28   |
+| 100 | 40   |
+
+The preamp is similar to the NE592 video amplifier chip. See the datasheet for examples of different gain networks.
+
 ### 10223-502 "RETURN"
 
 This device moves the heads to the landing zone when it detects a power loss.
