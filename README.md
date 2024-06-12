@@ -145,6 +145,76 @@ Differential signals from the currently selected read/write head gets amplified 
 
 The preamp is similar to the NE592 video amplifier chip. See the datasheet for examples of different gain networks.
 
+### 11782-501 "STEP SEQR"
+
+The step sequencer generates the 5-phase signals that drive the stepper motor power driver chips.
+
+**Pin Description**
+
+| Pin | Name  | Direction | Description                                     |
+|-----|-------|-----------|-------------------------------------------------|
+| 13, 20 | VCC | Power In | 5V power rail. |
+| 10, 19 | GND | Ground   | Connect to ground. |
+| 1   | MTA+  | Output    | Motor phase A high drive |
+| 2   | MTA-  | Output    | Motor phase A low drive |
+| 4   | MTB+  | Output    | Motor phase B high drive |
+| 5   | MTB-  | Output    | Motor phase B low drive |
+| 6   | MTC+  | Output    | Motor phase C high drive |
+| 7   | MTC-  | Output    | Motor phase C low drive |
+| 8   | MTD+  | Output    | Motor phase D high drive |
+| 9   | MTD-  | Output    | Motor phase D low drive |
+| 11  | MTE+  | Output    | Motor phase E high drive |
+| 12  | MTE-  | Output    | Motor phase E low drive |
+| 14  | RESET# | Input    | Active low reset input. Drive low to go to sequence 0. |
+| 15  | CLK   | Input     | Clock input. Sequence changes on rising edge. |
+| 3   | RETRACT# | Input  | Active low retract input. Drive low to set all phase outputs low. |
+| 17  | DIRECTION | Input | Direction pin. The sequence tables all assume this pin is high. |
+| 16  | HALFSTEP# | Input | Active low half-step input. Activating this pin turns on half-step mode. |
+| 18  | HALFSTEP2# | Input | Active low alternative half-step mode input. When asserted while HALFSTEP# is low, turns on alternate half-step mode. Ignored when HALFSTEP# is deasserted.|
+
+**Detailed Description**
+
+This device is basically a sequence controller chip that drives the phase signals going to the stepper motor driver chips.
+
+They follow these phase tables.
+
+For each phase, the states below correspond with the following output states. Phase 0 corresponds with the phase after a reset. When DIRECTION=0, proceed from phase 0, 1, 2...9 and wrap back to 0. When DIRECTION=1, proceed from phase 0, 9, 8, 7...1.
+
+| Phase | + Pin State | - Pin State |
+|-------|-------------|-------------|
+|   z   |         Low |        Low  |
+|   H   |        High |        Low  |
+|   L   |         Low |       High  |
+
+
+Std: Standard step mode (HALFSTEP#=1, HALFSTEP2#=x, DIRECTION=0)
+
+Half: Half step mode (HALFSTEP#=0, HALFSTEP2#=1, DIRECTION=0)
+
+AltHalf: Alternate half step mode (HALFSTEP#=0, HALFSTEP2#=0, DIRECTION=0)
+
+| Std   | 0 | . | 1 | . | 2 | . | 3 | . | 4 | . | 5 | . | 6 | . | 7 | . | 8 | . | 9 | . |
+|-------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|    A  | z |   | L |   | L |   | L |   | L |   | z |   | H |   | H |   | H |   | H |   |
+|    B  | L |   | z |   | H |   | H |   | H |   | H |   | z |   | L |   | L |   | L |   |
+|    C  | H |   | H |   | z |   | L |   | L |   | L |   | L |   | z |   | H |   | H |   |
+|    D  | L |   | L |   | L |   | z |   | H |   | H |   | H |   | H |   | z |   | L |   |
+|    E  | H |   | H |   | H |   | H |   | z |   | L |   | L |   | L |   | L |   | z |   |
+| **Half** | **0** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** | **9** | **10**| **11**| **12**| **13**| **14**| **15**| **16**| **17**| **18**| **19**|
+|    A  | z | z | L | L | L | L | L | L | L | z | z | z | H | H | H | H | H | H | H | z |
+|    B  | L | z | z | z | H | H | H | H | H | H | H | z | z | z | L | L | L | L | L | L |
+|    C  | H | H | H | z | z | z | L | L | L | L | L | L | L | z | z | z | H | H | H | H |
+|    D  | L | L | L | L | L | z | z | z | H | H | H | H | H | H | H | z | z | z | L | L |
+|    E  | H | H | H | H | H | H | H | z | z | z | L | L | L | L | L | L | L | z | z | z |
+| **AltHalf** | **0** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** | **9** | **10**| **11**| **12**| **13**| **14**| **15**| **16**| **17**| **18**| **19**|
+|    A  | z | L | L | L | L | L | L | L | L | L | z | H | H | H | H | H | H | H | H | H |
+|    B  | L | L | z | H | H | H | H | H | H | H | H | H | z | L | L | L | L | L | L | L |
+|    C  | H | H | H | H | z | L | L | L | L | L | L | L | L | L | z | H | H | H | H | H |
+|    D  | L | L | L | L | L | L | z | L | H | H | H | H | H | H | H | H | z | L | L | L |
+|    E  | H | H | H | H | H | H | H | H | z | L | L | L | L | L | L | L | L | L | z | H |
+
+
+
 ### 10223-502 "RETURN"
 
 This device moves the heads to the landing zone when it detects a power loss.
