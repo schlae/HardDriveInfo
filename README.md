@@ -280,6 +280,63 @@ AltHalf: Alternate half step mode (HALFSTEP#=0, HALFSTEP2#=0, DIRECTION=0)
 |    D  | L | L | L | L | L | L | z | L | H | H | H | H | H | H | H | H | z | L | L | L |
 |    E  | H | H | H | H | H | H | H | H | z | L | L | L | L | L | L | L | L | L | z | H |
 
+### 11743-501 Stepper drive enable control
+
+This device controls the H-bridge enable lines for each phase of the stepper motor.
+
+**Pin Description**
+
+| Pin | Name  | Direction | Description                                     |
+|-----|-------|-----------|-------------------------------------------------|
+| 28  | VCC   | Power     | +5V power input. |
+| 1, 17  | GND | Ground   | Connect to ground. |
+| 16  | DIS#  | Input     | Active low disable input. Pull low to make all outputs go low. |
+| 15  | ALLON | Input     | Forces all motor phase output enables high. |
+| 2   | S1    | Input     | Output mask select mux input. |
+| 3   | S2    | Input     | Output mask select mux input. |
+| 4   | S3    | Input     | Output mask select mux input. |
+| 5   | +A    | Input     | Motor phase A high drive. |
+| 6   | -A    | Input     | Motor phase A low drive. |
+| 7   | +B    | Input     | Motor phase B high drive. |
+| 8   | -B    | Input     | Motor phase B low drive. |
+| 9   | +C    | Input     | Motor phase C high drive. |
+| 10  | -C    | Input     | Motor phase C low drive. |
+| 11  | +D    | Input     | Motor phase D high drive. |
+| 12  | -D    | Input     | Motor phase D low drive. |
+| 13  | +E    | Input     | Motor phase E high drive. |
+| 14  | -E    | Input     | Motor phase E low drive. |
+| 26  | EN\_A | Output    | Phase A output enable. |
+| 24  | EN\_B | Output    | Phase B output enable. |
+| 22  | EN\_C | Output    | Phase C output enable. |
+| 20  | EN\_D | Output    | Phase D output enable. |
+| 18  | EN\_E | Output    | Phase E output enable. |
+| 19, 21, 23, 25, 27 | NC | No connect. | Leave unconnected. |
+
+**Detailed Description**
+
+The power driver chips for the stepper motor phase windings are typically L293 or similar totem-pole devices. That means that each phase connection can be driven high or low depending on the input state, but the output driver can also be disabled so it pulls neither high nor low. However, the step sequencer chip, 11782-501, can only drive both phase outputs (+ and -) low to indicate that the driver should be disabled. If both coil drivers are driven low, the coil is effectively short-circuited and will brake the motor, so this chip detects that and disables both coil drivers.
+
+If the ALLON line is low, then each phase output enable EN\_x will track the corresponding + and - inputs by XORing them together. So if both inputs are low or both are high, then the phase output enable will go low. If one input is high and the other is low, then the phase output enable goes high.
+
+If the ALLON line is high, then all phase output enables go high regardless of the motor phase inputs.
+
+The output mask select mux inputs, S1, S2, and S3, can selectively force individual phase output enables low according to this table:
+
+| S3 | S2 | S1 | EN\_A | EN\_B | EN\_C | EN\_D | EN\_E |
+|----|----|----|-------|-------|-------|-------|-------|
+|  0 |  0 |  0 |       |       |       |       |       |
+|  0 |  0 |  1 |       |       |       |  low  |       |
+|  0 |  1 |  0 |       |  low  |       |       |       |
+|  0 |  1 |  1 |  low  |  low  |       |       |       |
+|  1 |  0 |  0 |  low  |       |       |       |       |
+|  1 |  0 |  1 |       |       |       |       |  low  |
+|  1 |  1 |  0 |       |       |  low  |       |       |
+|  1 |  1 |  1 |  low  |       |  low  |       |       |
+
+Empty boxes follow the state prescribed by the ALLON line and the +/- motor phase inputs.
+
+Typical firmware leaves all three select mux inputs low, but one section brings S1 high, possible for stepper motor voltage calibration.
+
 
 
 ### 10223-502 "RETURN"
