@@ -66,7 +66,7 @@ This device interfaces with the MFM control cable.
 | 10  | WRT\_FAULT\_OUT# | O.C. | Buffered version of WRT\_FAULT# delayed by 6 clock cycles, to MFM bus. Gated by DRV\_SEL#. |
 | 37  | CLK     | Input     | System clock input, nominally 2MHz. |
 | 34  | HALL    | Input     | RPM signal from spindle motor driver. |
-| 12  | INDEX\_OUT# | O.C. | Index signal to MFM bus. Driven by a one-shot from HALL. About 1213 clock pulses wide. Gated by DRV\_SEL#. |
+| 12  | INDEX\_OUT# | O.C. | Index signal to MFM bus. Driven by a one-shot from HALL (but divided by two). About 1213 clock pulses wide. Gated by DRV\_SEL#. |
 | 42  | MCU\_INDEX | Output | Same as INDEX\_OUT# but inverted and sent to the MCU. |
 | 33  | STEP#   | Input     | Step signal from MFM bus. Causes the track to change by +/-1. |
 | 38  | MCUSTEP# | Output   | Step signal to MCU. Same as STEP# but gated by DRV\_SEL#. |
@@ -78,7 +78,7 @@ This device interfaces with the MFM control cable.
 | 35 | RESET# | Input | Reset input from MCU. Clears the SEEK\_COMPLETE# latch. |
 | 36 | READ\_DATA | Input | Data stream from read channel. |
 | 39 | INDEX\_TRACK# | O.C. | Connects to MCU PA2. Detects index MFM data pattern on READ\_DATA. |
-| 40 | INDEX\_SYNC | Input | Signal from MCU (poorly understood.) |
+| 40 | INDEX\_SYNC | Input | Signal from MCU to reset the HALL divider. |
 | 44 | WRT\_OK | Output | Asserts high when it is OK to write. Requires SEEK\_COMPLETE#, READY\_IN#, and DRV\_SEL# to be asserted. |
 | 19-29 | No Connect | N.C. | Not internally connected. |
 | 1, 14-19 | Unknown |      | Unknown function. Typically not connected. |
@@ -99,15 +99,17 @@ Other signals are returned from the MFM bus only when the drive select line is v
 * STEP#
 * DIR#
 
-The INDEX\_OUT# signal is passed through a one-shot timer run off the HALL input. When HALL pulses, it goes low for about 1213 cycles of the CLK input. This is about 600us.
+The INDEX\_OUT# signal is passed through a one-shot timer run off the HALL input divided by two. On every other HALL pulse, it goes low for about 1213 cycles of the CLK input. This is about 600us. The INDEX\_SYNC# signal, when held low, prevents the INDEX\_OUT# signal from asserting. On the rising edge of INDEX\_SYNC#, the HALL input divider is resynchronized and the first pulse on HALL will generate an index output pulse. The second pulse is skipped, but the third makes it through, and so forth.
 
-The WRT\_FAULT\_OUT# is delayed by 6 clock cycles.
+The WRT\_FAULT\_OUT# is the WRT\_FAULT# input but delayed by 6 clock cycles.
 
 The stepper direction signal going into the MCU is a latched version of the one present on the MFM bus, latched when STEP is pulsed.
 
 There is an SR latch driving the SEEK\_COMPLETE# signal. This signal deasserts when STEP# asserts, RESET# asserts, or DC\_UNSAFE# asserts. It asserts when the MCU\_SEEK\_DONE# signal asserts.
 
 The INDEX\_TRACK# signal is somewhat complex. The internal circuit isn't well understood but it looks at the data coming from the read channel and detects a special signal recorded on track -2. This is "2F" or 00101111 which occurs, repeating for 4ms, at the index location. The rest of the track contains a 1.75MHz signal which does not trigger this pin. For CLK=2MHz, this pin seems to go low when READ\_DATA falls between 1.958MHz and 2.038MHz.
+
+The INDEX\_TRACK# signal seems to depend on internal counters. If READ\_DATA pulses at least once per CLK high/low, in 9 READ\_DATA pulses, then INDEX\_TRACK# asserts low on the 9th READ\_DATA rising edge. This triggers another one-shot device that ensures that INDEX\_TRACK# continues to be asserted for 5 rising CLK edges after READ\_DATA stops pulsing. DC\_UNSAFE# resets both the READ\_DATA pulse detector and the INDEX\_TRACK# one-shot.
 
 
 ### 10188-501 "SSI257.2"
