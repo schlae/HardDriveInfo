@@ -45,6 +45,71 @@ The other boards are very similar to each other showing a clear design progressi
 | 11647-502   | STEP LOGIC    | 20629, 20938 | MFM interface logic. |
 | 80118-502   | R1512-12      | 20938 | Rockwell R6518(?) 6502-core microcontroller. |
 
+### 11647-502 "STEP LOGIC"
+
+This device interfaces with the MFM control cable.
+
+**Pin Description**
+
+| Pin | Name    | Direction | Description                                      |
+|-----|---------|-----------|--------------------------------------------------|
+| 30  |  VCC    | Power In  | Main 5V supply input.                            |
+| 13  |  GND    | Ground    | Ground connection.                               |
+| 2   | BIAS    |           | Tie through a 10K resistor to ground.            |
+| 4   | DRV\_SEL# | Input   | Active low drive select signal from MFM.         |
+| 9   | DRV\_SEL\_OUT# | O.C. | Buffered, open collector drive select output. |
+| 6   | READY\_IN# | Input | Active low ready signal from MCU. |
+| 7   | READY\_OUT# | O.C. | "Drive is ready" signal to MFM bus. Gated by DRV\_SEL#. |
+| 5   | TRK0\_IN# | Input | Active low track 0 signal from MCU. Asserts low when current track is 0. |
+| 8   | TRK0\_OUT# | O.C. | Track 0 signal to MFM bus. Gated by DRV\_SEL#. |
+| 3   | WRT\_FAULT# | Input | Write fault signal from write driver circuitry. |
+| 10  | WRT\_FAULT\_OUT# | O.C. | Buffered version of WRT\_FAULT# delayed by 6 clock cycles, to MFM bus. Gated by DRV\_SEL#. |
+| 37  | CLK     | Input     | System clock input, nominally 2MHz. |
+| 34  | HALL    | Input     | RPM signal from spindle motor driver. |
+| 12  | INDEX\_OUT# | O.C. | Index signal to MFM bus. Driven by a one-shot from HALL. About 1213 clock pulses wide. Gated by DRV\_SEL#. |
+| 42  | MCU\_INDEX | Output | Same as INDEX\_OUT# but inverted and sent to the MCU. |
+| 33  | STEP#   | Input     | Step signal from MFM bus. Causes the track to change by +/-1. |
+| 38  | MCUSTEP# | Output   | Step signal to MCU. Same as STEP# but gated by DRV\_SEL#. |
+| 32  | DIR#    | Input     | Stepper direction signal from MFM bus. 5V on this pin moves the head towards the spindle. 0V towards the edge of the platter. |
+| 41  | LATCHED\_DIR# | Output | Stepper direction signal derived from DIR#, gated by DRV\_SEL#, latched on falling edge of STEP#. |
+| 43  | MCU\_SEEK\_DONE# | Input | MCU pulses this line low to indicate it has arrived at the desired track. |
+| 11  | SEEK\_COMPLETE# | Output | Seek completed signal to MFM bus. Goes low when MCU\_SEEK\_DONE# pulsed, goes high when STEP#, RESET# or DC\_UNSAFE# pulsed. |
+| 31 | DC\_UNSAFE# | Input | Input from power supply voltage monitors. |
+| 35 | RESET# | Input | Reset input from MCU. Clears the SEEK\_COMPLETE# latch. |
+| 36 | READ\_DATA | Input | Data stream from read channel. |
+| 39 | INDEX\_TRACK# | O.C. | Connects to MCU PA2. Detects index MFM data pattern on READ\_DATA. |
+| 40 | INDEX\_SYNC | Input | Signal from MCU (poorly understood.) |
+| 44 | WRT\_OK | Output | Asserts high when it is OK to write. Requires SEEK\_COMPLETE#, READY\_IN#, and DRV\_SEL# to be asserted. |
+| 19-29 | No Connect | N.C. | Not internally connected. |
+| 1, 14-19 | Unknown |      | Unknown function. Typically not connected. |
+
+**Functional Description**
+
+Several signals are simply buffered to the MFM bus and active only when the drive select line is valid:
+
+* DRV\_SEL\_OUT#
+* READY\_OUT#
+* TRK0\_OUT#
+* WRT\_FAULT\_OUT#
+* INDEX\_OUT#
+* SEEK\_COMPLETE#
+
+Other signals are returned from the MFM bus only when the drive select line is valid:
+
+* STEP#
+* DIR#
+
+The INDEX\_OUT# signal is passed through a one-shot timer run off the HALL input. When HALL pulses, it goes low for about 1213 cycles of the CLK input. This is about 600us.
+
+The WRT\_FAULT\_OUT# is delayed by 6 clock cycles.
+
+The stepper direction signal going into the MCU is a latched version of the one present on the MFM bus, latched when STEP is pulsed.
+
+There is an SR latch driving the SEEK\_COMPLETE# signal. This signal deasserts when STEP# asserts, RESET# asserts, or DC\_UNSAFE# asserts. It asserts when the MCU\_SEEK\_DONE# signal asserts.
+
+The INDEX\_TRACK# signal is somewhat complex. The internal circuit isn't well understood but it looks at the data coming from the read channel and detects a special signal recorded on track -2. This is "2F" or 00101111 which occurs, repeating for 4ms, at the index location. The rest of the track contains a 1.75MHz signal which does not trigger this pin. For CLK=2MHz, this pin seems to go low when READ\_DATA falls between 1.958MHz and 2.038MHz.
+
+
 ### 10188-501 "SSI257.2"
 
 This device drives the center tap connections of the R/W heads, and also provides two outputs to drive the write current resistor divider.
