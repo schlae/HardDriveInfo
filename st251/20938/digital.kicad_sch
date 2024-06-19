@@ -3651,7 +3651,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1914b08e-9821-4de6-9783-7a86425b9700)
   )
-  (text "Rockwell R6518\n(Mask ROM)" (at 118.11 59.69 0)
+  (text "Rockwell R6518\n(Mask ROM)\n80118-502" (at 118.11 59.69 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1d9c08f6-a212-4937-88f3-77fd600f4b6c)
   )
@@ -4510,7 +4510,7 @@
   )
 
   (symbol (lib_id "74xx:74LS373") (at 177.8 96.52 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom yes) (on_board yes) (dnp yes) (fields_autoplaced)
     (uuid 170ac9a2-87d9-46d2-985a-b7d994f13a56)
     (property "Reference" "6B" (at 179.9941 76.2 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -4670,7 +4670,7 @@
   )
 
   (symbol (lib_id "memory_new:27C32") (at 210.82 77.47 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
+    (in_bom yes) (on_board yes) (dnp yes)
     (uuid 2e373601-839e-4948-9c0e-760dad8336ea)
     (property "Reference" "4A1" (at 222.25 72.39 0)
       (effects (font (size 1.27 1.27)) (justify left))
