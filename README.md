@@ -27,6 +27,10 @@ The other boards are very similar to each other showing a clear design progressi
 
 20629: Uses L293 H-bridge chips instead of the 11721-501. Firmware is in a separate EPROM chip.
 
+## Firmware
+
+The firmware from the 20629 board has been dumped. The label is marked "ST 251 / LSIL18". The firwmare has been fed through Ghidra and a good chunk of it has been commented and labeled. See [the repository](st251/firmware/ST251_commented.txt). Some parts of it are not understood.
+
 ## Chips
 
 | Part Number | Nicknames     | Where Used | Description |
