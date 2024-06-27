@@ -25,6 +25,8 @@ The PCB schematic and layout for 20629 are available, see st251/20629. This boar
 
 The PCB schematic and layout for 20938 are available, see st251/20938. This board is used in the ST-251-1 as well as the ST-277R (-300 version).
 
+The PCB schematic and layout for 21020 are available, see st251/21020. This board is used in the ST-277R-1.
+
 
 **20629 to 20938 changes**
 
@@ -61,7 +63,7 @@ Some changes imply changes to the drive firmware. This means that firmware meant
 
 **20938 to 21020 changes**
 
-The changes here are fairly minor. This list is incomplete and a work in progress.
+The electrical changes here are fairly minor. The layout has some moderate changes to improve routing and add the (few) new parts.
 
 * The spindle motor driver IC is now the 11738-002 which has a slightly different package.
 * The spindle motor IC's reference resistor now has two possible values, set by a transistor driven by a toggle flip flop (1F section A) by writing to address 0x0106. The default is 13K (19.6K || 38.3K) and, when toggled, it is just 38.3K. Presumably this is for power savings during operation by running the spindle motor at a reduced current.
