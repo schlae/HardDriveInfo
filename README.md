@@ -10,12 +10,25 @@ collect it.
 | Seagate      | ST-225    | ASSY 20301, 20327 | 4-Wire       |         65ms | Oxide Coated |
 | Seagate      | ST-238    | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated |
 | Seagate      | ST-238R   | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated |
-| Seagate      | ST-225    | ASSY 20301  | 4-Wire       |         65ms | Oxide Coated |
 | Seagate      | ST-251    | ASSY 20629  | 10-Wire      |         40ms | Thin Film    |
 | Seagate      | ST-251-1  | ASSY 20938  | 10-Wire      |         30ms | Thin Film    |
 | Seagate      | ST-277R-1 | ASSY 21020, 20938-300 | 10-Wire      |         28ms | Thin Film    |
 
 ## Driver boards
+
+### 20301 "225 CONTROL"
+
+This ST-225 control board integrates the functions of both circuit boards in the ST-412/419 generation. Some functions
+have been integrated in LSI chips.
+
+The PCB schematic and layout for 20301 are available, see st225/20301.
+
+There are several variations of this board. 
+
+1986 example: 74273, 2716, RP6 are not stuffed.
+1987 example: 74273, 2716, RP5, RP6, RP7, RP8, RP9, RP10, C18, C31, CR4, 7445(8C, 8B) are not stuffed. Q9 is replaced with a 620 ohm resistor between the emitter and base terminals. This disables the fancy pulldown resistors on the stepper motor circuit (probably a cost reduction).
+
+
 
 ### 20629, 20938, 21020 "251 CONTROL"
 
@@ -83,8 +96,11 @@ The firmware from the 20629 board has been dumped. The label is marked "ST 251 /
 | 11721-501   |               | 20938, 21020 | Similar to the L293 H-bridge driver |
 | 10189-521   | SSI257        | 20629, 20938 | Steering diodes and head preamp, NE592 equivalent. |
 | 10189-502   |               | 21020  | Steering diodes and head preamp, NE592 equivalent. |
+| 11642-001   |               | 20301  | Steering diodes and head pramp, NE592 equivalent. |
 | 10188-501   | SSI257.2      | 20629, 20938, 21020 | Head center tap driver, write current selector. |
+| 11665-001   |               | 20301 | Stepper motor control and driver chip (4 phase). |
 | 11744-502   | RING DETECTOR | 20629, 20938, 21020 | Stepper motor seek settling chip - adaptive ringout. |
+| 11695-002   |               | 20301 | Spindle speed control chip. |
 | 11695-502   | SPEED CONTROL | 20629 | Spindle speed control chip. |
 | 10223-502   | RETURN        | 20629, 20938, 21020 | Retracts stepper motor on power-down. |
 | 11743-501   |               | 20938 | Controls H-Bridge enables based on phase state. |
@@ -94,7 +110,9 @@ The firmware from the 20629 board has been dumped. The label is marked "ST 251 /
 | 11791       |               | 20938 | Spindle motor driver. Similar to the HA13406W. |
 | 11738-002   |               | 21020 | Similar to 11791 but in a different package. |
 | 10206-501   | SSI296        | 20629, 20938, 21020 | Read channel and write amplifier. |
+| SSI 280     |               | 20301 | Read channel and write amplifier. |
 | 11647-502   | STEP LOGIC    | 20629, 20938, 21020 | MFM interface logic. |
+| 80007-001   | R10L7-11      | 20301 | Rockwell R6500 6502-core microcontroller. |
 | R6518AJ     | R1113-18      | 20629 | Rockwell R6518 6502-core microcontroller. Requires external ROM. |
 | 80118-502   | R1512-12      | 20938 | Rockwell R6518(?) 6502-core microcontroller. |
 | 80118-505   | R1818-11      | 21020 | Rockwell R6518(?) 6502-core microcontroller. |
