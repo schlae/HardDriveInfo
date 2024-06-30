@@ -1,7 +1,13 @@
 # Hard Drive Repair Information
 
-There's not a whole lot here right now. I'll add more information as I
-collect it.
+This site contains extensive information about the control boards used in old MFM and RLL hard drives made by Seagate.
+
+Full schematics and even KiCad layouts are available for a number of different boards. My hope is that this will
+
+1. Aid anyone attempting to repair one of these drives. Loading the schematic and layout in KiCad will let you click on a part on the layout and highlight it in schematic.
+2. Inform anyone studying the history of small hard drives. For example, this information shows how Seagate integrated various functions into custom chips.
+
+Below is a table linking specific drive models with the part numbers of their matching control boards.
 
 | Manufacturer | Model     | Control PCB | Stepper Type | Avg Pos Time | Media        |
 |--------------|-----------|-------------|--------------|--------------|--------------|
@@ -16,19 +22,46 @@ collect it.
 
 ## Driver boards
 
-### 20301 "225 CONTROL"
+### 20301 "225 CONTROL", 20527
 
 This ST-225 control board integrates the functions of both circuit boards in the ST-412/419 generation. Some functions
 have been integrated in LSI chips.
 
 The PCB schematic and layout for 20301 are available, see st225/20301.
 
-There are several variations of this board. 
+The PCB schematic and layout for 20527 are available, see st225/20527.
 
-1986 example: 74273, 2716, RP6 are not stuffed.
-1987 example: 74273, 2716, RP5, RP6, RP7, RP8, RP9, RP10, C18, C31, CR4, 7445(8C, 8B) are not stuffed. Q9 is replaced with a 620 ohm resistor between the emitter and base terminals. This disables the fancy pulldown resistors on the stepper motor circuit (probably a cost reduction).
+There are several variations of the 20301 board: 
 
+* 1986 example: 74273, 2716, RP6 are not stuffed.
 
+* 1987 example: 74273, 2716, RP5, RP6, RP7, RP8, RP9, RP10, C18, C31, CR4, 7445(8C, 8B) are not stuffed. Q9 is replaced with a 620 ohm resistor between the emitter and base terminals. This disables the fancy pulldown resistors on the stepper motor circuit (probably a cost reduction).
+
+**20301 to 20527 changes**
+
+* A better LC power filter has been added to the 12V and 5V power inputs.
+* The two 7445 chips driving the stepper motor have been depopulated and all but one resistor array have been removed. Presumably a cost reduction.
+* The circuit driving the stepper motor chip's SET pin has been depopulated and jumpered with a resistor, probably a cost reduction.
+* The footprint for the 2716 EPROM and the 74273 latch (to support external firmware) have been removed completely.
+* The transistor driving the START#/RUN connection to the spindle driver has been swapped with a spare 7406.
+* Several discrete resistors in the spindle driver circuit have been incorporated into resistor arrays, including a fully custom array, the 12497-001 which contains a 3.3K, 470, 560, and 2.2K resistor.
+* The reference clock circuit driving the spindle motor control IC has changed, presumably to put less of a load on the 2MHz MCU crystal.
+* The transistor array and resistor arrays used to drive the read/write head center tap connections (as well as the two write current driver transistors) have been consolidated into LSI 10014-002.
+* Read/write channel SSI280 has been expanded and modified (now called 10206-002) with 3 additional one-shot timers in the pulse detector circuit as well as a more complex 2-part final differential signal filter. Compare this new design to the later ST-251.
+* New one-shot devices have been added to the MCU's read channel. This read channel allows the MCU to detect the index and guard band tracks recorded at manufacture time. Presumably these changes make the MCU's detection algorithms more tolerant of defects on these tracks. It is not known if drives with these boards have a different pattern recorded on the index and guard band tracks.
+* The reset signal pulse, derived from the DC\_UNSAFE# signal comparators in the 10206-002, has been shortened significantly.
+* The hall sensor signal to the MCU is generated with a real one-shot chip instead of two chained flip flops with RC filters.
+
+**A note about 20527 to ST-251 boards, like the 20629**
+
+There appears to be a clear evolution between the 20527 ST-225 board and the early ST-251 board, the 20629.
+
+* The read channel is nearly identical, with the preamp and first stage filter being exactly the same. The second stage filter has been adjusted and the one-shots are different.
+* Support for two additional read/write heads has been added.
+* The spindle motor is now a three-phase BLDC (instead of 2-phase) with three hall effect sensors (instead of one). A single chip 3-phase motor driver has been bolted onto the existing speed control chip.
+* The stepper motor is now a really wild 5-phase custom design with a slew of new control chips, including a ring detector LSI that is used to optimize the motor voltage, and an auto-retract chip that takes care of parking the heads during a power-down. All this design effort almost *halves* the average seek time.
+* A new LSI incorporates the MCU read channel one-shot devices along with a bunch of discrete buffers.
+* The MCU's external ROM chip is back. Presumably this was used extensively for internal firmware development and left in the shipping product until mask ROM MCUs became available.
 
 ### 20629, 20938, 21020 "251 CONTROL"
 
@@ -87,7 +120,7 @@ The electrical changes here are fairly minor. The layout has some moderate chang
 
 ## Firmware
 
-The firmware from the 20629 board has been dumped. The label is marked "ST 251 / LSIL18". The firwmare has been fed through Ghidra and a good chunk of it has been commented and labeled. See [the repository](st251/firmware/ST251_commented.txt). Some parts of it are not understood.
+The firmware from the 20629 board has been dumped. The label is marked "ST 251 / LSIL18". The firmware has been fed through Ghidra and a good chunk of it has been commented and labeled. See [the repository](st251/firmware/ST251_commented.txt). Some parts of it are not understood.
 
 ## Chips
 
@@ -96,11 +129,12 @@ The firmware from the 20629 board has been dumped. The label is marked "ST 251 /
 | 11721-501   |               | 20938, 21020 | Similar to the L293 H-bridge driver |
 | 10189-521   | SSI257        | 20629, 20938 | Steering diodes and head preamp, NE592 equivalent. |
 | 10189-502   |               | 21020  | Steering diodes and head preamp, NE592 equivalent. |
-| 11642-001   |               | 20301  | Steering diodes and head pramp, NE592 equivalent. |
+| 11642-001   |               | 20301, 20527  | Steering diodes and head pramp, NE592 equivalent. |
+| 10014-002   |               | 20527 | Head center tap driver, write current selector. |
 | 10188-501   | SSI257.2      | 20629, 20938, 21020 | Head center tap driver, write current selector. |
-| 11665-001   |               | 20301 | Stepper motor control and driver chip (4 phase). |
+| 11665-001   |               | 20301, 20527 | Stepper motor control and driver chip (4 phase). |
 | 11744-502   | RING DETECTOR | 20629, 20938, 21020 | Stepper motor seek settling chip - adaptive ringout. |
-| 11695-002   |               | 20301 | Spindle speed control chip. |
+| 11695-002   |               | 20301, 20257 | Spindle speed control chip. |
 | 11695-502   | SPEED CONTROL | 20629 | Spindle speed control chip. |
 | 10223-502   | RETURN        | 20629, 20938, 21020 | Retracts stepper motor on power-down. |
 | 11743-501   |               | 20938 | Controls H-Bridge enables based on phase state. |
@@ -110,6 +144,7 @@ The firmware from the 20629 board has been dumped. The label is marked "ST 251 /
 | 11791       |               | 20938 | Spindle motor driver. Similar to the HA13406W. |
 | 11738-002   |               | 21020 | Similar to 11791 but in a different package. |
 | 10206-501   | SSI296        | 20629, 20938, 21020 | Read channel and write amplifier. |
+| 10206-002   |               | 20527 | Read channel and write amplifier. |
 | SSI 280     |               | 20301 | Read channel and write amplifier. |
 | 11647-502   | STEP LOGIC    | 20629, 20938, 21020 | MFM interface logic. |
 | 80007-001   | R10L7-11      | 20301 | Rockwell R6500 6502-core microcontroller. |
@@ -184,9 +219,11 @@ The INDEX\_TRACK# signal is somewhat complex. The internal circuit isn't well un
 The INDEX\_TRACK# signal seems to depend on internal counters. If READ\_DATA pulses at least once per CLK high/low, in 9 READ\_DATA pulses, then INDEX\_TRACK# asserts low on the 9th READ\_DATA rising edge. This triggers another one-shot device that ensures that INDEX\_TRACK# continues to be asserted for 5 rising CLK edges after READ\_DATA stops pulsing. DC\_UNSAFE# resets both the READ\_DATA pulse detector and the INDEX\_TRACK# one-shot.
 
 
-### 10188-501 "SSI257.2"
+### 10188-501 "SSI257.2", 10014-002
 
-This device drives the center tap connections of the R/W heads, and also provides two outputs to drive the write current resistor divider.
+These devices drive the center tap connections of the R/W heads, and also provides two outputs to drive the write current resistor divider.
+
+The 10188-501 comes in an SOIC package while the 10014-002 comes in a DIP package.
 
 **Pin Description**
 
@@ -238,9 +275,11 @@ The chip also includes a very simple two-transistor driver for the write current
 When RIWR1 is driven high, IWR1 is driven to +12V. Otherwise, IWR1 floats.
 When RIWR2 is driven high, IWR2 is driven to +12V. Otherwise, IWR2 floats.
 
-### 10189-521 "SSI257"
+### 10189-521 "SSI257", 11642-001
 
 This is the head select steering matrix and read preamplifier.
+
+The 10189-521 comes in an SOIC package while the 11642-001 comes in a DIP package.
 
 **Pin Description**
 
@@ -284,49 +323,89 @@ Differential signals from the currently selected read/write head gets amplified 
 
 The preamp is similar to the NE592 video amplifier chip. See the datasheet for examples of different gain networks. Typically a capacitor is used here to create a differentiator (high pass) function. This aids the peak detection function in the read channel (see the next section.)
 
-### 10206-501 "SSI296" Read channel and write amplifier
+### SSI 280 Read channel and write preamplifier
 
-This device incorporates both the read channel and the write amplifier circuitry.
+This device incorporates the read channel and the write amplifier circuitry.
 
 **Pin Description**
 
-| Pin | Name  | Direction | Description                                     |
-|-----|-------|-----------|-------------------------------------------------|
-| 44  | 12V   | Power In  | 12V power rail. |
-| 29  | 5V    | Power In  | 5V power rail. |
-| 5, 30 | GND | Ground    | Connect to ground. |
-| 28  | GND   | Ground    | Connect to ground. |
-| 15  | WRT\_OK | Input   | Write OK input. Assert when seek completed, ready, and drive selected. |
-| 16  | WRITE\_CUR |      | Write current set point. |
-| 19  | WDO+  | Output    | Data out to the head steering matrix (positive) |
-| 20  | WDO-  | Output    | Data out to the head steering matrix (negative) |
-| 22  | WDATA\_IN+ | Input | Write data in (positive) |
-| 23  | WDATA\_IN- | Input | Write data in (negative) |
-| 37  | WRT\_GATE# | Input | Active low write enable. Connect to MFM bus. |
-| 39  | WRT\_FAULT# | Output | Active low write fault indicator. Asserted if a fault occurs during a write, may deassert during reads. |
-| 40  | DC\_UNSAFE# | Output | Active low DC unsafe indicator. Asserts if 5V or 12V rail fall below minimum thresholds. |
-| 42  | VHS   |           | Head selected monitoring connection to the head steering matrix. |
-| 43  | VCTAP | Output    | Head center tap driver. Driven to 12V during a write and about 5.3V during a read. |
+| Pin | Name | Direction | Description |
+|-----|------|-----------|-------------|
+| 28  |  12V  | Power In  | 12V power rail. |
+| 19  |  5V   | Power In  | 5V power rail. |
+| 5, 20 | GND   | Ground    | Connect to ground. |
+| 10  | WRT\_OK | Input   | Write OK input. Assert when seek completed, ready, and drive selected. |
+| 11  | WRITE\_CUR |      | Write current set point. |
+| 12  | WDO+  | Output    | Data out to the head steering matrix (positive) |
+| 13  | WDO-  | Output    | Data out to the head steering matrix (negative) |
+| 15  | WDATA\_IN+ | Input | Write data in (positive) |
+| 16  | WDATA\_IN- | Input | Write data in (negative) |
+| 23  | WRT\_GATE# | Input | Active low write enable. Connect to MFM bus. |
+| 24  | WRT\_FAULT# | Output | Active low write fault indicator. Asserted if a fault occurs during a write, may deassert during reads. |
+| 25  | DC\_UNSAFE# | Output | Active low DC unsafe indicator. Asserts if 5V or 12V rail fall below minimum thresholds. |
+| 26  | VHS   |           | Head selected monitoring connection to the head steering matrix. |
+| 27  | VCTAP | Output    | Head center tap driver. Driven to 12V during a write and about 5.3V during a read. |
 | 1   | DI+   | Input     | Preamp signal input (positive). |
 | 2   | DI-   | Input     | Preamp signal input (negative). |
 | 3   | -GAIN |           | Preamp gain pin 1. |
 | 4   | +GAIN |           | Preamp gain pin 2. |
-| 8   | DO+   | Output    | Preamp signal output (positive). |
-| 9   | DO-   | Output    | Preamp signal output (negative). |
-| 10  | +C1   | Input     | Signal comparator input 1+. |
-| 11  | -C1   | Input     | Signal comparator input 1-. |
-| 12  | +C2   | Input     | Signal comparator input 2+. |
-| 13  | -C2   | Input     | Signal comparator input 2-. |
-| 21  | DRV\_SEL | Input  | Active low drive select input. Enables the read channel differential outputs. |
-| 24  | +RDO  | O.C.      | Single-ended open-collector read data output. |
-| 25  | +RD   | Output    | Digital data output (positive). |
-| 26  | -RD   | Output    | Digital data output (negative). |
-| 31  | OA    |           | Digital data output amplitude control. Pull up for max or connect a resistor to ground to set another level. |
-| 32  | TMG4  |           | One-shot timer RC pin. Controls the width of the output pulse on RD for a detected flux transition. |
-| 33  | TMG3  |           | One-shot timer RC pin. Edge delay 2b. Triggered by edge delay 2. |
-| 34  | TMG2  |           | One-shot timer RC pin. Edge delay 2. Triggered by input comparator on pins 12 and 13. |
-| 35  | TMG1  |           | One-shot timer RC pin. Edge delay 1. Triggered by input comparator on pins 10 and 11. |
-| 6, 7, 14, 17, 18, 27, 36, 38, 41 | NC | No connect | Not connected. |
+| 6   | DO+   | Output    | Preamp signal output (positive). |
+| 7   | DO-   | Output    | Preamp signal output (negative). |
+| 8   | +C    | Input     | Signal comparator input+. |
+| 9   | -C    | Input     | Signal comparator input-. |
+| 14  | DRV\_SEL | Input  | Active low drive select input. Enables the read channel differential outputs. |
+| 21  | +RDO  | O.C.      | Single-ended open-collector read data output. |
+| 17  | +RD   | Output    | Digital data output (positive). |
+| 18  | -RD   | Output    | Digital data output (negative). |
+| 22  | TMG1  |           | One-shot timer RC pin. |
+
+The functionality of this device is similar to the 10206-501 but with a simpler pulse generation section including a single one-shot.
+
+### 10206-501 "SSI296", 10206-002 Read channel and write amplifier
+
+These devices incorporate both the read channel and the write amplifier circuitry.
+
+The 10206-501 comes in the 44-pin PLCC package while the 10206-002 comes in the 40-pin DIP package.
+
+**Pin Description**
+
+| PLCC Pin | DIP Pin | Name  | Direction | Description                                     |
+|----------|---------|-------|-----------|-------------------------------------------------|
+| 44       | 40      |  12V  | Power In  | 12V power rail. |
+| 29       | 27      |  5V   | Power In  | 5V power rail. |
+| 5, 30    | 5, 26   | GND   | Ground    | Connect to ground. |
+| 28       | 28      | GND   | Ground    | Connect to ground. |
+| 15       | 13      | WRT\_OK | Input   | Write OK input. Assert when seek completed, ready, and drive selected. |
+| 16       | 14      | WRITE\_CUR |      | Write current set point. |
+| 19       | 17      | WDO+  | Output    | Data out to the head steering matrix (positive) |
+| 20       | 16      | WDO-  | Output    | Data out to the head steering matrix (negative) |
+| 22       | 20      | WDATA\_IN+ | Input | Write data in (positive) |
+| 23       | 19      | WDATA\_IN- | Input | Write data in (negative) |
+| 37       | 35      | WRT\_GATE# | Input | Active low write enable. Connect to MFM bus. |
+| 39       | 36      | WRT\_FAULT# | Output | Active low write fault indicator. Asserted if a fault occurs during a write, may deassert during reads. |
+| 40       | 37      | DC\_UNSAFE# | Output | Active low DC unsafe indicator. Asserts if 5V or 12V rail fall below minimum thresholds. |
+| 42       | 38      | VHS   |           | Head selected monitoring connection to the head steering matrix. |
+| 43       | 39      | VCTAP | Output    | Head center tap driver. Driven to 12V during a write and about 5.3V during a read. |
+| 1        | 1       | DI+   | Input     | Preamp signal input (positive). |
+| 2        | 2       | DI-   | Input     | Preamp signal input (negative). |
+| 3        | 3       | -GAIN |           | Preamp gain pin 1. |
+| 4        | 4       | +GAIN |           | Preamp gain pin 2. |
+| 8        | 7       | DO+   | Output    | Preamp signal output (positive). |
+| 9        | 8       | DO-   | Output    | Preamp signal output (negative). |
+| 10       | 9       | +C1   | Input     | Signal comparator input 1+. |
+| 11       | 10      | -C1   | Input     | Signal comparator input 1-. |
+| 12       | 11      | +C2   | Input     | Signal comparator input 2+. |
+| 13       | 12      | -C2   | Input     | Signal comparator input 2-. |
+| 21       | 18      | DRV\_SEL | Input  | Active low drive select input. Enables the read channel differential outputs. |
+| 24       | 21      | +RDO  | O.C.      | Single-ended open-collector read data output. |
+| 25       | 22      | +RD   | Output    | Digital data output (positive). |
+| 26       | 23      | -RD   | Output    | Digital data output (negative). |
+| 31       | 29      | OA    |           | Digital data output amplitude control. Pull up for max or connect a resistor to ground to set another level. |
+| 32       | 30      | TMG4  |           | One-shot timer RC pin. Controls the width of the output pulse on RD for a detected flux transition. |
+| 33       | 31      | TMG3  |           | One-shot timer RC pin. Edge delay 2b. Triggered by edge delay 2. |
+| 34       | 32      | TMG2  |           | One-shot timer RC pin. Edge delay 2. Triggered by input comparator on pins 12 and 13. |
+| 35       | 33      | TMG1  |           | One-shot timer RC pin. Edge delay 1. Triggered by input comparator on pins 10 and 11. |
+| 6, 7, 14, 17, 18, 27, 36, 38, 41 | 6, 15, 24, 25, 34 | NC | No connect | Not connected. |
 
 **Detailed Description**
 
