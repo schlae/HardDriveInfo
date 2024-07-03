@@ -1,6 +1,6 @@
 # Hard Drive Repair Information
 
-This site contains extensive information about the control boards used in old MFM and RLL hard drives made by Seagate.
+This site contains extensive information about the control boards used in some 1980s hard drives made by Seagate.
 
 Full schematics and even KiCad layouts are available for a number of different boards. My hope is that this will
 
@@ -9,16 +9,26 @@ Full schematics and even KiCad layouts are available for a number of different b
 
 Below is a table linking specific drive models with the part numbers of their matching control boards.
 
-| Manufacturer | Model     | Control PCB | Stepper Type | Avg Pos Time | Media        |
-|--------------|-----------|-------------|--------------|--------------|--------------|
-| Seagate      | ST-412    | ASSY 20201  | 4-Wire       |         85ms | Oxide, 00253 |
-| Seagate      | ST-419    | ASSY 20225  | 4-Wire       |         85ms | Oxide, 00252 |
-| Seagate      | ST-225    | ASSY 20301, 20327 | 4-Wire       |         65ms | Oxide Coated |
-| Seagate      | ST-238    | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated |
-| Seagate      | ST-238R   | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated |
-| Seagate      | ST-251    | ASSY 20629  | 10-Wire      |         40ms | Thin Film    |
-| Seagate      | ST-251-1  | ASSY 20938  | 10-Wire      |         30ms | Thin Film    |
-| Seagate      | ST-277R-1 | ASSY 21020, 20938-300 | 10-Wire      |         28ms | Thin Film    |
+| Manufacturer | Model     | Interface | Control PCB | Stepper Type | Avg Pos Time | Media        | Media Size OD/ID |
+|--------------|-----------|-----------|-------------|--------------|--------------|--------------|------------------|
+| Seagate      | ST-412    | MFM       | ASSY 20201  | 4-Wire       |         85ms | Oxide, 00253 | 130/40mm |
+| Seagate      | ST-419    | MFM       | ASSY 20225  | 4-Wire       |         85ms | Oxide, 00252 | 130/40mm |
+| Seagate      | ST-225    | MFM       | ASSY 20301, 20327 | 4-Wire |         65ms | Oxide Coated | 130/40mm |
+| Seagate      | ST-238    | MFM       | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated | 130/40mm |
+| Seagate      | ST-238R   | MFM/RLL   | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated | 130/40mm |
+| Seagate      | ST-251    | MFM       | ASSY 20629  | 10-Wire      |         40ms | Thin Film    | 130/40mm |
+| Seagate      | ST-251-1  | MFM       | ASSY 20938  | 10-Wire      |         30ms | Thin Film    | 130/40mm |
+| Seagate      | ST-277R-1 | MFM/RLL   | ASSY 21020, 20938-300 | 10-Wire |    28ms | Thin Film    | 130/40mm |
+| Seagate      | ST-296N   | SCSI      | ASSY 20741  | 10-Wire      |         28ms | Thin Film    | 130/40mm |
+| Seagate      | ST-125    | MFM       | ASSY 20867  | 6-Wire       |         30ms | Thin Film    | 95/25mm  |
+| Seagate      | ST-157R   | MFM/RLL   | ASSY 20829  | 6-Wire       |         30ms | Thin Film    | 95/25mm  |
+| Seagate      | ST-157A-1 | AT-IDE    | 20948       |              |         28ms | Thin Film    | 95/25mm  |
+
+## Assembly Information
+
+The control boards are typically held to the drive by three screws. Two of the screws are insulated from the PCB ground with plastic washers, but one of them makes a solid ground connection to the chassis. This is (as far as I can tell) always the screw closest to the power connector.
+
+Early ST-225 boards have an 18-pin header going to the read/write heads, but the flex cable has a 16-pin connector. It should be plugged in offset to the pin 1 end of the header, allowing pins 17 and 18 on the header to hang outside the connector.
 
 ## Driver boards
 
@@ -124,33 +134,50 @@ The firmware from the 20629 board has been dumped. The label is marked "ST 251 /
 
 ## Chips
 
+20741
+
 | Part Number | Nicknames     | Where Used | Description |
 |-------------|---------------|------------|-------------|
-| 11721-501   |               | 20938, 21020 | Similar to the L293 H-bridge driver |
-| 10189-521   | SSI257        | 20629, 20938 | Steering diodes and head preamp, NE592 equivalent. |
-| 10189-502   |               | 21020  | Steering diodes and head preamp, NE592 equivalent. |
-| 11642-001   |               | 20301, 20527  | Steering diodes and head pramp, NE592 equivalent. |
 | 10014-002   |               | 20527 | Head center tap driver, write current selector. |
-| 10188-501   | SSI257.2      | 20629, 20938, 21020 | Head center tap driver, write current selector. |
+| 10188-501   | SSI257.2, V10096BQZ | 20629, 20938, 21020, 20867, 20829, 20948, 20741 | Head center tap driver, write current selector. |
+| 10189-521   | SSI257        | 20629, 20938, 20829 | Steering diodes and head preamp, NE592 equivalent. |
+| 10189-501   |               | 20867 | Steering diodes and head preamp, NE592 equivalent. |
+| 10189-502   |               | 21020, 20741  | Steering diodes and head preamp, NE592 equivalent. |
+| SSI 280     |               | 20301 | Read channel and write amplifier. |
+| 10206-501   | SSI296        | 20629, 20938, 21020, 20867, 20741 | Read channel and write amplifier. |
+| 10206-502   |               | 20829, 20948 | Read channel and write amplifier. |
+| 10206-002   |               | 20527 | Read channel and write amplifier. |
+| 10223-501   | RETURN        | 20867 | Retracts stepper motor on power-down. |
+| 10223-502   | RETURN        | 20629, 20938, 21020, 20829, 20948, 20741 | Retracts stepper motor on power-down. |
+| 11468       |               | 21020 | Controls H-Bridge enables based on phase state. |
+| 11642-001   |               | 20301, 20527  | Steering diodes and head preamp, NE592 equivalent. See 10189.|
+| 11647-502   | STEP LOGIC    | 20629, 20938, 21020, 20867, 20829 | MFM interface logic. |
 | 11665-001   |               | 20301, 20527 | Stepper motor control and driver chip (4 phase). |
-| 11744-502   | RING DETECTOR | 20629, 20938, 21020 | Stepper motor seek settling chip - adaptive ringout. |
 | 11695-002   |               | 20301, 20257 | Spindle speed control chip. |
 | 11695-502   | SPEED CONTROL | 20629 | Spindle speed control chip. |
-| 10223-502   | RETURN        | 20629, 20938, 21020 | Retracts stepper motor on power-down. |
-| 11743-501   |               | 20938 | Controls H-Bridge enables based on phase state. |
-| 11743-521   |               | 20938-300 | Controls H-Bridge enables based on phase state. |
-| 11468       |               | 21020 | Controls H-Bridge enables based on phase state. |
-| 11782-501   | STEP SEQR     | 20938, 21020 | 5-Phase stepper motor controller. |
-| 11791       |               | 20938 | Spindle motor driver. Similar to the HA13406W. |
+| 11721-501   |               | 20938, 21020, 20741 | Similar to the L293 H-bridge driver |
 | 11738-002   |               | 21020 | Similar to 11791 but in a different package. |
-| 10206-501   | SSI296        | 20629, 20938, 21020 | Read channel and write amplifier. |
-| 10206-002   |               | 20527 | Read channel and write amplifier. |
-| SSI 280     |               | 20301 | Read channel and write amplifier. |
-| 11647-502   | STEP LOGIC    | 20629, 20938, 21020 | MFM interface logic. |
+| 11738-502   |               | 20741 | Similar to 11791 but in a different package. |
+| 11741-502   |               | 20948, 20741 | Unknown. |
+| 11743-501   |               | 20938, 20741 | Controls H-Bridge enables based on phase state. |
+| 11743-521   |               | 20938-300 | Controls H-Bridge enables based on phase state. |
+| 11744-501   | RING DETECTOR | 20867 | Stepper motor seek settling chip - adaptive ringout. |
+| 11744-502   | RING DETECTOR | 20629, 20938, 21020, 20741 | Stepper motor seek settling chip - adaptive ringout. |
+| 11747-501   |               | 20948, 20741 | Unknown. |
+| 11782-501   | STEP SEQR     | 20938, 21020, 20867, 20741 | 5-Phase stepper motor controller. |
+| 11789-502   |               | 20829 | Unknown. Maybe a stepper motor controller with built-in driver transistors. |
+| 11789-504   |               | 20829, 20948 | Unknown. Maybe a stepper motor controller with built-in driver transistors. |
+| 11791       |               | 20938, 20829, 20948 | Spindle motor driver. Similar to the HA13406W. |
+| IP3M05AW    |               | 20867, 20829 | Spindle motor driver. Similar to 11791 but in a different package. |
+| 12654-501   |               | 20948 | AT-IDE interface. |
 | 80007-001   | R10L7-11      | 20301 | Rockwell R6500 6502-core microcontroller. |
 | R6518AJ     | R1113-18      | 20629 | Rockwell R6518 6502-core microcontroller. Requires external ROM. |
 | 80118-502   | R1512-12      | 20938 | Rockwell R6518(?) 6502-core microcontroller. |
 | 80118-505   | R1818-11      | 21020 | Rockwell R6518(?) 6502-core microcontroller. |
+| 80049-501   | SCN8051HCCA44 | 20867 | Intel 8051 microcontroller. |
+| 80074-504   | SAB8052A-N    | 20741 | Intel 8052 microcontroller. |
+| 80084-508   | SAB8052A-N    | 20829 | Intel 8052 microcontroller. |
+| 80127-506   | SCN8052HCCA44 | 20948 | Intel 8052 microcontroller. |
 
 ### 11647-502 "STEP LOGIC"
 
