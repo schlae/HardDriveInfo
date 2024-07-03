@@ -134,8 +134,6 @@ The firmware from the 20629 board has been dumped. The label is marked "ST 251 /
 
 ## Chips
 
-20741
-
 | Part Number | Nicknames     | Where Used | Description |
 |-------------|---------------|------------|-------------|
 | 10014-002   |               | 20527 | Head center tap driver, write current selector. |
