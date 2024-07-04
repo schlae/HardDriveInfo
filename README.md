@@ -13,7 +13,7 @@ Below is a table linking specific drive models with the part numbers of their ma
 |--------------|-----------|-----------|-------------|--------------|--------------|--------------|------------------|
 | Seagate      | ST-412    | MFM       | ASSY 20201  | 4-Wire       |         85ms | Oxide, 00253 | 130/40mm |
 | Seagate      | ST-419    | MFM       | ASSY 20225  | 4-Wire       |         85ms | Oxide, 00252 | 130/40mm |
-| Seagate      | ST-225    | MFM       | ASSY 20301, 20327 | 4-Wire |         65ms | Oxide Coated | 130/40mm |
+| Seagate      | ST-225    | MFM       | ASSY 20301, 20527 | 4-Wire |         65ms | Oxide Coated | 130/40mm |
 | Seagate      | ST-238    | MFM       | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated | 130/40mm |
 | Seagate      | ST-238R   | MFM/RLL   | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated | 130/40mm |
 | Seagate      | ST-251    | MFM       | ASSY 20629  | 10-Wire      |         40ms | Thin Film    | 130/40mm |
@@ -46,6 +46,8 @@ There are several variations of the 20301 board:
 * 1986 example: 74273, 2716, RP6 are not stuffed.
 
 * 1987 example: 74273, 2716, RP5, RP6, RP7, RP8, RP9, RP10, C18, C31, CR4, 7445(8C, 8B) are not stuffed. Q9 is replaced with a 620 ohm resistor between the emitter and base terminals. This disables the fancy pulldown resistors on the stepper motor circuit (probably a cost reduction).
+
+Unlike the EPROM chip on the ST-251 boards, the 2716 chip seems to be used to store tables for controlling the stepper motor.
 
 **20301 to 20527 changes**
 
@@ -156,7 +158,7 @@ The firmware from the 20629 board has been dumped. The label is marked "ST 251 /
 | 11721-501   |               | 20938, 21020, 20741 | Similar to the L293 H-bridge driver |
 | 11738-002   |               | 21020 | Similar to 11791 but in a different package. |
 | 11738-502   |               | 20741 | Similar to 11791 but in a different package. |
-| 11741-502   |               | 20948, 20741 | Unknown. |
+| 11741-502   |               | 20948, 20741 | SSI 2,7 RLL codec/data separator. Similar to 32D5321. |
 | 11743-501   |               | 20938, 20741 | Controls H-Bridge enables based on phase state. |
 | 11743-521   |               | 20938-300 | Controls H-Bridge enables based on phase state. |
 | 11744-501   | RING DETECTOR | 20867 | Stepper motor seek settling chip - adaptive ringout. |
@@ -168,7 +170,7 @@ The firmware from the 20629 board has been dumped. The label is marked "ST 251 /
 | 11791       |               | 20938, 20829, 20948 | Spindle motor driver. Similar to the HA13406W. |
 | IP3M05AW    |               | 20867, 20829 | Spindle motor driver. Similar to 11791 but in a different package. |
 | 12654-501   |               | 20948 | AT-IDE interface. |
-| 80007-001   | R10L7-11      | 20301 | Rockwell R6500 6502-core microcontroller. |
+| 80007-001   | R10L7-11      | 20301, 20527 | Rockwell R6500 6502-core microcontroller. |
 | R6518AJ     | R1113-18      | 20629 | Rockwell R6518 6502-core microcontroller. Requires external ROM. |
 | 80118-502   | R1512-12      | 20938 | Rockwell R6518(?) 6502-core microcontroller. |
 | 80118-505   | R1818-11      | 21020 | Rockwell R6518(?) 6502-core microcontroller. |
