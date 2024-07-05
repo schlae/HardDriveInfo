@@ -41,6 +41,7 @@ The PCB schematic and layout for 20301 are available, see st225/20301.
 
 The PCB schematic and layout for 20527 are available, see st225/20527.
 
+
 There are several variations of the 20301 board: 
 
 * 1986 example: 74273, 2716, RP6 are not stuffed.
@@ -132,7 +133,24 @@ The electrical changes here are fairly minor. The layout has some moderate chang
 
 ## Firmware
 
+### ST-251
+
 The firmware from the 20629 board has been dumped. The label is marked "ST 251 / LSIL18". The firmware has been fed through Ghidra and a good chunk of it has been commented and labeled. See [the repository](st251/firmware/ST251_commented.txt). Some parts of it are not understood.
+
+### ST-225
+
+The firmware from the ST-225's ROM microcontroller, 80007-001, has been dumped, disassembled, and commented. See st225/firmware.
+
+Fun facts:
+
+* Some (but not all) ST-225 logic boards have an array of resistors and two 7445 chips. These are connected to the stepper motor and are used to adjust
+the voltage on individual windings to subtly shift the position of the stepper motor (microstepping). This is used in recovery mode.
+* Early ST-225 logic boards have a latch and EPROM chip. These are not populated. They are not used to store firmware. The microcontroller's internal
+ROM contains code that uses this external EPROM as a lookup table of 1 byte per track. Each contains two 4-bit values used to microstep the head position
+(two values because the value can be different if you are stepping inwards to the track or stepping outwards to the track). This may have been used to provide
+a custom "defect map" for a single-platter drive, using the stepper to avoid bad areas on the platter.
+* An undocumented "pause mode" appears in the firmware. By pulling PA4 low (pin 34 of the MCU), it enters a state where it allows all GPIO pins to go high/float. Presumable this was useful for debugging.
+
 
 ## Chips
 

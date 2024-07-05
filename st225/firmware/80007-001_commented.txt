@@ -1,0 +1,2193 @@
+                            seek_settling_time:           ;XREF[3,0]:   0949,0abe,0d66
+ZERO_PAGE:0000                  ??          ??                                      
+                            DAT_0001:                     ;XREF[1,0]:   0ca6
+ZERO_PAGE:0001                  ??          ??                                      
+                            captured_count_hi:            ;XREF[2,0]:   0868,0880
+ZERO_PAGE:0002                  undefined1  ??                                      
+                            captured_count_lo:            ;XREF[2,0]:   0870,0886
+ZERO_PAGE:0003                  undefined1  ??                                      
+                            current_track_high:           ;XREF[10,0]:  0849,085a,08f9,0907,090b,0970,0b2b,0d62
+                                                          ;             0d73,0d80
+ZERO_PAGE:0004                  undefined1  ??                                      
+                            current_track_low:            ;XREF[15,0]:  0843,0854,08f3,08f7,0901,0905,090f,093d
+                                                          ;             096a,0ac9,0aee,0b19,0d58,0d6b,0d7a
+ZERO_PAGE:0005                  undefined1  ??                                      
+                            target_delta_with_offset_h:   ;XREF[5,0]:   0a0c,0a2d,0a31,0ab9,0e39
+ZERO_PAGE:0006                  undefined1  ??                                      
+                            target_delta_with_offset_l:   ;XREF[6,0]:   0a0e,0a27,0a2b,0a33,0ab3,0e3b
+ZERO_PAGE:0007                  undefined1  ??                                      
+                            track_lsbs:                   ;XREF[7,0]:   0941,0b7b,0b88,0b94,0d5a,0d6f,0db2
+ZERO_PAGE:0008                  undefined1  ??                                      
+                            direction_flags:              ;XREF[23,0]:  084d,0860,0864,08ec,09db,09df,09e2,09e6
+                                                          ;             09e9,09ed,0a12,0a4e,0a52,0a77,0a7e,0ac3
+                                                          ;             0ac5,0b49,0b5f,0b65,0b69,0b90,0c5e
+ZERO_PAGE:0009                  undefined1  ??                                      
+                            rom_val:                      ;XREF[8,0]:   0b3f,0b4c,0b59,0b6b,0b8e,0b9d,0ba3,0ba9
+ZERO_PAGE:000a                  undefined1  ??                                      
+                            step_count:                   ;XREF[16,0]:  0922,094e,0952,09d5,0cba,0cc4,0ccb,0cdb
+                                                          ;             0ce5,0cec,0cfc,0d03,0d0a,0d1a,0d1f,0d5c
+ZERO_PAGE:000b                  undefined1  ??                                      
+                            track_delta_hi:               ;XREF[13,0]:  086c,08a9,08b3,08cd,08dc,08fb,0909,0972
+                                                          ;             097b,09a7,0ab5,0e06,0e16
+ZERO_PAGE:000c                  undefined1  ??                                      
+                            track_delta_lo:               ;XREF[15,0]:  0874,08a5,08b9,08c9,08d8,08f5,0903,096c
+                                                          ;             0977,0983,09a3,0aae,0af0,0e02,0e12
+ZERO_PAGE:000d                  undefined1  ??                                      
+                            curAccelDelayTablePtr:        ;XREF[3,2]:   09f8,0ad7,0e2b,0adc,0e27
+ZERO_PAGE:000e                  undefined2  ??                                      
+                            curDecelDelayTablePtr:        ;XREF[2,1]:   0a3c,0afe,0b03
+ZERO_PAGE:0010                  undefined2  ??                                      
+                            curAccelStepCount:            ;XREF[5,0]:   09f3,0a00,0a08,0aa1,0e3f
+ZERO_PAGE:0012                  undefined1  ??                                      
+                            curAccelStepModeTablePtr:     ;XREF[3,2]:   0a03,0ae1,0e33,0ae6,0e2f
+ZERO_PAGE:0013                  undefined2  ??                                      
+                            curDecelStepCount:            ;XREF[5,0]:   0a37,0a42,0a4a,0aa6,0e37
+ZERO_PAGE:0015                  undefined1  ??                                      
+                            curDecelStepModeTablePtr:     ;XREF[2,1]:   0a45,0b08,0b0d
+ZERO_PAGE:0016                  undefined2  ??                                      
+                            curFullSpeedStepDelay:        ;XREF[2,0]:   0a1e,0aab
+ZERO_PAGE:0018                  undefined1  ??                                      
+                            skip_track_limit_check:       ;XREF[5,0]:   0898,089e,0963,0981,0d60
+ZERO_PAGE:0019                  undefined1  ??                                      
+                            DAT_001a:                     ;XREF[5,0]:   0822,0938,0994,099b,0c9e
+ZERO_PAGE:001a                  undefined1  ??                                      
+                            temp_hi:                      ;XREF[7,0]:   0b41,0b75,0d84,0dc0,0dd1,0e4b,0e4f
+ZERO_PAGE:001b                  undefined1  ??                                      
+                            temp_lo:                      ;XREF[13,0]:  0bfb,0bfd,0c08,0c0a,0c21,0c28,0d7e,0db5
+                                                          ;             0dc7,0dcd,0dcf,0e45,0e49
+ZERO_PAGE:001c                  undefined1  ??                                      
+                            index_find_tries:             ;XREF[2,0]:   0bf7,0c3b
+ZERO_PAGE:001d                  ??          ??                                      
+ZERO_PAGE:001e                  ??          ??                                      
+                            trim_counter:                 ;XREF[3,0]:   082b,0db7,0dd5
+ZERO_PAGE:001f                  undefined1  ??                                      
+ZERO_PAGE:0020                  ??          ??                                      
+ZERO_PAGE:0021                  ??          ??                                      
+                            max_step_count_hi:            ;XREF[3,0]:   084b,085e,08a7
+ZERO_PAGE:0022                  undefined1  ??                                      
+                            max_step_count_lo:            ;XREF[3,0]:   0845,0858,08a3
+ZERO_PAGE:0023                  undefined1  ??                                      
+ZERO_PAGE:0024                  ??          ??                                      
+ZERO_PAGE:0025                  ??          ??                                      
+ZERO_PAGE:0026                  ??          ??                                      
+ZERO_PAGE:0027                  ??          ??                                      
+ZERO_PAGE:0028                  ??          ??                                      
+ZERO_PAGE:0029                  ??          ??                                      
+ZERO_PAGE:002a                  ??          ??                                      
+ZERO_PAGE:002b                  ??          ??                                      
+ZERO_PAGE:002c                  ??          ??                                      
+ZERO_PAGE:002d                  ??          ??                                      
+ZERO_PAGE:002e                  ??          ??                                      
+ZERO_PAGE:002f                  ??          ??                                      
+ZERO_PAGE:0030                  ??          ??                                      
+ZERO_PAGE:0031                  ??          ??                                      
+ZERO_PAGE:0032                  ??          ??                                      
+ZERO_PAGE:0033                  ??          ??                                      
+ZERO_PAGE:0034                  ??          ??                                      
+ZERO_PAGE:0035                  ??          ??                                      
+ZERO_PAGE:0036                  ??          ??                                      
+ZERO_PAGE:0037                  ??          ??                                      
+ZERO_PAGE:0038                  ??          ??                                      
+ZERO_PAGE:0039                  ??          ??                                      
+ZERO_PAGE:003a                  ??          ??                                      
+ZERO_PAGE:003b                  ??          ??                                      
+ZERO_PAGE:003c                  ??          ??                                      
+ZERO_PAGE:003d                  ??          ??                                      
+ZERO_PAGE:003e                  ??          ??                                      
+ZERO_PAGE:003f                  ??          ??                                      
+ZERO_PAGE:0040                  ??          ??                                      
+ZERO_PAGE:0041                  ??          ??                                      
+ZERO_PAGE:0042                  ??          ??                                      
+ZERO_PAGE:0043                  ??          ??                                      
+ZERO_PAGE:0044                  ??          ??                                      
+ZERO_PAGE:0045                  ??          ??                                      
+ZERO_PAGE:0046                  ??          ??                                      
+ZERO_PAGE:0047                  ??          ??                                      
+ZERO_PAGE:0048                  ??          ??                                      
+ZERO_PAGE:0049                  ??          ??                                      
+ZERO_PAGE:004a                  ??          ??                                      
+ZERO_PAGE:004b                  ??          ??                                      
+ZERO_PAGE:004c                  ??          ??                                      
+ZERO_PAGE:004d                  ??          ??                                      
+ZERO_PAGE:004e                  ??          ??                                      
+ZERO_PAGE:004f                  ??          ??                                      
+ZERO_PAGE:0050                  ??          ??                                      
+ZERO_PAGE:0051                  ??          ??                                      
+ZERO_PAGE:0052                  ??          ??                                      
+ZERO_PAGE:0053                  ??          ??                                      
+ZERO_PAGE:0054                  ??          ??                                      
+ZERO_PAGE:0055                  ??          ??                                      
+ZERO_PAGE:0056                  ??          ??                                      
+ZERO_PAGE:0057                  ??          ??                                      
+ZERO_PAGE:0058                  ??          ??                                      
+ZERO_PAGE:0059                  ??          ??                                      
+ZERO_PAGE:005a                  ??          ??                                      
+ZERO_PAGE:005b                  ??          ??                                      
+ZERO_PAGE:005c                  ??          ??                                      
+ZERO_PAGE:005d                  ??          ??                                      
+ZERO_PAGE:005e                  ??          ??                                      
+ZERO_PAGE:005f                  ??          ??                                      
+ZERO_PAGE:0060                  ??          ??                                      
+ZERO_PAGE:0061                  ??          ??                                      
+ZERO_PAGE:0062                  ??          ??                                      
+ZERO_PAGE:0063                  ??          ??                                      
+ZERO_PAGE:0064                  ??          ??                                      
+ZERO_PAGE:0065                  ??          ??                                      
+ZERO_PAGE:0066                  ??          ??                                      
+ZERO_PAGE:0067                  ??          ??                                      
+ZERO_PAGE:0068                  ??          ??                                      
+ZERO_PAGE:0069                  ??          ??                                      
+ZERO_PAGE:006a                  ??          ??                                      
+ZERO_PAGE:006b                  ??          ??                                      
+ZERO_PAGE:006c                  ??          ??                                      
+ZERO_PAGE:006d                  ??          ??                                      
+ZERO_PAGE:006e                  ??          ??                                      
+ZERO_PAGE:006f                  ??          ??                                      
+ZERO_PAGE:0070                  ??          ??                                      
+ZERO_PAGE:0071                  ??          ??                                      
+ZERO_PAGE:0072                  ??          ??                                      
+ZERO_PAGE:0073                  ??          ??                                      
+ZERO_PAGE:0074                  ??          ??                                      
+ZERO_PAGE:0075                  ??          ??                                      
+ZERO_PAGE:0076                  ??          ??                                      
+ZERO_PAGE:0077                  ??          ??                                      
+ZERO_PAGE:0078                  undefined1  ??                                      
+ZERO_PAGE:0079                  ??          ??                                      
+ZERO_PAGE:007a                  ??          ??                                      
+ZERO_PAGE:007b                  ??          ??                                      
+ZERO_PAGE:007c                  ??          ??                                      
+ZERO_PAGE:007d                  ??          ??                                      
+ZERO_PAGE:007e                  ??          ??                                      
+ZERO_PAGE:007f                  ??          ??                                      
+                            PORTA:                        ;XREF[17,0]:  080a,0812,081a,081e,0827,083c,088c,0957
+                                                          ;             095d,09ae,09b8,0b10,0bd6,0c49,0c5a,0caa
+                                                          ;             0d42
+ZERO_PAGE:0080                  undefined1  ??                                      
+                            PORTB:                        ;XREF[8,0]:   0833,0835,09b0,0b1b,0b35,0b37,0bab,0dd3
+ZERO_PAGE:0081                  undefined1  ??                                      
+                            PORTC:                        ;XREF[24,0]:  08bd,08c1,0915,091c,0920,098a,098e,0992
+                                                          ;             09b2,0a18,0a1c,0a55,0a59,0a5e,0a62,0a69
+                                                          ;             0a73,0a81,0a8b,0a8d,0a94,0c4f,0c7a,0c7e
+ZERO_PAGE:0082                  undefined1  ??                                      
+                            PORTD:                        ;XREF[16,0]:  09b6,0b1d,0b21,0b25,0b27,0b31,0b43,0b47
+                                                          ;             0bad,0bb3,0c56,0d95,0d9b,0da3,0dab,0daf
+ZERO_PAGE:0083                  undefined1  ??                                      
+                            UPPER_LATCH:                  ;XREF[1,0]:   0936
+ZERO_PAGE:0084                  ??          ??                                      
+                            LOWER_LATCH:                  ;XREF[2,0]:   092c,0932
+ZERO_PAGE:0085                  ??          ??                                      
+                            UPPER_COUNT:                  ;XREF[2,0]:   0866,0882
+ZERO_PAGE:0086                  undefined1  ??                                      
+                            LOWER_COUNT:                  ;XREF[2,0]:   086e,0888
+ZERO_PAGE:0087                  undefined1  ??                                      
+                            UPR_LAT_XFER:                 ;XREF[1,0]:   092e
+ZERO_PAGE:0088                  ??          ??                                      
+                            spindle_state_question:       ;XREF[3,0]:   0c71,0c80,0c86
+ZERO_PAGE:0089                  ??          ??                                      
+ZERO_PAGE:008a                  ??          ??                                      
+ZERO_PAGE:008b                  ??          ??                                      
+ZERO_PAGE:008c                  ??          ??                                      
+ZERO_PAGE:008d                  ??          ??                                      
+ZERO_PAGE:008e                  ??          ??                                      
+                            CONTROL_REG:                  ;XREF[4,0]:   0928,0c73,0c82,0c92
+ZERO_PAGE:008f                  ??          ??                                      
+ZERO_PAGE:0090                  ??          ??                                      
+ZERO_PAGE:0091                  ??          ??                                      
+ZERO_PAGE:0092                  ??          ??                                      
+ZERO_PAGE:0093                  ??          ??                                      
+ZERO_PAGE:0094                  ??          ??                                      
+ZERO_PAGE:0095                  ??          ??                                      
+ZERO_PAGE:0096                  ??          ??                                      
+ZERO_PAGE:0097                  ??          ??                                      
+ZERO_PAGE:0098                  ??          ??                                      
+ZERO_PAGE:0099                  ??          ??                                      
+ZERO_PAGE:009a                  undefined1  ??                                      
+ZERO_PAGE:009b                  ??          ??                                      
+ZERO_PAGE:009c                  ??          ??                                      
+ZERO_PAGE:009d                  ??          ??                                      
+ZERO_PAGE:009e                  ??          ??                                      
+ZERO_PAGE:009f                  ??          ??                                      
+ZERO_PAGE:00a0                  ??          ??                                      
+ZERO_PAGE:00a1                  ??          ??                                      
+ZERO_PAGE:00a2                  ??          ??                                      
+ZERO_PAGE:00a3                  ??          ??                                      
+ZERO_PAGE:00a4                  ??          ??                                      
+ZERO_PAGE:00a5                  ??          ??                                      
+ZERO_PAGE:00a6                  ??          ??                                      
+ZERO_PAGE:00a7                  ??          ??                                      
+ZERO_PAGE:00a8                  ??          ??                                      
+ZERO_PAGE:00a9                  ??          ??                                      
+ZERO_PAGE:00aa                  ??          ??                                      
+ZERO_PAGE:00ab                  ??          ??                                      
+ZERO_PAGE:00ac                  ??          ??                                      
+ZERO_PAGE:00ad                  ??          ??                                      
+ZERO_PAGE:00ae                  ??          ??                                      
+ZERO_PAGE:00af                  ??          ??                                      
+ZERO_PAGE:00b0                  ??          ??                                      
+ZERO_PAGE:00b1                  ??          ??                                      
+ZERO_PAGE:00b2                  ??          ??                                      
+ZERO_PAGE:00b3                  ??          ??                                      
+ZERO_PAGE:00b4                  ??          ??                                      
+ZERO_PAGE:00b5                  ??          ??                                      
+ZERO_PAGE:00b6                  ??          ??                                      
+ZERO_PAGE:00b7                  ??          ??                                      
+ZERO_PAGE:00b8                  ??          ??                                      
+ZERO_PAGE:00b9                  ??          ??                                      
+ZERO_PAGE:00ba                  ??          ??                                      
+ZERO_PAGE:00bb                  ??          ??                                      
+ZERO_PAGE:00bc                  ??          ??                                      
+ZERO_PAGE:00bd                  ??          ??                                      
+ZERO_PAGE:00be                  ??          ??                                      
+ZERO_PAGE:00bf                  ??          ??                                      
+ZERO_PAGE:00c0                  ??          ??                                      
+ZERO_PAGE:00c1                  ??          ??                                      
+ZERO_PAGE:00c2                  ??          ??                                      
+ZERO_PAGE:00c3                  ??          ??                                      
+ZERO_PAGE:00c4                  ??          ??                                      
+ZERO_PAGE:00c5                  ??          ??                                      
+ZERO_PAGE:00c6                  ??          ??                                      
+ZERO_PAGE:00c7                  ??          ??                                      
+ZERO_PAGE:00c8                  ??          ??                                      
+ZERO_PAGE:00c9                  ??          ??                                      
+ZERO_PAGE:00ca                  ??          ??                                      
+ZERO_PAGE:00cb                  ??          ??                                      
+ZERO_PAGE:00cc                  ??          ??                                      
+ZERO_PAGE:00cd                  ??          ??                                      
+ZERO_PAGE:00ce                  ??          ??                                      
+ZERO_PAGE:00cf                  ??          ??                                      
+ZERO_PAGE:00d0                  ??          ??                                      
+ZERO_PAGE:00d1                  ??          ??                                      
+ZERO_PAGE:00d2                  ??          ??                                      
+ZERO_PAGE:00d3                  ??          ??                                      
+ZERO_PAGE:00d4                  ??          ??                                      
+ZERO_PAGE:00d5                  ??          ??                                      
+ZERO_PAGE:00d6                  ??          ??                                      
+ZERO_PAGE:00d7                  ??          ??                                      
+ZERO_PAGE:00d8                  ??          ??                                      
+ZERO_PAGE:00d9                  ??          ??                                      
+ZERO_PAGE:00da                  ??          ??                                      
+ZERO_PAGE:00db                  ??          ??                                      
+ZERO_PAGE:00dc                  ??          ??                                      
+ZERO_PAGE:00dd                  ??          ??                                      
+ZERO_PAGE:00de                  ??          ??                                      
+ZERO_PAGE:00df                  ??          ??                                      
+ZERO_PAGE:00e0                  ??          ??                                      
+ZERO_PAGE:00e1                  ??          ??                                      
+ZERO_PAGE:00e2                  ??          ??                                      
+ZERO_PAGE:00e3                  ??          ??                                      
+ZERO_PAGE:00e4                  ??          ??                                      
+ZERO_PAGE:00e5                  ??          ??                                      
+ZERO_PAGE:00e6                  ??          ??                                      
+ZERO_PAGE:00e7                  ??          ??                                      
+ZERO_PAGE:00e8                  ??          ??                                      
+ZERO_PAGE:00e9                  ??          ??                                      
+ZERO_PAGE:00ea                  ??          ??                                      
+ZERO_PAGE:00eb                  ??          ??                                      
+ZERO_PAGE:00ec                  ??          ??                                      
+ZERO_PAGE:00ed                  ??          ??                                      
+ZERO_PAGE:00ee                  ??          ??                                      
+ZERO_PAGE:00ef                  ??          ??                                      
+ZERO_PAGE:00f0                  ??          ??                                      
+ZERO_PAGE:00f1                  ??          ??                                      
+ZERO_PAGE:00f2                  ??          ??                                      
+ZERO_PAGE:00f3                  ??          ??                                      
+ZERO_PAGE:00f4                  ??          ??                                      
+ZERO_PAGE:00f5                  ??          ??                                      
+ZERO_PAGE:00f6                  ??          ??                                      
+ZERO_PAGE:00f7                  ??          ??                                      
+ZERO_PAGE:00f8                  ??          ??                                      
+ZERO_PAGE:00f9                  ??          ??                                      
+ZERO_PAGE:00fa                  ??          ??                                      
+ZERO_PAGE:00fb                  ??          ??                                      
+ZERO_PAGE:00fc                  ??          ??                                      
+ZERO_PAGE:00fd                  ??          ??                                      
+ZERO_PAGE:00fe                  ??          ??                                      
+ZERO_PAGE:00ff                  ??          ??                                      
+STACK:0100                      ??          ??                                      
+STACK:0101                      ??          ??                                      
+STACK:0102                      ??          ??                                      
+STACK:0103                      ??          ??                                      
+STACK:0104                      ??          ??                                      
+STACK:0105                      ??          ??                                      
+STACK:0106                      ??          ??                                      
+STACK:0107                      ??          ??                                      
+STACK:0108                      ??          ??                                      
+STACK:0109                      ??          ??                                      
+STACK:010a                      ??          ??                                      
+STACK:010b                      ??          ??                                      
+STACK:010c                      ??          ??                                      
+STACK:010d                      ??          ??                                      
+STACK:010e                      ??          ??                                      
+STACK:010f                      ??          ??                                      
+STACK:0110                      ??          ??                                      
+STACK:0111                      ??          ??                                      
+STACK:0112                      ??          ??                                      
+STACK:0113                      ??          ??                                      
+STACK:0114                      ??          ??                                      
+STACK:0115                      ??          ??                                      
+STACK:0116                      ??          ??                                      
+STACK:0117                      ??          ??                                      
+STACK:0118                      ??          ??                                      
+STACK:0119                      ??          ??                                      
+STACK:011a                      ??          ??                                      
+STACK:011b                      ??          ??                                      
+STACK:011c                      ??          ??                                      
+STACK:011d                      ??          ??                                      
+STACK:011e                      ??          ??                                      
+STACK:011f                      ??          ??                                      
+STACK:0120                      ??          ??                                      
+STACK:0121                      ??          ??                                      
+STACK:0122                      ??          ??                                      
+STACK:0123                      ??          ??                                      
+STACK:0124                      ??          ??                                      
+STACK:0125                      ??          ??                                      
+STACK:0126                      ??          ??                                      
+STACK:0127                      ??          ??                                      
+STACK:0128                      ??          ??                                      
+STACK:0129                      ??          ??                                      
+STACK:012a                      ??          ??                                      
+STACK:012b                      ??          ??                                      
+STACK:012c                      ??          ??                                      
+STACK:012d                      ??          ??                                      
+STACK:012e                      ??          ??                                      
+STACK:012f                      ??          ??                                      
+STACK:0130                      ??          ??                                      
+STACK:0131                      ??          ??                                      
+STACK:0132                      ??          ??                                      
+STACK:0133                      ??          ??                                      
+STACK:0134                      ??          ??                                      
+STACK:0135                      ??          ??                                      
+STACK:0136                      ??          ??                                      
+STACK:0137                      ??          ??                                      
+STACK:0138                      ??          ??                                      
+STACK:0139                      ??          ??                                      
+STACK:013a                      ??          ??                                      
+STACK:013b                      ??          ??                                      
+STACK:013c                      ??          ??                                      
+STACK:013d                      ??          ??                                      
+STACK:013e                      ??          ??                                      
+STACK:013f                      ??          ??                                      
+STACK:0140                      ??          ??                                      
+STACK:0141                      ??          ??                                      
+STACK:0142                      ??          ??                                      
+STACK:0143                      ??          ??                                      
+STACK:0144                      ??          ??                                      
+STACK:0145                      ??          ??                                      
+STACK:0146                      ??          ??                                      
+STACK:0147                      ??          ??                                      
+STACK:0148                      ??          ??                                      
+STACK:0149                      ??          ??                                      
+STACK:014a                      ??          ??                                      
+STACK:014b                      ??          ??                                      
+STACK:014c                      ??          ??                                      
+STACK:014d                      ??          ??                                      
+STACK:014e                      ??          ??                                      
+STACK:014f                      ??          ??                                      
+STACK:0150                      ??          ??                                      
+STACK:0151                      ??          ??                                      
+STACK:0152                      ??          ??                                      
+STACK:0153                      ??          ??                                      
+STACK:0154                      ??          ??                                      
+STACK:0155                      ??          ??                                      
+STACK:0156                      ??          ??                                      
+STACK:0157                      ??          ??                                      
+STACK:0158                      ??          ??                                      
+STACK:0159                      ??          ??                                      
+STACK:015a                      ??          ??                                      
+STACK:015b                      ??          ??                                      
+STACK:015c                      ??          ??                                      
+STACK:015d                      ??          ??                                      
+STACK:015e                      ??          ??                                      
+STACK:015f                      ??          ??                                      
+STACK:0160                      ??          ??                                      
+STACK:0161                      ??          ??                                      
+STACK:0162                      ??          ??                                      
+STACK:0163                      ??          ??                                      
+STACK:0164                      ??          ??                                      
+STACK:0165                      ??          ??                                      
+STACK:0166                      ??          ??                                      
+STACK:0167                      ??          ??                                      
+STACK:0168                      ??          ??                                      
+STACK:0169                      ??          ??                                      
+STACK:016a                      ??          ??                                      
+STACK:016b                      ??          ??                                      
+STACK:016c                      ??          ??                                      
+STACK:016d                      ??          ??                                      
+STACK:016e                      ??          ??                                      
+STACK:016f                      ??          ??                                      
+STACK:0170                      ??          ??                                      
+STACK:0171                      ??          ??                                      
+STACK:0172                      ??          ??                                      
+STACK:0173                      ??          ??                                      
+STACK:0174                      ??          ??                                      
+STACK:0175                      ??          ??                                      
+STACK:0176                      ??          ??                                      
+STACK:0177                      ??          ??                                      
+STACK:0178                      ??          ??                                      
+STACK:0179                      ??          ??                                      
+STACK:017a                      ??          ??                                      
+STACK:017b                      ??          ??                                      
+STACK:017c                      ??          ??                                      
+STACK:017d                      ??          ??                                      
+STACK:017e                      ??          ??                                      
+STACK:017f                      ??          ??                                      
+STACK:0180                      ??          ??                                      
+STACK:0181                      ??          ??                                      
+STACK:0182                      ??          ??                                      
+STACK:0183                      ??          ??                                      
+STACK:0184                      ??          ??                                      
+STACK:0185                      ??          ??                                      
+STACK:0186                      ??          ??                                      
+STACK:0187                      ??          ??                                      
+STACK:0188                      ??          ??                                      
+STACK:0189                      ??          ??                                      
+STACK:018a                      ??          ??                                      
+STACK:018b                      ??          ??                                      
+STACK:018c                      ??          ??                                      
+STACK:018d                      ??          ??                                      
+STACK:018e                      ??          ??                                      
+STACK:018f                      ??          ??                                      
+STACK:0190                      ??          ??                                      
+STACK:0191                      ??          ??                                      
+STACK:0192                      ??          ??                                      
+STACK:0193                      ??          ??                                      
+STACK:0194                      ??          ??                                      
+STACK:0195                      ??          ??                                      
+STACK:0196                      ??          ??                                      
+STACK:0197                      ??          ??                                      
+STACK:0198                      ??          ??                                      
+STACK:0199                      ??          ??                                      
+STACK:019a                      ??          ??                                      
+STACK:019b                      ??          ??                                      
+STACK:019c                      ??          ??                                      
+STACK:019d                      ??          ??                                      
+STACK:019e                      ??          ??                                      
+STACK:019f                      ??          ??                                      
+STACK:01a0                      ??          ??                                      
+STACK:01a1                      ??          ??                                      
+STACK:01a2                      ??          ??                                      
+STACK:01a3                      ??          ??                                      
+STACK:01a4                      ??          ??                                      
+STACK:01a5                      ??          ??                                      
+STACK:01a6                      ??          ??                                      
+STACK:01a7                      ??          ??                                      
+STACK:01a8                      ??          ??                                      
+STACK:01a9                      ??          ??                                      
+STACK:01aa                      ??          ??                                      
+STACK:01ab                      ??          ??                                      
+STACK:01ac                      ??          ??                                      
+STACK:01ad                      ??          ??                                      
+STACK:01ae                      ??          ??                                      
+STACK:01af                      ??          ??                                      
+STACK:01b0                      ??          ??                                      
+STACK:01b1                      ??          ??                                      
+STACK:01b2                      ??          ??                                      
+STACK:01b3                      ??          ??                                      
+STACK:01b4                      ??          ??                                      
+STACK:01b5                      ??          ??                                      
+STACK:01b6                      ??          ??                                      
+STACK:01b7                      ??          ??                                      
+STACK:01b8                      ??          ??                                      
+STACK:01b9                      ??          ??                                      
+STACK:01ba                      ??          ??                                      
+STACK:01bb                      ??          ??                                      
+STACK:01bc                      ??          ??                                      
+STACK:01bd                      ??          ??                                      
+STACK:01be                      ??          ??                                      
+STACK:01bf                      ??          ??                                      
+STACK:01c0                      ??          ??                                      
+STACK:01c1                      ??          ??                                      
+STACK:01c2                      ??          ??                                      
+STACK:01c3                      ??          ??                                      
+STACK:01c4                      ??          ??                                      
+STACK:01c5                      ??          ??                                      
+STACK:01c6                      ??          ??                                      
+STACK:01c7                      ??          ??                                      
+STACK:01c8                      ??          ??                                      
+STACK:01c9                      ??          ??                                      
+STACK:01ca                      ??          ??                                      
+STACK:01cb                      ??          ??                                      
+STACK:01cc                      ??          ??                                      
+STACK:01cd                      ??          ??                                      
+STACK:01ce                      ??          ??                                      
+STACK:01cf                      ??          ??                                      
+STACK:01d0                      ??          ??                                      
+STACK:01d1                      ??          ??                                      
+STACK:01d2                      ??          ??                                      
+STACK:01d3                      ??          ??                                      
+STACK:01d4                      ??          ??                                      
+STACK:01d5                      ??          ??                                      
+STACK:01d6                      ??          ??                                      
+STACK:01d7                      ??          ??                                      
+STACK:01d8                      ??          ??                                      
+STACK:01d9                      ??          ??                                      
+STACK:01da                      ??          ??                                      
+STACK:01db                      ??          ??                                      
+STACK:01dc                      ??          ??                                      
+STACK:01dd                      ??          ??                                      
+STACK:01de                      ??          ??                                      
+STACK:01df                      ??          ??                                      
+STACK:01e0                      ??          ??                                      
+STACK:01e1                      ??          ??                                      
+STACK:01e2                      ??          ??                                      
+STACK:01e3                      ??          ??                                      
+STACK:01e4                      ??          ??                                      
+STACK:01e5                      ??          ??                                      
+STACK:01e6                      ??          ??                                      
+STACK:01e7                      ??          ??                                      
+STACK:01e8                      ??          ??                                      
+STACK:01e9                      ??          ??                                      
+STACK:01ea                      ??          ??                                      
+STACK:01eb                      ??          ??                                      
+STACK:01ec                      ??          ??                                      
+STACK:01ed                      ??          ??                                      
+STACK:01ee                      ??          ??                                      
+STACK:01ef                      ??          ??                                      
+STACK:01f0                      ??          ??                                      
+STACK:01f1                      ??          ??                                      
+STACK:01f2                      ??          ??                                      
+STACK:01f3                      ??          ??                                      
+STACK:01f4                      ??          ??                                      
+STACK:01f5                      ??          ??                                      
+STACK:01f6                      ??          ??                                      
+STACK:01f7                      ??          ??                                      
+STACK:01f8                      ??          ??                                      
+STACK:01f9                      ??          ??                                      
+STACK:01fa                      ??          ??                                      
+STACK:01fb                      ??          ??                                      
+STACK:01fc                      ??          ??                                      
+STACK:01fd                      ??          ??                                      
+STACK:01fe                      ??          ??                                      
+STACK:01ff                      ??          ??                                      
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined RESET_Vector()
+                                                          ;XREF[3,0]:   09be,0ffa,0ffc
+rom:0800        d8              CLD                                                 
+rom:0801        78              SEI                                                 
+rom:0802        a23f            LDX         #0x3f                                   
+rom:0804        9a              TXS                                                 
+rom:0805        204d0c          JSR         initialize                              ;undefined initialize()
+rom:0808        58              CLI                                                 
+                            ;************************************************************************************************
+                            ;*  PA0 - HALL IN                                                                               *
+                            ;*  PA1 - DIR (LATCHED)                                                                         *
+                            ;*  PA2 - RECOVERY_MODE                                                                         *
+                            ;*  PA3 - nc                                                                                    *
+                            ;*  PA4 - CNTR loopback                                                                         *
+                            ;*  PA5 - LIFE_TEST                                                                             *
+                            ;*  PA6 - nc                                                                                    *
+                            ;*  PA7 - READ_DATA                                                                             *
+                            ;************************************************************************************************
+                            main_loop:                    ;XREF[1,0]:   082e
+rom:0809        78              SEI                                                 
+rom:080a        a580            LDA         ZERO_PAGE:PORTA                         ;= ??
+rom:080c        2904            AND         #0x4                                    ;check PA2
+rom:080e        f019            BEQ         not_recovery_mode                       
+                            recovery_mode_loop:           ;XREF[1,0]:   0816
+rom:0810        58              CLI                                                 
+rom:0811        ea              NOP                                                 
+rom:0812        a580            LDA         ZERO_PAGE:PORTA                         ;= ??
+rom:0814        2904            AND         #0x4                                    ;keep checking PA2
+rom:0816        d0f8            BNE         recovery_mode_loop                      
+rom:0818        a96f            LDA         #0x6f                                   
+rom:081a        8580            STA         ZERO_PAGE:PORTA                         ;= ??
+rom:081c        097f            ORA         #0x7f                                   
+rom:081e        8580            STA         ZERO_PAGE:PORTA                         ;= ??
+rom:0820        a9ff            LDA         #0xff                                   
+rom:0822        851a            STA         ZERO_PAGE:DAT_001a                      ;= ??
+rom:0824        202209          JSR         finish_step_operation                   ;undefined finish_step_operation()
+rom:0827        a580            LDA         ZERO_PAGE:PORTA                         ;= ??
+                            not_recovery_mode:            ;XREF[1,0]:   080e
+rom:0829        a900            LDA         #0x0                                    
+rom:082b        851f            STA         ZERO_PAGE:trim_counter                  ;= ??
+rom:082d        58              CLI                                                 
+rom:082e        4c0908          JMP         main_loop                               
+                            ;************************************************************************************************
+                            ;*                           IRQ hits when counter detects STEP pulse                           *
+                            ;************************************************************************************************
+                            ;undefined IRQ_Vector()
+                                                          ;XREF[1,0]:   0ffe
+rom:0831        a9aa            LDA         #0xaa                                   
+rom:0833        0581            ORA         ZERO_PAGE:PORTB                         ;= ??
+rom:0835        8581            STA         ZERO_PAGE:PORTB                         ;Turn off all 7445 outputs to stepper
+rom:0837        a23c            LDX         #0x3c                                   
+rom:0839        9a              TXS                                                 ;Set up stack
+rom:083a        a902            LDA         #00000010b                              
+rom:083c        2480            BIT         ZERO_PAGE:PORTA                         ;Check direction pin
+                            ;************************************************************************************************
+                            ;*  MFM direction pin:                                                                          *
+                            ;*  true (aka 0v) on the DIR- pin is inward to spindle.                                         *
+                            ;*  false (aka 5v) on DIR- pin is outward to edge.                                              *
+                            ;*  there is an inverter on the board between the card edge                                     *
+                            ;*  and the MCU.                                                                                *
+                            ;************************************************************************************************
+rom:083e        f013            BEQ         step_outwards                           ;1=inward,0=outward
+                            ;compare current track to track 672 (maximum)
+rom:0840        38              SEC                                                 
+rom:0841        a9a0            LDA         #0xa0                                   
+rom:0843        e505            SBC         ZERO_PAGE:current_track_low             ;= ??
+rom:0845        8523            STA         ZERO_PAGE:max_step_count_lo             ;= ??
+rom:0847        a902            LDA         #0x2                                    
+rom:0849        e504            SBC         ZERO_PAGE:current_track_high            ;= ??
+rom:084b        8522            STA         ZERO_PAGE:max_step_count_hi             ;= ??
+rom:084d        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+                            ;1=positive (inwards)
+rom:084f        0901            ORA         #00000001b                              
+rom:0851        d011            BNE         LAB_0864                                
+                            step_outwards:                ;XREF[1,0]:   083e
+rom:0853        38              SEC                                                 
+                            ;comapre to track 2 (minimum)
+rom:0854        a505            LDA         ZERO_PAGE:current_track_low             ;= ??
+rom:0856        e902            SBC         #0x2                                    
+rom:0858        8523            STA         ZERO_PAGE:max_step_count_lo             ;= ??
+rom:085a        a504            LDA         ZERO_PAGE:current_track_high            ;= ??
+rom:085c        e900            SBC         #0x0                                    
+rom:085e        8522            STA         ZERO_PAGE:max_step_count_hi             ;= ??
+                            ;0=negative (outwards)
+rom:0860        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+rom:0862        29fe            AND         #11111110b                              
+                            LAB_0864:                     ;XREF[1,0]:   0851
+rom:0864        8509            STA         ZERO_PAGE:direction_flags               ;= ??
+                            capture_pulse_count:          ;XREF[2,0]:   0884,088a
+rom:0866        a586            LDA         ZERO_PAGE:UPPER_COUNT                   ;= ??
+rom:0868        8502            STA         ZERO_PAGE:captured_count_hi             ;= ??
+                            ;negate to get the number of step pulses
+rom:086a        49ff            EOR         #0xff                                   
+rom:086c        850c            STA         ZERO_PAGE:track_delta_hi                ;= ??
+rom:086e        a587            LDA         ZERO_PAGE:LOWER_COUNT                   ;= ??
+rom:0870        8503            STA         ZERO_PAGE:captured_count_lo             ;= ??
+rom:0872        49ff            EOR         #0xff                                   
+rom:0874        850d            STA         ZERO_PAGE:track_delta_lo                ;= ??
+rom:0876        a000            LDY         #0x0                                    
+rom:0878        209e0a          JSR         load_accel_decel_data                   ;undefined load_accel_decel_data()
+                            ;Wait 150us to allow more pulses to arrive
+rom:087b        a20f            LDX         #15                                     
+rom:087d        20d409          JSR         delay_10us_x                            ;undefined delay_10us_x()
+                            ;check if more pulses came in
+rom:0880        a502            LDA         ZERO_PAGE:captured_count_hi             ;= ??
+rom:0882        c586            CMP         ZERO_PAGE:UPPER_COUNT                   ;= ??
+rom:0884        d0e0            BNE         capture_pulse_count                     
+rom:0886        a503            LDA         ZERO_PAGE:captured_count_lo             ;= ??
+rom:0888        c587            CMP         ZERO_PAGE:LOWER_COUNT                   ;= ??
+rom:088a        d0da            BNE         capture_pulse_count                     
+rom:088c        a580            LDA         ZERO_PAGE:PORTA                         ;= ??
+rom:088e        2904            AND         #00000100b                              ;check if recovery mode
+rom:0890        f006            BEQ         not_recovery_mode                       
+                            ;in recovery mode, step pulses cycle through 8 different microstep positions.
+rom:0892        20b20d          JSR         set_stepper_trim                        ;microposition stepper
+rom:0895        4c2209          JMP         finish_step_operation                   ;complete step operation, set write c...
+                            not_recovery_mode:            ;XREF[1,0]:   0890
+rom:0898        a519            LDA         ZERO_PAGE:skip_track_limit_check        ;= ??
+rom:089a        f006            BEQ         check_against_limits                    
+rom:089c        a900            LDA         #0x0                                    
+rom:089e        8519            STA         ZERO_PAGE:skip_track_limit_check        ;= ??
+rom:08a0        f00b            BEQ         LAB_08ad                                
+                            check_against_limits:         ;XREF[1,0]:   089a
+rom:08a2        38              SEC                                                 
+rom:08a3        a523            LDA         ZERO_PAGE:max_step_count_lo             ;= ??
+rom:08a5        e50d            SBC         ZERO_PAGE:track_delta_lo                ;= ??
+rom:08a7        a522            LDA         ZERO_PAGE:max_step_count_hi             ;= ??
+rom:08a9        e50c            SBC         ZERO_PAGE:track_delta_hi                ;= ??
+                            ;within limits? then goto this track.
+rom:08ab        b006            BCS         goto_track                              
+                            ;out of limits, so go back to track 0 (auto-truncation)
+                            LAB_08ad:                     ;XREF[1,0]:   08a0
+rom:08ad        20a40c          JSR         go_find_track0                          ;undefined go_find_track0()
+                            ;complete step operation, set write current, etc
+rom:08b0        4c2209          JMP         finish_step_operation                   ;undefined finish_step_operation()
+                            ;************************************************************************************************
+                            ;*                      track_delta_hi/track_delta_lo = amount to move by                       *
+                            ;************************************************************************************************
+                            ;undefined goto_track()
+                                                          ;XREF[3,0]:   08ab,0987,09a9
+rom:08b3        a50c            LDA         ZERO_PAGE:track_delta_hi                ;= ??
+rom:08b5        d00f            BNE         trkhi_nonzero                           
+rom:08b7        a901            LDA         #0x1                                    
+rom:08b9        c50d            CMP         ZERO_PAGE:track_delta_lo                ;= ??
+rom:08bb        d009            BNE         trkhi_nonzero                           
+                            ;only moving by 1 step, so clear step chip mode bit
+rom:08bd        a582            LDA         ZERO_PAGE:PORTC                         ;= ??
+rom:08bf        29fb            AND         #11111011b                              
+rom:08c1        8582            STA         ZERO_PAGE:PORTC                         ;= ??
+rom:08c3        4ce908          JMP         only_1_trk                              
+                            ;moving more than 1 track? find and
+                            ;load the appropriate accel/decel
+                            ;table depending on step magnitude
+                            trkhi_nonzero:                ;XREF[2,0]:   08b5,08bb
+rom:08c6        38              SEC                                                 
+rom:08c7        a950            LDA         #80                                     
+rom:08c9        e50d            SBC         ZERO_PAGE:track_delta_lo                ;= ??
+rom:08cb        a900            LDA         #0x0                                    
+rom:08cd        e50c            SBC         ZERO_PAGE:track_delta_hi                ;= ??
+rom:08cf        b004            BCS         lessthan_80trks                         
+rom:08d1        a042            LDY         #66                                     ;more than 80 tracks
+rom:08d3        d011            BNE         do_load_of_accel_decel_data             
+                            lessthan_80trks:              ;XREF[1,0]:   08cf
+rom:08d5        38              SEC                                                 
+rom:08d6        a90e            LDA         #14                                     
+rom:08d8        e50d            SBC         ZERO_PAGE:track_delta_lo                ;= ??
+rom:08da        a900            LDA         #0x0                                    
+rom:08dc        e50c            SBC         ZERO_PAGE:track_delta_hi                ;= ??
+rom:08de        b004            BCS         lessthan_14_trks                        
+rom:08e0        a02c            LDY         #44                                     ;between 14 and 80 tracks
+rom:08e2        d002            BNE         do_load_of_accel_decel_data             
+                            lessthan_14_trks:             ;XREF[1,0]:   08de
+rom:08e4        a016            LDY         #22                                     ;more than 1, less than 14 tracks
+                            do_load_of_accel_decel_data:  ;XREF[2,0]:   08d3,08e2
+rom:08e6        209e0a          JSR         load_accel_decel_data                   ;undefined load_accel_decel_data()
+                            only_1_trk:                   ;XREF[1,0]:   08c3
+rom:08e9        20f009          JSR         do_step_movement_with_accel             ;undefined do_step_movement_with_accel()
+                            ;now update our current track position
+rom:08ec        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+                            ;1=positive (inwards)
+                            ;0=negative (outwards)
+rom:08ee        2901            AND         #00000001b                              
+rom:08f0        d00e            BNE         pos_step                                
+rom:08f2        38              SEC                                                 
+rom:08f3        a505            LDA         ZERO_PAGE:current_track_low             ;= ??
+rom:08f5        e50d            SBC         ZERO_PAGE:track_delta_lo                ;= ??
+rom:08f7        8505            STA         ZERO_PAGE:current_track_low             ;= ??
+rom:08f9        a504            LDA         ZERO_PAGE:current_track_high            ;= ??
+rom:08fb        e50c            SBC         ZERO_PAGE:track_delta_hi                ;= ??
+rom:08fd        4c0b09          JMP         LAB_090b                                
+                            pos_step:                     ;XREF[1,0]:   08f0
+rom:0900        18              CLC                                                 
+rom:0901        a505            LDA         ZERO_PAGE:current_track_low             ;= ??
+rom:0903        650d            ADC         ZERO_PAGE:track_delta_lo                ;= ??
+rom:0905        8505            STA         ZERO_PAGE:current_track_low             ;= ??
+rom:0907        a504            LDA         ZERO_PAGE:current_track_high            ;= ??
+rom:0909        650c            ADC         ZERO_PAGE:track_delta_hi                ;= ??
+                            LAB_090b:                     ;XREF[1,0]:   08fd
+rom:090b        8504            STA         ZERO_PAGE:current_track_high            ;= ??
+rom:090d        d00d            BNE         not_track_0                             
+rom:090f        a505            LDA         ZERO_PAGE:current_track_low             ;= ??
+rom:0911        c902            CMP         #0x2                                    ;track 2 is user track 0
+rom:0913        d007            BNE         not_track_0                             
+rom:0915        a582            LDA         ZERO_PAGE:PORTC                         ;= ??
+rom:0917        29df            AND         #11011111b                              ;set track0 flag
+rom:0919        4c2009          JMP         LAB_0920                                
+                            not_track_0:                  ;XREF[2,0]:   090d,0913
+rom:091c        a582            LDA         ZERO_PAGE:PORTC                         ;= ??
+rom:091e        0920            ORA         #00100000b                              ;not track0
+                            LAB_0920:                     ;XREF[1,0]:   0919
+rom:0920        8582            STA         ZERO_PAGE:PORTC                         ;= ??
+                            ;Fall through into next function to clear
+                            ;the counter and prep for more steps.
+                            ;************************************************************************************************
+                            ;*  completes step operation. preps counter,                                                    *
+                            ;*  sets write current, sets ready flag,                                                        *
+                            ;*  sets seek_complete                                                                          *
+                            ;************************************************************************************************
+                            ;undefined finish_step_operation()
+                                                          ;XREF[4,0]:   0824,0895,08b0,0ca0
+rom:0922        a50b            LDA         ZERO_PAGE:step_count                    ;= ??
+rom:0924        d023            BNE         LAB_0949                                
+                            ;************************************************************************************************
+                            ;*  CMC0/1: 10=event counter                                                                    *
+                            ;*  PA1&PA0 interrupts disabled                                                                 *
+                            ;*  C1E: 1=counter interrupt enabled                                                            *
+                            ;************************************************************************************************
+rom:0926        a912            LDA         #00010010b                              
+rom:0928        858f            STA         ZERO_PAGE:CONTROL_REG                   ;= ??
+                            ;Counter latch = 0, copy over to count
+rom:092a        a900            LDA         #0x0                                    
+rom:092c        8585            STA         ZERO_PAGE:LOWER_LATCH                   ;= ??
+rom:092e        8588            STA         ZERO_PAGE:UPR_LAT_XFER                  ;= ??
+                            ;Counter latch = 0xfffe = -1 (ones comp)
+                            ;Since counter starts at 0, first pulse
+                            ;makes it overflow, loading 0xfffe (-1).
+                            ;ISR negates this to get +1. Any more steps
+                            ;decrement the counter even further while in the
+                            ;ISR 100us delay.
+rom:0930        a9fe            LDA         #0xfe                                   
+rom:0932        8585            STA         ZERO_PAGE:LOWER_LATCH                   ;= ??
+rom:0934        a9ff            LDA         #0xff                                   
+rom:0936        8584            STA         ZERO_PAGE:UPPER_LATCH                   ;= ??
+rom:0938        a51a            LDA         ZERO_PAGE:DAT_001a                      ;= ??
+rom:093a        d001            BNE         LAB_093d                                
+rom:093c        58              CLI                                                 
+                            LAB_093d:                     ;XREF[1,0]:   093a
+rom:093d        a505            LDA         ZERO_PAGE:current_track_low             ;= ??
+rom:093f        2907            AND         #0x7                                    
+rom:0941        8508            STA         ZERO_PAGE:track_lsbs                    ;= ??
+rom:0943        20100b          JSR         read_rom_trim_table                     ;undefined read_rom_trim_table()
+rom:0946        20790d          JSR         set_write_current                       ;undefined set_write_current()
+                            LAB_0949:                     ;XREF[1,0]:   0924
+rom:0949        a400            LDY         ZERO_PAGE:seek_settling_time            
+rom:094b        20cb09          JSR         delay_1ms_y                             ;undefined delay_1ms_y()
+rom:094e        a50b            LDA         ZERO_PAGE:step_count                    ;= ??
+rom:0950        f005            BEQ         LAB_0957                                
+rom:0952        c60b            DEC         ZERO_PAGE:step_count                    ;= ??
+rom:0954        4c9e09          JMP         life_test_mode                          
+                            LAB_0957:                     ;XREF[1,0]:   0950
+rom:0957        a580            LDA         ZERO_PAGE:PORTA                         ;= ??
+rom:0959        2910            AND         #00010000b                              
+                            ;pull porta4 and hold it low to
+                            ;keep the MCU from doing anything
+rom:095b        f04f            BEQ         porta4_low                              ;undocumented mode
+rom:095d        a580            LDA         ZERO_PAGE:PORTA                         ;= ??
+rom:095f        2920            AND         #00100000b                              
+rom:0961        f03b            BEQ         life_test_mode                          ;PA5=life test#
+rom:0963        a519            LDA         ZERO_PAGE:skip_track_limit_check        ;= ??
+rom:0965        d023            BNE         do_seek_complete_ready                  
+rom:0967        38              SEC                                                 
+                            ;step 672 tracks
+rom:0968        a9a0            LDA         #0xa0                                   
+rom:096a        e505            SBC         ZERO_PAGE:current_track_low             ;= ??
+rom:096c        850d            STA         ZERO_PAGE:track_delta_lo                ;= ??
+rom:096e        a902            LDA         #0x2                                    
+rom:0970        e504            SBC         ZERO_PAGE:current_track_high            ;= ??
+rom:0972        850c            STA         ZERO_PAGE:track_delta_hi                ;= ??
+rom:0974        38              SEC                                                 
+rom:0975        a937            LDA         #55                                     
+rom:0977        e50d            SBC         ZERO_PAGE:track_delta_lo                ;= ??
+rom:0979        a900            LDA         #0x0                                    
+rom:097b        e50c            SBC         ZERO_PAGE:track_delta_hi                ;= ??
+rom:097d        900b            BCC         do_seek_complete_ready                  
+rom:097f        a9ff            LDA         #0xff                                   
+rom:0981        8519            STA         ZERO_PAGE:skip_track_limit_check        ;= ??
+rom:0983        a50d            LDA         ZERO_PAGE:track_delta_lo                ;= ??
+rom:0985        f003            BEQ         do_seek_complete_ready                  
+rom:0987        4cb308          JMP         goto_track                              ;undefined goto_track()
+                            do_seek_complete_ready:       ;XREF[3,0]:   0965,097d,0985
+rom:098a        a582            LDA         ZERO_PAGE:PORTC                         ;= ??
+rom:098c        29e7            AND         #11100111b                              
+rom:098e        8582            STA         ZERO_PAGE:PORTC                         ;= ??
+rom:0990        0908            ORA         #00001000b                              ;Set ready output
+rom:0992        8582            STA         ZERO_PAGE:PORTC                         ;Set seek complete output
+rom:0994        a51a            LDA         ZERO_PAGE:DAT_001a                      ;= ??
+rom:0996        d001            BNE         LAB_0999                                
+rom:0998        40              RTI                                                 
+                            LAB_0999:                     ;XREF[1,0]:   0996
+rom:0999        a900            LDA         #0x0                                    
+rom:099b        851a            STA         ZERO_PAGE:DAT_001a                      ;= ??
+rom:099d        60              RTS                                                 
+                            life_test_mode:               ;XREF[2,0]:   0954,0961
+rom:099e        20db09          JSR         toggle_dir_flag                         ;undefined toggle_dir_flag()
+                            ;670 decimal
+rom:09a1        a99e            LDA         #0x9e                                   
+rom:09a3        850d            STA         ZERO_PAGE:track_delta_lo                ;= ??
+rom:09a5        a902            LDA         #0x2                                    
+rom:09a7        850c            STA         ZERO_PAGE:track_delta_hi                ;= ??
+rom:09a9        4cb308          JMP         goto_track                              ;undefined goto_track()
+                            porta4_low:                   ;XREF[1,0]:   095b
+rom:09ac        a9ff            LDA         #0xff                                   
+rom:09ae        8580            STA         ZERO_PAGE:PORTA                         ;= ??
+rom:09b0        8581            STA         ZERO_PAGE:PORTB                         ;= ??
+rom:09b2        8582            STA         ZERO_PAGE:PORTC                         ;= ??
+rom:09b4        a9ff            LDA         #0xff                                   
+rom:09b6        8583            STA         ZERO_PAGE:PORTD                         ;= ??
+                            LAB_09b8:                     ;XREF[1,0]:   09bc
+rom:09b8        a580            LDA         ZERO_PAGE:PORTA                         ;= ??
+rom:09ba        2910            AND         #0x10                                   
+rom:09bc        f0fa            BEQ         LAB_09b8                                
+rom:09be        4c0008          JMP         RESET_Vector                            ;undefined RESET_Vector()
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined delay_3ms()
+                                                          ;XREF[2,0]:   0a5b,0c63
+rom:09c1        a003            LDY         #3                                      
+rom:09c3        d006            BNE         delay_1ms_y                             
+rom:09c5        a004            LDY         #4                                      
+rom:09c7        d002            BNE         delay_1ms_y                             
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined delay_40ms()
+                                                          ;XREF[4,0]:   0a9a,0caf,0d23,0d29
+rom:09c9        a028            LDY         #40                                     
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined delay_1ms_y()
+                                                          ;XREF[10,0]:  094b,09c3,09c7,09d1,0bf2,0c1c,0c2e,0c44
+                                                          ;             0c8a,0e22
+rom:09cb        a262            LDX         #98                                     
+rom:09cd        20d409          JSR         delay_10us_x                            ;undefined delay_10us_x()
+rom:09d0        88              DEY                                                 
+rom:09d1        d0f8            BNE         delay_1ms_y                             
+rom:09d3        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined delay_10us_x()
+                                                          ;XREF[9,0]:   087d,09cd,09d8,09fb,0a20,0a3f,0a91,0c33
+                                                          ;             0c8f
+rom:09d4        ea              NOP                                                 ;2
+rom:09d5        a50b            LDA         ZERO_PAGE:step_count                    ;3
+rom:09d7        ca              DEX                                                 ;2
+rom:09d8        d0fa            BNE         delay_10us_x                            ;2+1
+rom:09da        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined toggle_dir_flag()
+                                                          ;XREF[2,0]:   099e,0c66
+rom:09db        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+rom:09dd        4901            EOR         #0x1                                    
+rom:09df        8509            STA         ZERO_PAGE:direction_flags               ;= ??
+rom:09e1        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined set_dir_flag_inwards()
+                                                          ;XREF[4,0]:   0cb2,0cd0,0d0f,0d2c
+rom:09e2        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+rom:09e4        0901            ORA         #0x1                                    
+rom:09e6        8509            STA         ZERO_PAGE:direction_flags               ;= ??
+rom:09e8        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined clear_dir_flag_outwards()
+                                                          ;XREF[5,0]:   0cbc,0cf1,0d44,0d4d,0d53
+rom:09e9        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+rom:09eb        29fe            AND         #0xfe                                   
+rom:09ed        8509            STA         ZERO_PAGE:direction_flags               ;= ??
+rom:09ef        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*                           does a step operation with acceleration                            *
+                            ;************************************************************************************************
+                            ;undefined do_step_movement_with_accel()
+                                                          ;XREF[2,0]:   08e9,0e41
+rom:09f0        207e0a          JSR         stepper_step                            ;undefined stepper_step()
+                            do_accel_step_loop:           ;XREF[1,0]:   0a0a
+rom:09f3        a412            LDY         ZERO_PAGE:curAccelStepCount             ;= ??
+rom:09f5        f015            BEQ         table_index_is_zero                     
+rom:09f7        88              DEY                                                 
+rom:09f8        b10e            LDA         (ZERO_PAGE:curAccelDelayTablePtr),Y     ;= ??
+rom:09fa        aa              TAX                                                 
+rom:09fb        20d409          JSR         delay_10us_x                            ;undefined delay_10us_x()
+rom:09fe        ea              NOP                                                 
+rom:09ff        ea              NOP                                                 
+rom:0a00        a412            LDY         ZERO_PAGE:curAccelStepCount             ;= ??
+rom:0a02        88              DEY                                                 
+rom:0a03        b113            LDA         (ZERO_PAGE:curAccelStepModeTablePtr),Y  ;= ??
+rom:0a05        20650a          JSR         set_step_mode_then_stepper_step         ;undefined set_step_mode_then_stepper...
+rom:0a08        c612            DEC         ZERO_PAGE:curAccelStepCount             ;= ??
+rom:0a0a        d0e7            BNE         do_accel_step_loop                      
+                            table_index_is_zero:          ;XREF[1,0]:   09f5
+rom:0a0c        a506            LDA         ZERO_PAGE:target_delta_with_offset_h    ;= ??
+rom:0a0e        0507            ORA         ZERO_PAGE:target_delta_with_offset_l    ;= ??
+rom:0a10        f025            BEQ         no_steps_left                           
+rom:0a12        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+rom:0a14        2908            AND         #00001000b                              
+rom:0a16        f006            BEQ         step_at_full_speed_loop                 
+rom:0a18        a582            LDA         ZERO_PAGE:PORTC                         ;= ??
+rom:0a1a        29fb            AND         #11111011b                              ;Clear step chip mode input
+rom:0a1c        8582            STA         ZERO_PAGE:PORTC                         ;= ??
+                            step_at_full_speed_loop:      ;XREF[2,0]:   0a16,0a35
+rom:0a1e        a618            LDX         ZERO_PAGE:curFullSpeedStepDelay         ;= ??
+rom:0a20        20d409          JSR         delay_10us_x                            ;undefined delay_10us_x()
+rom:0a23        207e0a          JSR         stepper_step                            ;undefined stepper_step()
+rom:0a26        38              SEC                                                 
+                            ;decrement
+rom:0a27        a507            LDA         ZERO_PAGE:target_delta_with_offset_l    ;= ??
+rom:0a29        e901            SBC         #0x1                                    
+rom:0a2b        8507            STA         ZERO_PAGE:target_delta_with_offset_l    ;= ??
+rom:0a2d        a506            LDA         ZERO_PAGE:target_delta_with_offset_h    ;= ??
+rom:0a2f        e900            SBC         #0x0                                    
+rom:0a31        8506            STA         ZERO_PAGE:target_delta_with_offset_h    ;= ??
+rom:0a33        0507            ORA         ZERO_PAGE:target_delta_with_offset_l    ;= ??
+rom:0a35        d0e7            BNE         step_at_full_speed_loop                 
+                            no_steps_left:                ;XREF[2,0]:   0a10,0a4c
+rom:0a37        a415            LDY         ZERO_PAGE:curDecelStepCount             ;= ??
+rom:0a39        f013            BEQ         LAB_0a4e                                
+rom:0a3b        88              DEY                                                 
+rom:0a3c        b110            LDA         (ZERO_PAGE:curDecelDelayTablePtr),Y     ;= ??
+rom:0a3e        aa              TAX                                                 
+rom:0a3f        20d409          JSR         delay_10us_x                            ;undefined delay_10us_x()
+rom:0a42        a415            LDY         ZERO_PAGE:curDecelStepCount             ;= ??
+rom:0a44        88              DEY                                                 
+rom:0a45        b116            LDA         (ZERO_PAGE:curDecelStepModeTablePtr),Y  ;= ??
+rom:0a47        20650a          JSR         set_step_mode_then_stepper_step         ;undefined set_step_mode_then_stepper...
+rom:0a4a        c615            DEC         ZERO_PAGE:curDecelStepCount             ;= ??
+rom:0a4c        d0e9            BNE         no_steps_left                           
+                            LAB_0a4e:                     ;XREF[1,0]:   0a39
+rom:0a4e        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+                            ;clear flags bit 3: positioning op done
+rom:0a50        29f7            AND         #11110111b                              
+rom:0a52        8509            STA         ZERO_PAGE:direction_flags               ;= ??
+rom:0a54        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined apply_step_current()
+                                                          ;XREF[3,0]:   0c51,0cac,0d26
+rom:0a55        a582            LDA         ZERO_PAGE:PORTC                         ;= ??
+rom:0a57        4980            EOR         #0x80                                   
+rom:0a59        8582            STA         ZERO_PAGE:PORTC                         ;toggle PC7 (stepper current)
+rom:0a5b        20c109          JSR         delay_3ms                               ;undefined delay_3ms()
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined toggle_step_current()
+                                                          ;XREF[2,0]:   0c6c,0c96
+rom:0a5e        a582            LDA         ZERO_PAGE:PORTC                         ;= ??
+rom:0a60        4980            EOR         #0x80                                   ;toggle PC7 (set current)
+rom:0a62        8582            STA         ZERO_PAGE:PORTC                         ;= ??
+rom:0a64        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*  Acc < 0x7f = step chip mode=1                                                               *
+                            ;*  Acc >= 0x7f = step chip mode=0                                                              *
+                            ;************************************************************************************************
+                            ;undefined set_step_mode_then_stepper_step()
+                                                          ;XREF[2,0]:   0a05,0a47
+rom:0a65        18              CLC                                                 
+rom:0a66        6980            ADC         #0x80                                   
+rom:0a68        4a              LSR         A                                       ;lsb->C
+rom:0a69        a582            LDA         ZERO_PAGE:PORTC                         ;= ??
+rom:0a6b        7004            BVS         input_gteq_7f                           
+rom:0a6d        0904            ORA         #00000100b                              ;set step mode for in<7f
+rom:0a6f        5002            BVC         input_lt_7f                             
+                            input_gteq_7f:                ;XREF[1,0]:   0a6b
+rom:0a71        29fb            AND         #11111011b                              ;clear mode when in>=7f
+                            input_lt_7f:                  ;XREF[1,0]:   0a6f
+rom:0a73        8582            STA         ZERO_PAGE:PORTC                         ;= ??
+rom:0a75        9007            BCC         stepper_step                            ;mode=1, go directly to stepper step
+rom:0a77        a509            LDA         ZERO_PAGE:direction_flags               ;mode=0, toggle dir
+rom:0a79        4901            EOR         #0x1                                    
+rom:0a7b        4c800a          JMP         LAB_0a80                                
+                            ;************************************************************************************************
+                            ;*  sets the DIR pin on the stepper chip                                                        *
+                            ;*  then feeds it a 20us step pulse.                                                            *
+                            ;************************************************************************************************
+                            ;undefined stepper_step()
+                                                          ;XREF[6,0]:   09f0,0a23,0a75,0a97,0c60,0c69
+rom:0a7e        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+                            LAB_0a80:                     ;XREF[1,0]:   0a7b
+rom:0a80        4a              LSR         A                                       
+rom:0a81        a582            LDA         ZERO_PAGE:PORTC                         ;= ??
+rom:0a83        b004            BCS         dir_flag_set                            ;copy direction flag into DIR pin of ...
+rom:0a85        29fd            AND         #11111101b                              ;ext. dir pin is inverse of flag
+rom:0a87        9002            BCC         dir_flag_clr                            
+                            dir_flag_set:                 ;XREF[1,0]:   0a83
+rom:0a89        0902            ORA         #00000010b                              
+                            dir_flag_clr:                 ;XREF[1,0]:   0a87
+rom:0a8b        8582            STA         ZERO_PAGE:PORTC                         ;= ??
+rom:0a8d        c682            DEC         ZERO_PAGE:PORTC                         ;20us negative pulse on step
+rom:0a8f        a202            LDX         #0x2                                    
+rom:0a91        20d409          JSR         delay_10us_x                            ;undefined delay_10us_x()
+rom:0a94        e682            INC         ZERO_PAGE:PORTC                         ;= ??
+rom:0a96        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*                               step but with time for settling                                *
+                            ;************************************************************************************************
+                            ;undefined step_wait_40ms()
+                                                          ;XREF[8,0]:   0cb5,0cd3,0cd6,0cf4,0cf7,0d12,0d2f,0d32
+rom:0a97        207e0a          JSR         stepper_step                            ;undefined stepper_step()
+rom:0a9a        20c909          JSR         delay_40ms                              ;undefined delay_40ms()
+rom:0a9d        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*  load acceleration/deceleration parameters                                                   *
+                            ;*  for current seek magnitude                                                                  *
+                            ;************************************************************************************************
+                            ;undefined load_accel_decel_data()
+                                                          ;XREF[4,0]:   0878,08e6,0e0a,0e1a
+rom:0a9e        b9250f          LDA         first_table_struct,Y                    
+rom:0aa1        8512            STA         ZERO_PAGE:curAccelStepCount             ;= ??
+rom:0aa3        b9260f          LDA         first_table_struct.DecelStepCount,Y     
+rom:0aa6        8515            STA         ZERO_PAGE:curDecelStepCount             ;= ??
+rom:0aa8        b9270f          LDA         first_table_struct.FullSpeedStepDelay,Y 
+rom:0aab        8518            STA         ZERO_PAGE:curFullSpeedStepDelay         ;= ??
+rom:0aad        38              SEC                                                 
+rom:0aae        a50d            LDA         ZERO_PAGE:track_delta_lo                ;= ??
+rom:0ab0        f9280f          SBC         first_table_struct.NegativeTrackOffset,Y
+rom:0ab3        8507            STA         ZERO_PAGE:target_delta_with_offset_l    ;= ??
+rom:0ab5        a50c            LDA         ZERO_PAGE:track_delta_hi                ;= ??
+rom:0ab7        e900            SBC         #0x0                                    
+rom:0ab9        8506            STA         ZERO_PAGE:target_delta_with_offset_h    ;= ??
+rom:0abb        b9290f          LDA         first_table_struct.SeekSettlingTime,Y   
+rom:0abe        8500            STA         ZERO_PAGE:seek_settling_time            
+rom:0ac0        b92a0f          LDA         first_table_struct.AdditionalDirectio...
+rom:0ac3        0509            ORA         ZERO_PAGE:direction_flags               ;= ??
+rom:0ac5        8509            STA         ZERO_PAGE:direction_flags               ;= ??
+rom:0ac7        98              TYA                                                 
+rom:0ac8        48              PHA                                                 
+rom:0ac9        a505            LDA         ZERO_PAGE:current_track_low             ;= ??
+rom:0acb        2901            AND         #0x1                                    
+rom:0acd        d005            BNE         tracknum_is_odd                         
+                            ;for even numbered tracks, add 4 to our table index
+rom:0acf        98              TYA                                                 
+rom:0ad0        18              CLC                                                 
+rom:0ad1        6904            ADC         #0x4                                    
+rom:0ad3        a8              TAY                                                 
+                            tracknum_is_odd:              ;XREF[1,0]:   0acd
+rom:0ad4        b92b0f          LDA         first_table_struct.AccelDelayTablePtr,Y ;Set up accel table ptrs
+rom:0ad7        850e            STA         ZERO_PAGE:curAccelDelayTablePtr         ;= ??
+rom:0ad9        b92c0f          LDA         first_table_struct.AccelDelayTablePtr...
+rom:0adc        850f            STA         ZERO_PAGE:curAccelDelayTablePtr+1       
+rom:0ade        b92d0f          LDA         first_table_struct.AccelStepModeTable...
+rom:0ae1        8513            STA         ZERO_PAGE:curAccelStepModeTablePtr      ;= ??
+rom:0ae3        b92e0f          LDA         first_table_struct.AccelStepModeTable...
+rom:0ae6        8514            STA         ZERO_PAGE:curAccelStepModeTablePtr+1    
+rom:0ae8        68              PLA                                                 
+rom:0ae9        18              CLC                                                 
+rom:0aea        6904            ADC         #0x4                                    
+rom:0aec        a8              TAY                                                 
+rom:0aed        18              CLC                                                 
+rom:0aee        a505            LDA         ZERO_PAGE:current_track_low             ;= ??
+rom:0af0        650d            ADC         ZERO_PAGE:track_delta_lo                ;= ??
+rom:0af2        2901            AND         #0x1                                    
+rom:0af4        d005            BNE         delta_is_odd                            
+rom:0af6        98              TYA                                                 
+rom:0af7        18              CLC                                                 
+rom:0af8        6904            ADC         #0x4                                    
+rom:0afa        a8              TAY                                                 
+                            delta_is_odd:                 ;XREF[1,0]:   0af4
+rom:0afb        b92f0f          LDA         first_table_struct.AccelDelayTablePtr...
+rom:0afe        8510            STA         ZERO_PAGE:curDecelDelayTablePtr         ;= ??
+rom:0b00        b9300f          LDA         first_table_struct.AccelDelayTablePtr...
+rom:0b03        8511            STA         ZERO_PAGE:curDecelDelayTablePtr+1       
+rom:0b05        b9310f          LDA         first_table_struct.AccelStepModeTable...
+rom:0b08        8516            STA         ZERO_PAGE:curDecelStepModeTablePtr      ;= ??
+rom:0b0a        b9320f          LDA         first_table_struct.AccelStepModeTable...
+rom:0b0d        8517            STA         ZERO_PAGE:curDecelStepModeTablePtr+1    
+rom:0b0f        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*  Loads per-track microstep values from an                                                    *
+                            ;*  external EPROM (if installed). Presumably                                                   *
+                            ;*  the EPROM could be burned at the factory                                                    *
+                            ;*  to avoid placing tracks on bad areas on the disk.                                           *
+                            ;************************************************************************************************
+                            ;undefined read_rom_trim_table()
+                                                          ;XREF[2,0]:   0943,0d75
+rom:0b10        a580            LDA         ZERO_PAGE:PORTA                         ;= ??
+rom:0b12        2904            AND         #00000100b                              ;check PA2, recovery mode
+rom:0b14        f003            BEQ         no_recovery_mode                        
+rom:0b16        4cb50b          JMP         recovery_mode1                          
+                            ;ROM address = {1, track[9:0]}
+                            no_recovery_mode:             ;XREF[1,0]:   0b14
+rom:0b19        a505            LDA         ZERO_PAGE:current_track_low             ;= ??
+rom:0b1b        8581            STA         ZERO_PAGE:PORTB                         ;= ??
+rom:0b1d        a583            LDA         ZERO_PAGE:PORTD                         ;= ??
+                            ;pulse pd6 to latch address
+rom:0b1f        29bf            AND         #10111111b                              
+rom:0b21        8583            STA         ZERO_PAGE:PORTD                         ;clear PD6 (unused?)
+rom:0b23        0940            ORA         #01000000b                              
+rom:0b25        8583            STA         ZERO_PAGE:PORTD                         ;set PD6
+rom:0b27        a583            LDA         ZERO_PAGE:PORTD                         ;= ??
+rom:0b29        29fc            AND         #11111100b                              
+rom:0b2b        0504            ORA         ZERO_PAGE:current_track_high            ;= ??
+rom:0b2d        29df            AND         #11011111b                              ;ensure PD5=0, ROM chip enabled
+rom:0b2f        0904            ORA         #00000100b                              ;A10=1
+                            ;Literally all these PORTD pins just go to
+                            ;the addr latch and ROM.
+rom:0b31        8583            STA         ZERO_PAGE:PORTD                         ;= ??
+rom:0b33        a9ff            LDA         #11111111b                              ;PB now inputs
+rom:0b35        8581            STA         ZERO_PAGE:PORTB                         ;= ??
+rom:0b37        a581            LDA         ZERO_PAGE:PORTB                         ;= ??
+rom:0b39        49ff            EOR         #0xff                                   ;invert
+                            ;make sure all bits of PORTB are 1
+                            ;otherwise use this external byte, store to 0a and 1b.
+rom:0b3b        d002            BNE         LAB_0b3f                                
+                            ;default value is 0x81 (if no ROM found)
+rom:0b3d        a981            LDA         #0x81                                   
+                            LAB_0b3f:                     ;XREF[1,0]:   0b3b
+rom:0b3f        850a            STA         ZERO_PAGE:rom_val                       ;= ??
+rom:0b41        851b            STA         ZERO_PAGE:temp_hi                       ;= ??
+rom:0b43        a583            LDA         ZERO_PAGE:PORTD                         ;= ??
+rom:0b45        0920            ORA         #00100000b                              
+rom:0b47        8583            STA         ZERO_PAGE:PORTD                         ;PD5=1
+                            ;check dir flag, pick high or low
+                            ;nybble depending on direction
+rom:0b49        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+rom:0b4b        4a              LSR         A                                       
+rom:0b4c        a50a            LDA         ZERO_PAGE:rom_val                       ;= ??
+rom:0b4e        9007            BCC         dir_low_outward                         
+rom:0b50        4a              LSR         A                                       
+rom:0b51        4a              LSR         A                                       
+rom:0b52        4a              LSR         A                                       
+                            ;get upper nybble
+rom:0b53        4a              LSR         A                                       ;default=0x8
+rom:0b54        4c590b          JMP         LAB_0b59                                
+                            dir_low_outward:              ;XREF[1,0]:   0b4e
+rom:0b57        290f            AND         #00001111b                              ;default = 0x1
+                            LAB_0b59:                     ;XREF[1,0]:   0b54
+rom:0b59        850a            STA         ZERO_PAGE:rom_val                       ;= ??
+                            ;copy this bit into flags[6]
+rom:0b5b        2908            AND         #00001000b                              
+rom:0b5d        f006            BEQ         upper_flag_clear                        
+rom:0b5f        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+rom:0b61        0940            ORA         #01000000b                              ;set flags[6]
+rom:0b63        d004            BNE         LAB_0b69                                
+                            upper_flag_clear:             ;XREF[1,0]:   0b5d
+rom:0b65        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+rom:0b67        29bf            AND         #10111111b                              
+                            LAB_0b69:                     ;XREF[1,0]:   0b63
+rom:0b69        8509            STA         ZERO_PAGE:direction_flags               ;= ??
+rom:0b6b        a50a            LDA         ZERO_PAGE:rom_val                       ;= ??
+rom:0b6d        2907            AND         #00000111b                              
+rom:0b6f        f004            BEQ         low_zero                                
+rom:0b71        c905            CMP         #00000101b                              
+rom:0b73        9011            BCC         gtr_than_5                              
+                            low_zero:                     ;XREF[1,0]:   0b6f
+rom:0b75        a51b            LDA         ZERO_PAGE:temp_hi                       ;= ??
+rom:0b77        c981            CMP         #0x81                                   
+rom:0b79        d007            BNE         not_default                             
+rom:0b7b        a408            LDY         ZERO_PAGE:track_lsbs                    ;= ??
+rom:0b7d        b9e80d          LDA         stepper_trim_table2,Y                   ;= A0h
+rom:0b80        d029            BNE         load_to_trim                            
+                            not_default:                  ;XREF[1,0]:   0b79
+rom:0b82        a9aa            LDA         #0xaa                                   ;no trim voltage on stepper
+rom:0b84        d025            BNE         load_to_trim                            
+                            gtr_than_5:                   ;XREF[1,0]:   0b73
+rom:0b86        a8              TAY                                                 ;6, 7
+rom:0b87        88              DEY                                                 ;5, 6
+rom:0b88        a508            LDA         ZERO_PAGE:track_lsbs                    ;= ??
+rom:0b8a        4a              LSR         A                                       ;C=even/odd track
+                                                          ; FWD[2,0]:   0bb6,0c5f
+rom:0b8b        b9b60b          LDA         0xbb6,Y=>LAB_0c5e+1                     ;= 03h
+rom:0b8e        850a            STA         ZERO_PAGE:rom_val                       ;= ??
+rom:0b90        a509            LDA         ZERO_PAGE:direction_flags               ;= ??
+rom:0b92        0a              ASL         A                                       
+rom:0b93        0a              ASL         A                                       
+rom:0b94        a508            LDA         ZERO_PAGE:track_lsbs                    ;= ??
+rom:0b96        2a              ROL         A                                       
+rom:0b97        a8              TAY                                                 
+rom:0b98        b9f00d          LDA         stepper_trim_highlow,Y                  
+rom:0b9b        f008            BEQ         LAB_0ba5                                
+rom:0b9d        a50a            LDA         ZERO_PAGE:rom_val                       ;= ??
+rom:0b9f        0a              ASL         A                                       
+rom:0ba0        0a              ASL         A                                       
+rom:0ba1        0a              ASL         A                                       
+rom:0ba2        0a              ASL         A                                       
+rom:0ba3        850a            STA         ZERO_PAGE:rom_val                       ;= ??
+                            LAB_0ba5:                     ;XREF[1,0]:   0b9b
+rom:0ba5        b9d80d          LDA         stepper_trim_values,Y                   ;= 06h
+rom:0ba8        18              CLC                                                 
+rom:0ba9        650a            ADC         ZERO_PAGE:rom_val                       ;= ??
+                            load_to_trim:                 ;XREF[2,0]:   0b80,0b84
+rom:0bab        8581            STA         ZERO_PAGE:PORTB                         ;= ??
+rom:0bad        a583            LDA         ZERO_PAGE:PORTD                         ;= ??
+rom:0baf        0960            ORA         #01100000b                              
+rom:0bb1        297f            AND         #01111111b                              
+rom:0bb3        8583            STA         ZERO_PAGE:PORTD                         ;= ??
+                            recovery_mode1:               ;XREF[1,0]:   0b16
+rom:0bb5        60              RTS                                                 
+                            DAT_0bb6:                     ;XREF[1,0]:   0b8b
+rom:0bb6        03              ??          03h                                     
+rom:0bb7        02              ??          02h                                     
+rom:0bb8        01              ??          01h                                     
+rom:0bb9        00              ??          00h                                     
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined det_idx_pulses_63_117()
+                                                          ;XREF[2,0]:   0c13,0c36
+rom:0bba        a03f            LDY         #63                                     ;567us
+rom:0bbc        a275            LDX         #117                                    ;1.287ms
+rom:0bbe        d016            BNE         get_databit_40_160::wait_for_one        
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined get_2_databits_200_20_90_10()
+                                                          ;XREF[1,0]:   0c23
+rom:0bc0        a2c8            LDX         #200                                    ;1.8ms
+rom:0bc2        a014            LDY         #20                                     ;220us
+rom:0bc4        d010            BNE         get_databit_40_160::wait_for_one        
+rom:0bc6        a25a            LDX         #90                                     ;810us
+rom:0bc8        a00a            LDY         #10                                     ;110us
+rom:0bca        d00a            BNE         get_databit_40_160::wait_for_one        
+                            ;************************************************************************************************
+                            ;*                                           FUNCTION                                           *
+                            ;************************************************************************************************
+                            ;undefined get_databit_35_65()
+                                                          ;XREF[1,0]:   0c0e
+rom:0bcc        a023            LDY         #35                                     ;315us
+rom:0bce        a241            LDX         #65                                     ;715us
+rom:0bd0        d004            BNE         get_databit_40_160::wait_for_one        
+                            ;************************************************************************************************
+                            ;*  carry clear: no pulse detected                                                              *
+                            ;*  carry set: pulses detected                                                                  *
+                            ;************************************************************************************************
+                            ;undefined get_databit_40_160()
+                                                          ;XREF[1,0]:   0c01
+rom:0bd2        a028            LDY         #40                                     ;at 9 cycles each=360=360us
+rom:0bd4        a2a0            LDX         #160                                    ;at 11 cycles each=1760=1.76ms
+                            ;check drive read data
+                            wait_for_one:                 ;XREF[6,0]:   0bbe,0bc4,0bca,0bd0,0bdc,0be7
+rom:0bd6        a580            LDA         ZERO_PAGE:PORTA                         ;2
+rom:0bd8        300c            BMI         data_is_one                             ;2
+rom:0bda        ca              DEX                                                 ;2
+rom:0bdb        ea              NOP                                                 ;2
+rom:0bdc        d0f8            BNE         wait_for_one                            ;3
+                            delay_360us:                  ;XREF[1,0]:   0be1
+rom:0bde        ea              NOP                                                 ;2
+rom:0bdf        ea              NOP                                                 ;2
+rom:0be0        88              DEY                                                 ;2
+rom:0be1        d0fb            BNE         delay_360us                             ;3
+rom:0be3        18              CLC                                                 
+rom:0be4        9009            BCC         sub_end                                 
+                            data_is_one:                  ;XREF[1,0]:   0bd8
+rom:0be6        88              DEY                                                 
+rom:0be7        d0ed            BNE         wait_for_one                            ;must be high for 400us
+                            delay_1440us:                 ;XREF[1,0]:   0bec
+rom:0be9        ea              NOP                                                 ;2
+rom:0bea        ea              NOP                                                 ;2
+rom:0beb        ca              DEX                                                 ;2
+rom:0bec        d0fb            BNE         delay_1440us                            ;3
+rom:0bee        38              SEC                                                 
+                            sub_end:                      ;XREF[1,0]:   0be4
+rom:0bef        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*  simple algorithm to decode data recorded on the index                                       *
+                            ;*  and guard band tracks.                                                                      *
+                            ;************************************************************************************************
+                            ;undefined check_for_index_marker()
+                                                          ;XREF[4,0]:   0cbf,0ce0,0cfe,0d3b
+rom:0bf0        a014            LDY         #20                                     ;ensure we wait at least 1 revolution
+rom:0bf2        20cb09          JSR         delay_1ms_y                             ;undefined delay_1ms_y()
+rom:0bf5        a903            LDA         #0x3                                    
+rom:0bf7        851d            STA         ZERO_PAGE:index_find_tries              ;= ??
+                            begin_find_index:             ;XREF[1,0]:   0c3d
+rom:0bf9        a90a            LDA         #10                                     ;try 10 times
+rom:0bfb        851c            STA         ZERO_PAGE:temp_lo                       ;= ??
+                            preamble_loop1:               ;XREF[1,0]:   0c04
+rom:0bfd        c61c            DEC         ZERO_PAGE:temp_lo                       ;= ??
+rom:0bff        f012            BEQ         end_preamble_part1                      
+rom:0c01        20d20b          JSR         get_databit_40_160                      ;undefined get_databit_40_160()
+rom:0c04        b0f7            BCS         preamble_loop1                          
+rom:0c06        a910            LDA         #16                                     
+rom:0c08        851c            STA         ZERO_PAGE:temp_lo                       ;= ??
+                            preamble_loop2:               ;XREF[1,0]:   0c11
+rom:0c0a        c61c            DEC         ZERO_PAGE:temp_lo                       ;= ??
+rom:0c0c        f005            BEQ         end_preamble_part1                      
+rom:0c0e        20cc0b          JSR         get_databit_35_65                       ;undefined get_databit_35_65()
+rom:0c11        90f7            BCC         preamble_loop2                          
+                            end_preamble_part1:           ;XREF[2,0]:   0bff,0c0c
+rom:0c13        20ba0b          JSR         det_idx_pulses_63_117                   ;undefined det_idx_pulses_63_117()
+rom:0c16        b002            BCS         sync_is_one                             
+rom:0c18        9021            BCC         sync_is_zero                            
+                            sync_is_one:                  ;XREF[1,0]:   0c16
+rom:0c1a        a002            LDY         #0x2                                    ;wait 2ms
+rom:0c1c        20cb09          JSR         delay_1ms_y                             ;undefined delay_1ms_y()
+rom:0c1f        a904            LDA         #0x4                                    
+rom:0c21        851c            STA         ZERO_PAGE:temp_lo                       ;= ??
+                            get_preamble3:                ;XREF[1,0]:   0c2a
+rom:0c23        20c00b          JSR         get_2_databits_200_20_90_10             ;undefined get_2_databits_200_20_90_10()
+rom:0c26        b013            BCS         sync_is_zero                            
+rom:0c28        c61c            DEC         ZERO_PAGE:temp_lo                       ;= ??
+rom:0c2a        d0f7            BNE         get_preamble3                           
+rom:0c2c        a001            LDY         #0x1                                    ;wait 1.5ms
+rom:0c2e        20cb09          JSR         delay_1ms_y                             ;undefined delay_1ms_y()
+rom:0c31        a232            LDX         #50                                     
+rom:0c33        20d409          JSR         delay_10us_x                            ;undefined delay_10us_x()
+rom:0c36        20ba0b          JSR         det_idx_pulses_63_117                   ;undefined det_idx_pulses_63_117()
+rom:0c39        b007            BCS         found_sync                              
+                            sync_is_zero:                 ;XREF[2,0]:   0c18,0c26
+rom:0c3b        c61d            DEC         ZERO_PAGE:index_find_tries              ;= ??
+rom:0c3d        d0ba            BNE         begin_find_index                        
+rom:0c3f        38              SEC                                                 ;C=1 is an error
+rom:0c40        b00a            BCS         end_find_sync                           
+                            found_sync:                   ;XREF[1,0]:   0c39
+rom:0c42        a006            LDY         #0x6                                    
+rom:0c44        20cb09          JSR         delay_1ms_y                             ;undefined delay_1ms_y()
+rom:0c47        a97f            LDA         #01111111b                              ;ignore PA7 now
+rom:0c49        8580            STA         ZERO_PAGE:PORTA                         ;= ??
+rom:0c4b        18              CLC                                                 
+                            end_find_sync:                ;XREF[1,0]:   0c40
+rom:0c4c        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*  warms up stepper, reduces spindle current, waits for                                        *
+                            ;*  it to get up to speed, seeks to track 0, waits for                                          *
+                            ;*  commands                                                                                    *
+                            ;************************************************************************************************
+                            ;undefined initialize()
+                                                          ;XREF[1,0]:   0805
+rom:0c4d        a9fb            LDA         #11111011b                              
+rom:0c4f        8582            STA         ZERO_PAGE:PORTC                         ;= ??
+rom:0c51        20550a          JSR         apply_step_current                      ;undefined apply_step_current()
+rom:0c54        a9a0            LDA         #0xa0                                   
+rom:0c56        8583            STA         ZERO_PAGE:PORTD                         ;= ??
+rom:0c58        a97f            LDA         #0x7f                                   
+rom:0c5a        8580            STA         ZERO_PAGE:PORTA                         ;= ??
+rom:0c5c        a901            LDA         #0x1                                    
+                                                          ;XREF[0,1]:   0b8b
+rom:0c5e        8509            STA         ZERO_PAGE:direction_flags               ;= ??
+rom:0c60        207e0a          JSR         stepper_step                            ;undefined stepper_step()
+rom:0c63        20c109          JSR         delay_3ms                               ;undefined delay_3ms()
+rom:0c66        20db09          JSR         toggle_dir_flag                         ;undefined toggle_dir_flag()
+rom:0c69        207e0a          JSR         stepper_step                            ;undefined stepper_step()
+rom:0c6c        205e0a          JSR         toggle_step_current                     ;undefined toggle_step_current()
+rom:0c6f        a229            LDX         #41                                     
+                            wait_hall:                    ;XREF[1,0]:   0c78
+rom:0c71        8589            STA         ZERO_PAGE:spindle_state_question        ;= ??
+                            wait_for_pa0_posedge:         ;XREF[1,0]:   0c75
+rom:0c73        248f            BIT         ZERO_PAGE:CONTROL_REG                   ;= ??
+rom:0c75        50fc            BVC         wait_for_pa0_posedge                    
+rom:0c77        ca              DEX                                                 
+rom:0c78        d0f7            BNE         wait_hall                               
+                            ;Set spindle driver from START to RUN
+rom:0c7a        a582            LDA         ZERO_PAGE:PORTC                         ;= ??
+rom:0c7c        29bf            AND         #10111111b                              
+rom:0c7e        8582            STA         ZERO_PAGE:PORTC                         ;= ??
+rom:0c80        8589            STA         ZERO_PAGE:spindle_state_question        ;= ??
+                            ;Wait to get up to speed
+                            wait_for_pa0_posedge2:        ;XREF[2,0]:   0c84,0c94
+rom:0c82        248f            BIT         ZERO_PAGE:CONTROL_REG                   ;= ??
+rom:0c84        50fc            BVC         wait_for_pa0_posedge2                   
+rom:0c86        8589            STA         ZERO_PAGE:spindle_state_question        ;= ??
+                            ;wait for 16.9ms (think 16.66ms + hall one-shot pulse timer)
+rom:0c88        a010            LDY         #16                                     
+rom:0c8a        20cb09          JSR         delay_1ms_y                             ;undefined delay_1ms_y()
+rom:0c8d        a25a            LDX         #90                                     
+rom:0c8f        20d409          JSR         delay_10us_x                            ;undefined delay_10us_x()
+rom:0c92        248f            BIT         ZERO_PAGE:CONTROL_REG                   ;= ??
+rom:0c94        50ec            BVC         wait_for_pa0_posedge2                   
+rom:0c96        205e0a          JSR         toggle_step_current                     ;undefined toggle_step_current()
+rom:0c99        20a40c          JSR         go_find_track0                          ;undefined go_find_track0()
+rom:0c9c        a9ff            LDA         #0xff                                   
+rom:0c9e        851a            STA         ZERO_PAGE:DAT_001a                      ;= ??
+rom:0ca0        202209          JSR         finish_step_operation                   ;undefined finish_step_operation()
+rom:0ca3        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*                           algorithm to locate and stop on track 0                            *
+                            ;************************************************************************************************
+                            ;undefined go_find_track0()
+                                                          ;XREF[2,0]:   08ad,0c99
+rom:0ca4        a900            LDA         #0x0                                    
+rom:0ca6        8501            STA         ZERO_PAGE:DAT_0001                      ;= ??
+rom:0ca8        a9ff            LDA         #0xff                                   
+rom:0caa        8580            STA         ZERO_PAGE:PORTA                         ;= ??
+rom:0cac        20550a          JSR         apply_step_current                      ;undefined apply_step_current()
+rom:0caf        20c909          JSR         delay_40ms                              ;undefined delay_40ms()
+rom:0cb2        20e209          JSR         set_dir_flag_inwards                    ;undefined set_dir_flag_inwards()
+rom:0cb5        20970a          JSR         step_wait_40ms                          ;undefined step_wait_40ms()
+                            ;check every 8th track going outwards
+                            ;stop after 15 tries
+rom:0cb8        a90f            LDA         #15                                     
+rom:0cba        850b            STA         ZERO_PAGE:step_count                    ;= ??
+rom:0cbc        20e909          JSR         clear_dir_flag_outwards                 ;undefined clear_dir_flag_outwards()
+                            index_marker_find_loop:       ;XREF[1,0]:   0ccd
+rom:0cbf        20f00b          JSR         check_for_index_marker                  ;undefined check_for_index_marker()
+rom:0cc2        904b            BCC         found_index_marker                      
+rom:0cc4        a50b            LDA         ZERO_PAGE:step_count                    ;= ??
+rom:0cc6        f008            BEQ         timed_out                               
+rom:0cc8        20000e          JSR         step_by_8                               ;undefined step_by_8()
+rom:0ccb        c60b            DEC         ZERO_PAGE:step_count                    ;= ??
+rom:0ccd        4cbf0c          JMP         index_marker_find_loop                  
+                            ;check every 8th track going inwards
+                            ;stop after 8 tries
+                            timed_out:                    ;XREF[1,0]:   0cc6
+rom:0cd0        20e209          JSR         set_dir_flag_inwards                    ;undefined set_dir_flag_inwards()
+rom:0cd3        20970a          JSR         step_wait_40ms                          ;undefined step_wait_40ms()
+rom:0cd6        20970a          JSR         step_wait_40ms                          ;undefined step_wait_40ms()
+rom:0cd9        a908            LDA         #0x8                                    
+rom:0cdb        850b            STA         ZERO_PAGE:step_count                    ;= ??
+                            second_index_try:             ;XREF[1,0]:   0cee
+rom:0cdd        20690d          JSR         we_are_at_track_619                     ;undefined we_are_at_track_619()
+rom:0ce0        20f00b          JSR         check_for_index_marker                  ;undefined check_for_index_marker()
+rom:0ce3        9068            BCC         found_inner_guardband                   ;if found while stepping inwards, mus...
+rom:0ce5        a50b            LDA         ZERO_PAGE:step_count                    ;= ??
+rom:0ce7        f008            BEQ         timed_out2                              
+rom:0ce9        20000e          JSR         step_by_8                               ;undefined step_by_8()
+rom:0cec        c60b            DEC         ZERO_PAGE:step_count                    ;= ??
+rom:0cee        4cdd0c          JMP         second_index_try                        
+                            ;nothing found so far, so let's go outwards
+                            ;and check every 8th track up to 85 times
+                            timed_out2:                   ;XREF[1,0]:   0ce7
+rom:0cf1        20e909          JSR         clear_dir_flag_outwards                 ;undefined clear_dir_flag_outwards()
+rom:0cf4        20970a          JSR         step_wait_40ms                          ;undefined step_wait_40ms()
+rom:0cf7        20970a          JSR         step_wait_40ms                          ;undefined step_wait_40ms()
+rom:0cfa        a955            LDA         #85                                     ;85*8=680 (more than our total avail....
+rom:0cfc        850b            STA         ZERO_PAGE:step_count                    ;= ??
+                            third_index_try:              ;XREF[1,0]:   0d0c
+rom:0cfe        20f00b          JSR         check_for_index_marker                  ;undefined check_for_index_marker()
+rom:0d01        900c            BCC         found_index_marker                      
+rom:0d03        a50b            LDA         ZERO_PAGE:step_count                    ;= ??
+rom:0d05        f011            BEQ         timed_out3                              
+rom:0d07        20000e          JSR         step_by_8                               ;undefined step_by_8()
+rom:0d0a        c60b            DEC         ZERO_PAGE:step_count                    ;= ??
+rom:0d0c        4cfe0c          JMP         third_index_try                         
+                            found_index_marker:           ;XREF[2,0]:   0cc2,0d01
+rom:0d0f        20e209          JSR         set_dir_flag_inwards                    ;undefined set_dir_flag_inwards()
+rom:0d12        20970a          JSR         step_wait_40ms                          ;undefined step_wait_40ms()
+rom:0d15        4c530d          JMP         end_of_find_track0                      
+                            ;nothing found? go slow and do 16 individual steps
+                            ;presumably running into the outer hard stop
+                            timed_out3:                   ;XREF[1,0]:   0d05
+rom:0d18        a910            LDA         #16                                     
+rom:0d1a        850b            STA         ZERO_PAGE:step_count                    ;= ??
+                            fourth_index_try:             ;XREF[1,0]:   0d21
+rom:0d1c        20200e          JSR         do_steps_with_fixed_accel_no_decel      ;undefined do_steps_with_fixed_accel_...
+rom:0d1f        c60b            DEC         ZERO_PAGE:step_count                    ;= ??
+rom:0d21        d0f9            BNE         fourth_index_try                        
+rom:0d23        20c909          JSR         delay_40ms                              ;undefined delay_40ms()
+rom:0d26        20550a          JSR         apply_step_current                      ;undefined apply_step_current()
+rom:0d29        20c909          JSR         delay_40ms                              ;undefined delay_40ms()
+rom:0d2c        20e209          JSR         set_dir_flag_inwards                    ;undefined set_dir_flag_inwards()
+                            ;2 steps then 617 steps, take us to track 619
+rom:0d2f        20970a          JSR         step_wait_40ms                          ;undefined step_wait_40ms()
+rom:0d32        20970a          JSR         step_wait_40ms                          ;undefined step_wait_40ms()
+rom:0d35        20100e          JSR         step_by_617                             ;undefined step_by_617()
+rom:0d38        20690d          JSR         we_are_at_track_619                     ;undefined we_are_at_track_619()
+rom:0d3b        20f00b          JSR         check_for_index_marker                  ;undefined check_for_index_marker()
+rom:0d3e        9004            BCC         found_marker3                           
+rom:0d40        a97f            LDA         #01111111b                              
+rom:0d42        8580            STA         ZERO_PAGE:PORTA                         ;= ??
+                            ;we're at track 619, so now step outwards
+                            ;by 617 tracks taking us to track 2
+                            found_marker3:                ;XREF[1,0]:   0d3e
+rom:0d44        20e909          JSR         clear_dir_flag_outwards                 ;undefined clear_dir_flag_outwards()
+rom:0d47        20100e          JSR         step_by_617                             ;undefined step_by_617()
+rom:0d4a        4c530d          JMP         end_of_find_track0                      
+                            ;we've found the inner guardband, so we must
+                            ;be at track 619. step out by 617 taking us
+                            ;to track 2.
+                            found_inner_guardband:        ;XREF[1,0]:   0ce3
+rom:0d4d        20e909          JSR         clear_dir_flag_outwards                 ;undefined clear_dir_flag_outwards()
+rom:0d50        20100e          JSR         step_by_617                             ;undefined step_by_617()
+                            end_of_find_track0:           ;XREF[2,0]:   0d15,0d4a
+rom:0d53        20e909          JSR         clear_dir_flag_outwards                 ;undefined clear_dir_flag_outwards()
+                            ;our track 2 is user track 0
+rom:0d56        a902            LDA         #0x2                                    
+rom:0d58        8505            STA         ZERO_PAGE:current_track_low             ;= ??
+rom:0d5a        8508            STA         ZERO_PAGE:track_lsbs                    ;= ??
+rom:0d5c        850b            STA         ZERO_PAGE:step_count                    ;= ??
+rom:0d5e        a900            LDA         #0x0                                    
+rom:0d60        8519            STA         ZERO_PAGE:skip_track_limit_check        ;= ??
+rom:0d62        8504            STA         ZERO_PAGE:current_track_high            ;= ??
+rom:0d64        a912            LDA         #0x12                                   
+rom:0d66        8500            STA         ZERO_PAGE:seek_settling_time            
+rom:0d68        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*  declares that our current position                                                          *
+                            ;*  is track 619 (hopefully correctly!)                                                         *
+                            ;************************************************************************************************
+                            ;undefined we_are_at_track_619()
+                                                          ;XREF[2,0]:   0cdd,0d38
+rom:0d69        a96b            LDA         #0x6b                                   ;load track 619
+rom:0d6b        8505            STA         ZERO_PAGE:current_track_low             ;= ??
+rom:0d6d        2907            AND         #0x7                                    
+rom:0d6f        8508            STA         ZERO_PAGE:track_lsbs                    ;= ??
+rom:0d71        a902            LDA         #0x2                                    
+rom:0d73        8504            STA         ZERO_PAGE:current_track_high            ;= ??
+rom:0d75        20100b          JSR         read_rom_trim_table                     ;undefined read_rom_trim_table()
+rom:0d78        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*  computes current zone (1 of 4) and sets                                                     *
+                            ;*  the write current appropriately                                                             *
+                            ;************************************************************************************************
+                            ;undefined set_write_current()
+                                                          ;XREF[1,0]:   0946
+rom:0d79        38              SEC                                                 
+rom:0d7a        a505            LDA         ZERO_PAGE:current_track_low             ;= ??
+rom:0d7c        e902            SBC         #0x2                                    
+rom:0d7e        851c            STA         ZERO_PAGE:temp_lo                       ;= ??
+rom:0d80        a504            LDA         ZERO_PAGE:current_track_high            ;= ??
+rom:0d82        e900            SBC         #0x0                                    
+rom:0d84        851b            STA         ZERO_PAGE:temp_hi                       ;= ??
+rom:0d86        20450e          JSR         subtract_153                            ;undefined subtract_153()
+rom:0d89        9020            BCC         write_cur_0                             
+rom:0d8b        20450e          JSR         subtract_153                            ;undefined subtract_153()
+rom:0d8e        9013            BCC         write_cur_1                             
+rom:0d90        20450e          JSR         subtract_153                            ;undefined subtract_153()
+rom:0d93        9006            BCC         write_cur_2                             
+rom:0d95        a583            LDA         ZERO_PAGE:PORTD                         ;= ??
+rom:0d97        0918            ORA         #00011000b                              ;write current=3
+rom:0d99        d014            BNE         write_cur_end                           
+                            write_cur_2:                  ;XREF[1,0]:   0d93
+rom:0d9b        a583            LDA         ZERO_PAGE:PORTD                         ;= ??
+rom:0d9d        29e7            AND         #11100111b                              
+rom:0d9f        0910            ORA         #00010000b                              ;write current=2
+rom:0da1        d00c            BNE         write_cur_end                           
+                            write_cur_1:                  ;XREF[1,0]:   0d8e
+rom:0da3        a583            LDA         ZERO_PAGE:PORTD                         ;= ??
+rom:0da5        29e7            AND         #11100111b                              
+rom:0da7        0908            ORA         #00001000b                              ;write current=1
+rom:0da9        d004            BNE         write_cur_end                           
+                            write_cur_0:                  ;XREF[1,0]:   0d89
+rom:0dab        a583            LDA         ZERO_PAGE:PORTD                         ;= ??
+rom:0dad        29e7            AND         #11100111b                              ;write current=0
+                            write_cur_end:                ;XREF[3,0]:   0d99,0da1,0da9
+rom:0daf        8583            STA         ZERO_PAGE:PORTD                         ;= ??
+rom:0db1        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*  Controls optional circuit that adjusts                                                      *
+                            ;*  stepper phase voltages. this is micropositioning                                            *
+                            ;*  for recovery mode. the tables contain                                                       *
+                            ;*  "the optimum algorithm" (from the manual)                                                   *
+                            ;************************************************************************************************
+                            ;undefined set_stepper_trim()
+                                                          ;XREF[1,0]:   0892
+rom:0db2        a508            LDA         ZERO_PAGE:track_lsbs                    ;= ??
+                            ;even/odd phase -> carry bit
+rom:0db4        4a              LSR         A                                       
+rom:0db5        851c            STA         ZERO_PAGE:temp_lo                       ;= ??
+rom:0db7        a51f            LDA         ZERO_PAGE:trim_counter                  ;= ??
+rom:0db9        2907            AND         #0x7                                    ;mask off
+                            ;lsb=carry bit=even/odd phase
+rom:0dbb        2a              ROL         A                                       ;times 2
+rom:0dbc        a8              TAY                                                 
+rom:0dbd        b9d80d          LDA         stepper_trim_values,Y                   ;= 06h
+rom:0dc0        851b            STA         ZERO_PAGE:temp_hi                       ;= ??
+rom:0dc2        b9f00d          LDA         stepper_trim_highlow,Y                  
+rom:0dc5        f008            BEQ         is_ph0_1                                
+                            ;track summed to ph0/1 or ph2/3?
+rom:0dc7        a51c            LDA         ZERO_PAGE:temp_lo                       ;= ??
+rom:0dc9        0a              ASL         A                                       
+rom:0dca        0a              ASL         A                                       
+rom:0dcb        0a              ASL         A                                       
+rom:0dcc        0a              ASL         A                                       
+rom:0dcd        851c            STA         ZERO_PAGE:temp_lo                       ;= ??
+                            is_ph0_1:                     ;XREF[1,0]:   0dc5
+rom:0dcf        a51c            LDA         ZERO_PAGE:temp_lo                       ;tracknum/2 (0 to 3)
+rom:0dd1        651b            ADC         ZERO_PAGE:temp_hi                       ;value from table
+rom:0dd3        8581            STA         ZERO_PAGE:PORTB                         ;= ??
+rom:0dd5        e61f            INC         ZERO_PAGE:trim_counter                  ;= ??
+rom:0dd7        60              RTS                                                 
+                            stepper_trim_values:          ;XREF[2,0]:   0ba5,0dbd
+rom:0dd8        06              ??          06h                                     ;0
+rom:0dd9        60              ??          60h    `                                
+rom:0dda        1a              ??          1Ah                                     ;1
+rom:0ddb        6a              ??          6Ah    j                                
+rom:0ddc        10              ??          10h                                     ;2
+rom:0ddd        56              ??          56h    V                                
+rom:0dde        a1              ??          A1h                                     ;3
+rom:0ddf        a6              ??          A6h                                     
+rom:0de0        51              ??          51h    Q                                ;4
+rom:0de1        15              ??          15h                                     
+rom:0de2        6a              ??          6Ah    j                                ;5
+rom:0de3        1a              ??          1Ah                                     
+rom:0de4        65              ??          65h    e                                ;6
+rom:0de5        01              ??          01h                                     
+rom:0de6        a6              ??          A6h                                     ;7
+rom:0de7        a1              ??          A1h                                     
+                            stepper_trim_table2:          ;XREF[1,0]:   0b7d
+rom:0de8        a0              ??          A0h                                     
+rom:0de9        aa              ??          AAh                                     
+rom:0dea        5a              ??          5Ah    Z                                
+rom:0deb        aa              ??          AAh                                     
+rom:0dec        a5              ??          A5h                                     
+rom:0ded        aa              ??          AAh                                     
+rom:0dee        0a              ??          0Ah                                     
+rom:0def        aa              ??          AAh                                     
+                            stepper_trim_highlow:         ;XREF[2,0]:   0b98,0dc2
+rom:0df0        00              ??          00h                                     
+rom:0df1        01              ??          01h                                     
+rom:0df2        01              ??          01h                                     
+rom:0df3        01              ??          01h                                     
+rom:0df4        01              ??          01h                                     
+rom:0df5        00              ??          00h                                     
+rom:0df6        00              ??          00h                                     
+rom:0df7        00              ??          00h                                     
+rom:0df8        00              ??          00h                                     
+rom:0df9        01              ??          01h                                     
+rom:0dfa        01              ??          01h                                     
+rom:0dfb        01              ??          01h                                     
+rom:0dfc        01              ??          01h                                     
+rom:0dfd        00              ??          00h                                     
+rom:0dfe        00              ??          00h                                     
+rom:0dff        00              ??          00h                                     
+                            ;************************************************************************************************
+                            ;*                          steps by 8 tracks in the current direction                          *
+                            ;************************************************************************************************
+                            ;undefined step_by_8()
+                                                          ;XREF[3,0]:   0cc8,0ce9,0d07
+rom:0e00        a908            LDA         #0x8                                    
+rom:0e02        850d            STA         ZERO_PAGE:track_delta_lo                ;= ??
+rom:0e04        a900            LDA         #0x0                                    
+rom:0e06        850c            STA         ZERO_PAGE:track_delta_hi                ;= ??
+rom:0e08        a016            LDY         #22                                     
+rom:0e0a        209e0a          JSR         load_accel_decel_data                   ;undefined load_accel_decel_data()
+rom:0e0d        4c410e          JMP         LAB_0e41                                
+                            ;************************************************************************************************
+                            ;*                         steps by 617 tracks in the current direction                         *
+                            ;************************************************************************************************
+                            ;undefined step_by_617()
+                                                          ;XREF[3,0]:   0d35,0d47,0d50
+rom:0e10        a969            LDA         #0x69                                   
+rom:0e12        850d            STA         ZERO_PAGE:track_delta_lo                ;= ??
+rom:0e14        a902            LDA         #0x2                                    
+rom:0e16        850c            STA         ZERO_PAGE:track_delta_hi                ;= ??
+rom:0e18        a042            LDY         #66                                     
+rom:0e1a        209e0a          JSR         load_accel_decel_data                   ;undefined load_accel_decel_data()
+rom:0e1d        4c410e          JMP         LAB_0e41                                
+                            ;************************************************************************************************
+                            ;*  steps by track_delta in current direction                                                   *
+                            ;*  with no acceleration                                                                        *
+                            ;************************************************************************************************
+                            ;undefined do_steps_with_fixed_accel_no_decel()
+                                                          ;XREF[1,0]:   0d1c
+rom:0e20        a010            LDY         #0x10                                   
+rom:0e22        20cb09          JSR         delay_1ms_y                             ;undefined delay_1ms_y()
+rom:0e25        a90e            LDA         #0xe                                    
+rom:0e27        850f            STA         ZERO_PAGE:curAccelDelayTablePtr+1       
+rom:0e29        a9fd            LDA         #0xfd                                   
+rom:0e2b        850e            STA         ZERO_PAGE:curAccelDelayTablePtr         ;Pointer is 0xefd
+rom:0e2d        a90f            LDA         #0xf                                    
+rom:0e2f        8514            STA         ZERO_PAGE:curAccelStepModeTablePtr+1    
+rom:0e31        a911            LDA         #0x11                                   
+rom:0e33        8513            STA         ZERO_PAGE:curAccelStepModeTablePtr      ;Pointer is 0xf11
+rom:0e35        a900            LDA         #0x0                                    
+rom:0e37        8515            STA         ZERO_PAGE:curDecelStepCount             ;= ??
+rom:0e39        8506            STA         ZERO_PAGE:target_delta_with_offset_h    ;= ??
+rom:0e3b        8507            STA         ZERO_PAGE:target_delta_with_offset_l    ;= ??
+rom:0e3d        a914            LDA         #20                                     
+rom:0e3f        8512            STA         ZERO_PAGE:curAccelStepCount             ;= ??
+                            LAB_0e41:                     ;XREF[2,0]:   0e0d,0e1d
+rom:0e41        20f009          JSR         do_step_movement_with_accel             ;undefined do_step_movement_with_accel()
+rom:0e44        60              RTS                                                 
+                            ;************************************************************************************************
+                            ;*  subtracts 153 from value in temp_hi/lo. result                                              *
+                            ;*  is in carry bit. used to calculate zone for write current                                   *
+                            ;************************************************************************************************
+                            ;undefined subtract_153()
+                                                          ;XREF[3,0]:   0d86,0d8b,0d90
+rom:0e45        a51c            LDA         ZERO_PAGE:temp_lo                       ;= ??
+rom:0e47        e999            SBC         #153                                    
+rom:0e49        851c            STA         ZERO_PAGE:temp_lo                       ;= ??
+rom:0e4b        a51b            LDA         ZERO_PAGE:temp_hi                       ;= ??
+rom:0e4d        e900            SBC         #0x0                                    
+rom:0e4f        851b            STA         ZERO_PAGE:temp_hi                       ;= ??
+rom:0e51        60              RTS                                                 
+                            DAT_0e52:                     ;XREF[1,0]:   0f45
+rom:0e52        56              ??          56h    V                                
+rom:0e53        06              ??          06h                                     
+rom:0e54        2e              ??          2Eh    .                                
+                            DAT_0e55:                     ;XREF[2,0]:   0f43,0f47
+rom:0e55        00              ??          00h                                     
+rom:0e56        00              ??          00h                                     
+rom:0e57        01              ??          01h                                     
+                            DAT_0e58:                     ;XREF[1,0]:   0f4d
+rom:0e58        10              ??          10h                                     
+rom:0e59        47              ??          47h    G                                
+rom:0e5a        1f              ??          1Fh                                     
+rom:0e5b        5a              ??          5Ah    Z                                
+                            DAT_0e5c:                     ;XREF[2,0]:   0f4b,0f4f
+rom:0e5c        01              ??          01h                                     
+rom:0e5d        00              ??          00h                                     
+rom:0e5e        00              ??          00h                                     
+rom:0e5f        01              ??          01h                                     
+                            DAT_0e60:                     ;XREF[1,0]:   0f41
+rom:0e60        6a              ??          6Ah    j                                
+rom:0e61        01              ??          01h                                     
+rom:0e62        3d              ??          3Dh    =                                
+                            DAT_0e63:                     ;XREF[1,0]:   0f49
+rom:0e63        0d              ??          0Dh                                     
+rom:0e64        38              ??          38h    8                                
+rom:0e65        22              ??          22h    "                                
+rom:0e66        5a              ??          5Ah    Z                                
+                            DAT_0e67:                     ;XREF[2,0]:   0f57,0f5b
+rom:0e67        60              ??          60h    `                                
+rom:0e68        3d              ??          3Dh    =                                
+rom:0e69        29              ??          29h    )                                
+rom:0e6a        06              ??          06h                                     
+rom:0e6b        2e              ??          2Eh    .                                
+                            DAT_0e6c:                     ;XREF[2,0]:   0f59,0f5d
+rom:0e6c        00              ??          00h                                     
+rom:0e6d        00              ??          00h                                     
+rom:0e6e        00              ??          00h                                     
+rom:0e6f        00              ??          00h                                     
+rom:0e70        01              ??          01h                                     
+                            DAT_0e71:                     ;XREF[1,0]:   0f5f
+rom:0e71        09              ??          09h                                     
+rom:0e72        38              ??          38h    8                                
+rom:0e73        15              ??          15h                                     
+rom:0e74        10              ??          10h                                     
+rom:0e75        56              ??          56h    V                                
+rom:0e76        28              ??          28h    (                                
+                            DAT_0e77:                     ;XREF[1,0]:   0f63
+rom:0e77        0c              ??          0Ch                                     
+rom:0e78        33              ??          33h    3                                
+rom:0e79        28              ??          28h    (                                
+rom:0e7a        1f              ??          1Fh                                     
+rom:0e7b        4c              ??          4Ch    L                                
+rom:0e7c        28              ??          28h    (                                
+                            DAT_0e7d:                     ;XREF[2,0]:   0f61,0f65
+rom:0e7d        01              ??          01h                                     
+rom:0e7e        00              ??          00h                                     
+rom:0e7f        00              ??          00h                                     
+rom:0e80        01              ??          01h                                     
+rom:0e81        00              ??          00h                                     
+rom:0e82        00              ??          00h                                     
+                            DAT_0e83:                     ;XREF[2,0]:   0f6d,0f71
+rom:0e83        09              ??          09h                                     
+rom:0e84        0b              ??          0Bh                                     
+rom:0e85        09              ??          09h                                     
+rom:0e86        06              ??          06h                                     
+rom:0e87        06              ??          06h                                     
+rom:0e88        06              ??          06h                                     
+rom:0e89        06              ??          06h                                     
+rom:0e8a        07              ??          07h                                     
+rom:0e8b        07              ??          07h                                     
+rom:0e8c        07              ??          07h                                     
+rom:0e8d        08              ??          08h                                     
+rom:0e8e        08              ??          08h                                     
+rom:0e8f        08              ??          08h                                     
+rom:0e90        09              ??          09h                                     
+rom:0e91        09              ??          09h                                     
+rom:0e92        0a              ??          0Ah                                     
+rom:0e93        0a              ??          0Ah                                     
+rom:0e94        0a              ??          0Ah                                     
+rom:0e95        0b              ??          0Bh                                     
+rom:0e96        0b              ??          0Bh                                     
+rom:0e97        0c              ??          0Ch                                     
+rom:0e98        0d              ??          0Dh                                     
+rom:0e99        0e              ??          0Eh                                     
+rom:0e9a        0f              ??          0Fh                                     
+rom:0e9b        10              ??          10h                                     
+rom:0e9c        11              ??          11h                                     
+rom:0e9d        12              ??          12h                                     
+rom:0e9e        17              ??          17h                                     
+rom:0e9f        1a              ??          1Ah                                     
+rom:0ea0        1e              ??          1Eh                                     
+rom:0ea1        27              ??          27h    '                                
+rom:0ea2        2f              ??          2Fh    /                                
+rom:0ea3        24              ??          24h    $                                
+rom:0ea4        1f              ??          1Fh                                     
+rom:0ea5        07              ??          07h                                     
+rom:0ea6        33              ??          33h    3                                
+                            DAT_0ea7:                     ;XREF[2,0]:   0f6f,0f73
+rom:0ea7        80              ??          80h                                     
+rom:0ea8        80              ??          80h                                     
+rom:0ea9        80              ??          80h                                     
+rom:0eaa        80              ??          80h                                     
+rom:0eab        80              ??          80h                                     
+rom:0eac        80              ??          80h                                     
+rom:0ead        80              ??          80h                                     
+rom:0eae        80              ??          80h                                     
+rom:0eaf        80              ??          80h                                     
+rom:0eb0        80              ??          80h                                     
+rom:0eb1        80              ??          80h                                     
+rom:0eb2        80              ??          80h                                     
+rom:0eb3        80              ??          80h                                     
+rom:0eb4        80              ??          80h                                     
+rom:0eb5        80              ??          80h                                     
+rom:0eb6        80              ??          80h                                     
+rom:0eb7        80              ??          80h                                     
+rom:0eb8        80              ??          80h                                     
+rom:0eb9        80              ??          80h                                     
+rom:0eba        80              ??          80h                                     
+rom:0ebb        80              ??          80h                                     
+rom:0ebc        80              ??          80h                                     
+rom:0ebd        80              ??          80h                                     
+rom:0ebe        80              ??          80h                                     
+rom:0ebf        80              ??          80h                                     
+rom:0ec0        80              ??          80h                                     
+rom:0ec1        80              ??          80h                                     
+rom:0ec2        80              ??          80h                                     
+rom:0ec3        80              ??          80h                                     
+rom:0ec4        80              ??          80h                                     
+rom:0ec5        80              ??          80h                                     
+rom:0ec6        80              ??          80h                                     
+rom:0ec7        80              ??          80h                                     
+rom:0ec8        00              ??          00h                                     
+rom:0ec9        00              ??          00h                                     
+rom:0eca        01              ??          01h                                     
+                            DAT_0ecb:                     ;XREF[2,0]:   0f75,0f79
+rom:0ecb        10              ??          10h                                     
+rom:0ecc        1f              ??          1Fh                                     
+rom:0ecd        2e              ??          2Eh    .                                
+rom:0ece        3c              ??          3Ch    <                                
+rom:0ecf        29              ??          29h    )                                
+rom:0ed0        21              ??          21h    !                                
+rom:0ed1        1d              ??          1Dh                                     
+rom:0ed2        19              ??          19h                                     
+rom:0ed3        15              ??          15h                                     
+rom:0ed4        11              ??          11h                                     
+rom:0ed5        10              ??          10h                                     
+rom:0ed6        0e              ??          0Eh                                     
+rom:0ed7        0d              ??          0Dh                                     
+rom:0ed8        0b              ??          0Bh                                     
+rom:0ed9        09              ??          09h                                     
+rom:0eda        09              ??          09h                                     
+rom:0edb        06              ??          06h                                     
+rom:0edc        06              ??          06h                                     
+rom:0edd        0b              ??          0Bh                                     
+                            DAT_0ede:                     ;XREF[2,0]:   0f77,0f7b
+rom:0ede        01              ??          01h                                     
+rom:0edf        00              ??          00h                                     
+rom:0ee0        00              ??          00h                                     
+rom:0ee1        01              ??          01h                                     
+rom:0ee2        00              ??          00h                                     
+rom:0ee3        00              ??          00h                                     
+rom:0ee4        00              ??          00h                                     
+rom:0ee5        00              ??          00h                                     
+rom:0ee6        00              ??          00h                                     
+rom:0ee7        00              ??          00h                                     
+rom:0ee8        00              ??          00h                                     
+rom:0ee9        00              ??          00h                                     
+rom:0eea        00              ??          00h                                     
+rom:0eeb        00              ??          00h                                     
+rom:0eec        00              ??          00h                                     
+rom:0eed        00              ??          00h                                     
+rom:0eee        00              ??          00h                                     
+rom:0eef        00              ??          00h                                     
+rom:0ef0        00              ??          00h                                     
+                            DAT_0ef1:                     ;XREF[1,0]:   0f33
+rom:0ef1        10              ??          10h                                     
+rom:0ef2        02              ??          02h                                     
+rom:0ef3        4c              ??          4Ch    L                                
+rom:0ef4        50              ??          50h    P                                
+                            DAT_0ef5:                     ;XREF[2,0]:   0f35,0f39
+rom:0ef5        01              ??          01h                                     
+rom:0ef6        80              ??          80h                                     
+rom:0ef7        80              ??          80h                                     
+rom:0ef8        81              ??          81h                                     
+                            DAT_0ef9:                     ;XREF[1,0]:   0f37
+rom:0ef9        10              ??          10h                                     
+rom:0efa        02              ??          02h                                     
+rom:0efb        2e              ??          2Eh    .                                
+rom:0efc        6e              ??          6Eh    n                                
+                            data_efd:                     
+rom:0efd        06              ??          06h                                     
+rom:0efe        42              ??          42h    B                                
+rom:0eff        10              ??          10h                                     
+rom:0f00        38              ??          38h    8                                
+rom:0f01        06              ??          06h                                     
+rom:0f02        10              ??          10h                                     
+rom:0f03        06              ??          06h                                     
+rom:0f04        10              ??          10h                                     
+rom:0f05        0b              ??          0Bh                                     
+rom:0f06        0b              ??          0Bh                                     
+rom:0f07        0b              ??          0Bh                                     
+rom:0f08        0b              ??          0Bh                                     
+rom:0f09        10              ??          10h                                     
+rom:0f0a        06              ??          06h                                     
+rom:0f0b        1a              ??          1Ah                                     
+rom:0f0c        06              ??          06h                                     
+rom:0f0d        42              ??          42h    B                                
+rom:0f0e        10              ??          10h                                     
+rom:0f0f        4c              ??          4Ch    L                                
+rom:0f10        09              ??          09h                                     
+                            data_f11:                     
+rom:0f11        00              ??          00h                                     
+rom:0f12        01              ??          01h                                     
+rom:0f13        00              ??          00h                                     
+rom:0f14        01              ??          01h                                     
+rom:0f15        00              ??          00h                                     
+rom:0f16        01              ??          01h                                     
+rom:0f17        00              ??          00h                                     
+rom:0f18        01              ??          01h                                     
+rom:0f19        00              ??          00h                                     
+rom:0f1a        01              ??          01h                                     
+rom:0f1b        00              ??          00h                                     
+rom:0f1c        01              ??          01h                                     
+rom:0f1d        00              ??          00h                                     
+rom:0f1e        01              ??          01h                                     
+rom:0f1f        00              ??          00h                                     
+rom:0f20        01              ??          01h                                     
+rom:0f21        00              ??          00h                                     
+rom:0f22        01              ??          01h                                     
+rom:0f23        00              ??          00h                                     
+rom:0f24        01              ??          01h                                     
+                            ;************************************************************************************************
+                            ;*                             acceleration table for 1 track seek                              *
+                            ;************************************************************************************************
+                            first_table_struct:           ;XREF[1,13]:  0a9e,0aa3,0aa8,0ab0,0abb,0ac0,0ad4,0ad9
+                                                          ;             0ade,0ae3,0afb,0b00,0b05,0b0a
+rom:0f25        000400011...    tablestruct                                         ;= 10h
+                                                                                    ;= 01h
+   |_rom:0f25        AccelStep...    db          0h                                      
+   |_rom:0f26        DecelStep...    db          4h                                      
+   |_rom:0f27        FullSpeed...    db          0h                                      
+   |_rom:0f28        NegativeT...    db          1h                                      
+   |_rom:0f29        SeekSettl...    db          11h                                     
+   |_rom:0f2a        Additiona...    db          80h                                     
+   |_rom:0f2b        AccelDela...    addr        0000                                    
+   |_rom:0f2d        AccelStep...    addr        0000                                    
+   |_rom:0f2f        AccelDela...    addr        0000                                    
+   |_rom:0f31        AccelStep...    addr        0000                                    
+   |_rom:0f33        DecelDela...    addr        DAT_0ef1                                
+   |_rom:0f35        DecelStep...    addr        DAT_0ef5                                
+   |_rom:0f37        DecelDela...    addr        DAT_0ef9                                
+   |_rom:0f39        DecelStep...    addr        DAT_0ef5                                
+                            ;************************************************************************************************
+                            ;*                          acceleration table for 1 to 14 track seek                           *
+                            ;************************************************************************************************
+                            second_table_struct:          
+rom:0f3b        03045c021...    tablestruct                                         ;= 6Ah    j
+                                                                                    ;= 56h    V
+                                                                                    ;= 0Dh
+                                                                                    ;= 01h
+   |_rom:0f3b        AccelStep...    db          3h                                      
+   |_rom:0f3c        DecelStep...    db          4h                                      
+   |_rom:0f3d        FullSpeed...    db          5Ch                                     
+   |_rom:0f3e        NegativeT...    db          2h                                      
+   |_rom:0f3f        SeekSettl...    db          12h                                     
+   |_rom:0f40        Additiona...    db          80h                                     
+   |_rom:0f41        AccelDela...    addr        DAT_0e60                                
+   |_rom:0f43        AccelStep...    addr        DAT_0e55                                
+   |_rom:0f45        AccelDela...    addr        DAT_0e52                                
+   |_rom:0f47        AccelStep...    addr        DAT_0e55                                
+   |_rom:0f49        DecelDela...    addr        DAT_0e63                                
+   |_rom:0f4b        DecelStep...    addr        DAT_0e5c                                
+   |_rom:0f4d        DecelDela...    addr        DAT_0e58                                
+   |_rom:0f4f        DecelStep...    addr        DAT_0e5c                                
+                            ;************************************************************************************************
+                            ;*                          acceleration table for 14 to 80 track seek                          *
+                            ;************************************************************************************************
+                            third_table_struct:           
+rom:0f51        05062d061...    tablestruct                                         ;= 60h    `
+                                                                                    ;= 09h
+                                                                                    ;= 01h
+   |_rom:0f51        AccelStep...    db          5h                                      
+   |_rom:0f52        DecelStep...    db          6h                                      
+   |_rom:0f53        FullSpeed...    db          2Dh                                     
+   |_rom:0f54        NegativeT...    db          6h                                      
+   |_rom:0f55        SeekSettl...    db          12h                                     
+   |_rom:0f56        Additiona...    db          88h                                     
+   |_rom:0f57        AccelDela...    addr        DAT_0e67                                
+   |_rom:0f59        AccelStep...    addr        DAT_0e6c                                
+   |_rom:0f5b        AccelDela...    addr        DAT_0e67                                
+   |_rom:0f5d        AccelStep...    addr        DAT_0e6c                                
+   |_rom:0f5f        DecelDela...    addr        DAT_0e71                                
+   |_rom:0f61        DecelStep...    addr        DAT_0e7d                                
+   |_rom:0f63        DecelDela...    addr        DAT_0e77                                
+   |_rom:0f65        DecelStep...    addr        DAT_0e7d                                
+                            ;************************************************************************************************
+                            ;*                        acceleration table for more than 80 track seek                        *
+                            ;************************************************************************************************
+                            fourth_table_struct:          
+rom:0f67        241308321...    tablestruct                                         ;= 09h
+                                                                                    ;= 80h
+                                                                                    ;= 10h
+                                                                                    ;= 01h
+   |_rom:0f67        AccelStep...    db          24h                                     
+   |_rom:0f68        DecelStep...    db          13h                                     
+   |_rom:0f69        FullSpeed...    db          8h                                      
+   |_rom:0f6a        NegativeT...    db          32h                                     
+   |_rom:0f6b        SeekSettl...    db          10h                                     
+   |_rom:0f6c        Additiona...    db          88h                                     
+   |_rom:0f6d        AccelDela...    addr        DAT_0e83                                
+   |_rom:0f6f        AccelStep...    addr        DAT_0ea7                                
+   |_rom:0f71        AccelDela...    addr        DAT_0e83                                
+   |_rom:0f73        AccelStep...    addr        DAT_0ea7                                
+   |_rom:0f75        DecelDela...    addr        DAT_0ecb                                
+   |_rom:0f77        DecelStep...    addr        DAT_0ede                                
+   |_rom:0f79        DecelDela...    addr        DAT_0ecb                                
+   |_rom:0f7b        DecelStep...    addr        DAT_0ede                                
+                            ;end of data table structures
+rom:0f7d        ff              ??          FFh                                     
+rom:0f7e        ff              ??          FFh                                     
+rom:0f7f        ff              ??          FFh                                     
+rom:0f80        ff              ??          FFh                                     
+rom:0f81        ff              ??          FFh                                     
+rom:0f82        ff              ??          FFh                                     
+rom:0f83        ff              ??          FFh                                     
+rom:0f84        ff              ??          FFh                                     
+rom:0f85        ff              ??          FFh                                     
+rom:0f86        ff              ??          FFh                                     
+rom:0f87        ff              ??          FFh                                     
+rom:0f88        ff              ??          FFh                                     
+rom:0f89        ff              ??          FFh                                     
+rom:0f8a        ff              ??          FFh                                     
+rom:0f8b        ff              ??          FFh                                     
+rom:0f8c        ff              ??          FFh                                     
+rom:0f8d        ff              ??          FFh                                     
+rom:0f8e        ff              ??          FFh                                     
+rom:0f8f        ff              ??          FFh                                     
+rom:0f90        ff              ??          FFh                                     
+rom:0f91        ff              ??          FFh                                     
+rom:0f92        ff              ??          FFh                                     
+rom:0f93        ff              ??          FFh                                     
+rom:0f94        ff              ??          FFh                                     
+rom:0f95        ff              ??          FFh                                     
+rom:0f96        ff              ??          FFh                                     
+rom:0f97        ff              ??          FFh                                     
+rom:0f98        ff              ??          FFh                                     
+rom:0f99        ff              ??          FFh                                     
+rom:0f9a        ff              ??          FFh                                     
+rom:0f9b        ff              ??          FFh                                     
+rom:0f9c        ff              ??          FFh                                     
+rom:0f9d        ff              ??          FFh                                     
+rom:0f9e        ff              ??          FFh                                     
+rom:0f9f        ff              ??          FFh                                     
+rom:0fa0        ff              ??          FFh                                     
+rom:0fa1        ff              ??          FFh                                     
+rom:0fa2        ff              ??          FFh                                     
+rom:0fa3        ff              ??          FFh                                     
+rom:0fa4        ff              ??          FFh                                     
+rom:0fa5        ff              ??          FFh                                     
+rom:0fa6        ff              ??          FFh                                     
+rom:0fa7        ff              ??          FFh                                     
+rom:0fa8        ff              ??          FFh                                     
+rom:0fa9        ff              ??          FFh                                     
+rom:0faa        ff              ??          FFh                                     
+rom:0fab        ff              ??          FFh                                     
+rom:0fac        ff              ??          FFh                                     
+rom:0fad        ff              ??          FFh                                     
+rom:0fae        ff              ??          FFh                                     
+rom:0faf        ff              ??          FFh                                     
+rom:0fb0        ff              ??          FFh                                     
+rom:0fb1        ff              ??          FFh                                     
+rom:0fb2        ff              ??          FFh                                     
+rom:0fb3        ff              ??          FFh                                     
+rom:0fb4        ff              ??          FFh                                     
+rom:0fb5        ff              ??          FFh                                     
+rom:0fb6        ff              ??          FFh                                     
+rom:0fb7        ff              ??          FFh                                     
+rom:0fb8        ff              ??          FFh                                     
+rom:0fb9        ff              ??          FFh                                     
+rom:0fba        ff              ??          FFh                                     
+rom:0fbb        ff              ??          FFh                                     
+rom:0fbc        ff              ??          FFh                                     
+rom:0fbd        ff              ??          FFh                                     
+rom:0fbe        ff              ??          FFh                                     
+rom:0fbf        ff              ??          FFh                                     
+rom:0fc0        ff              ??          FFh                                     
+rom:0fc1        ff              ??          FFh                                     
+rom:0fc2        ff              ??          FFh                                     
+rom:0fc3        ff              ??          FFh                                     
+rom:0fc4        ff              ??          FFh                                     
+rom:0fc5        ff              ??          FFh                                     
+rom:0fc6        ff              ??          FFh                                     
+rom:0fc7        ff              ??          FFh                                     
+rom:0fc8        ff              ??          FFh                                     
+rom:0fc9        ff              ??          FFh                                     
+rom:0fca        ff              ??          FFh                                     
+rom:0fcb        ff              ??          FFh                                     
+rom:0fcc        ff              ??          FFh                                     
+rom:0fcd        ff              ??          FFh                                     
+rom:0fce        ff              ??          FFh                                     
+rom:0fcf        ff              ??          FFh                                     
+rom:0fd0        ff              ??          FFh                                     
+rom:0fd1        ff              ??          FFh                                     
+rom:0fd2        ff              ??          FFh                                     
+rom:0fd3        ff              ??          FFh                                     
+rom:0fd4        ff              ??          FFh                                     
+rom:0fd5        ff              ??          FFh                                     
+rom:0fd6        ff              ??          FFh                                     
+rom:0fd7        ff              ??          FFh                                     
+rom:0fd8        ff              ??          FFh                                     
+rom:0fd9        ff              ??          FFh                                     
+rom:0fda        ff              ??          FFh                                     
+rom:0fdb        ff              ??          FFh                                     
+rom:0fdc        ff              ??          FFh                                     
+rom:0fdd        ff              ??          FFh                                     
+rom:0fde        ff              ??          FFh                                     
+rom:0fdf        ff              ??          FFh                                     
+rom:0fe0        ff              ??          FFh                                     
+rom:0fe1        ff              ??          FFh                                     
+rom:0fe2        ff              ??          FFh                                     
+rom:0fe3        ff              ??          FFh                                     
+rom:0fe4        ff              ??          FFh                                     
+rom:0fe5        ff              ??          FFh                                     
+rom:0fe6        ff              ??          FFh                                     
+rom:0fe7        ff              ??          FFh                                     
+rom:0fe8        ff              ??          FFh                                     
+rom:0fe9        ff              ??          FFh                                     
+rom:0fea        ff              ??          FFh                                     
+rom:0feb        ff              ??          FFh                                     
+rom:0fec        ff              ??          FFh                                     
+rom:0fed        ff              ??          FFh                                     
+rom:0fee        ff              ??          FFh                                     
+rom:0fef        ff              ??          FFh                                     
+rom:0ff0        ff              ??          FFh                                     
+rom:0ff1        ff              ??          FFh                                     
+rom:0ff2        ff              ??          FFh                                     
+rom:0ff3        ff              ??          FFh                                     
+rom:0ff4        ff              ??          FFh                                     
+rom:0ff5        ff              ??          FFh                                     
+rom:0ff6        ff              ??          FFh                                     
+rom:0ff7        ff              ??          FFh                                     
+rom:0ff8        ff              ??          FFh                                     
+rom:0ff9        ff              ??          FFh                                     
+rom:0ffa        0008            addr        RESET_Vector                            
+rom:0ffc        0008            addr        RESET_Vector                            
+rom:0ffe        3108            addr        IRQ_Vector                              
