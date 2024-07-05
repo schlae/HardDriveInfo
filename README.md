@@ -262,7 +262,7 @@ The 10188-501 comes in an SOIC package while the 10014-002 comes in a DIP packag
 | 16  | HDSEL2# | Input     | Head select bit 2 input. Active low.             |
 | 15  | HDSEL4# | Input     | Head select bit 3 input. Active low.             |
 | 12  | WRT\_FAULT\_IN| Input | Goes high if there is a write fault, which disables all center tap outputs. |
-| 20  | VHS     | Input     | Head center tap resistor divider supply. Provides termination voltage. |
+| 20  | VHS     | Output    | Voltage Head Safe. Generates an average of the center tap voltages from an internal resistor network. |
 | 1   | VCTAP   | Input     | Head center tap active voltage. The selected head's center tap gets driven to this voltage - 0.25V. |
 | 9   | HDC1    | Output    | Head 1 center tap output. |
 | 8   | HDC2    | Output    | Head 2 center tap output. |
@@ -283,19 +283,19 @@ The center tap driver chip drives the center tap of each head coil depending on 
 
 | WRT\_FAULT\_IN  | HDSEL4# | HDSEL2# | HDSEL1# | HDC1 | HDC2 | HDC3 | HDC4 | HDC5 | HDC6 |
 |-----------------|---------|---------|---------|------|------|------|------|------|------|
-|               0 |       1 |       1 |       1 | VCTAP|   VT |   VT |   VT |   VT |   VT |
-|               0 |       1 |       1 |       0 |   VT | VCTAP|   VT |   VT |   VT |   VT |
-|               0 |       1 |       0 |       1 |   VT |   VT | VCTAP|   VT |   VT |   VT |
-|               0 |       1 |       0 |       0 |   VT |   VT |   VT | VCTAP|   VT |   VT |
-|               0 |       0 |       1 |       1 |   VT |   VT |   VT |   VT | VCTAP|   VT |
-|               0 |       0 |       1 |       0 |   VT |   VT |   VT |   VT |   VT | VCTAP|
-|               1 |       x |       x |       x |   VT |   VT |   VT |   VT |   VT |   VT |
+|               0 |       1 |       1 |       1 | VCTAP|    z |    z |    z |    z |    z |
+|               0 |       1 |       1 |       0 |    z | VCTAP|    z |    z |    z |    z |
+|               0 |       1 |       0 |       1 |    z |    z | VCTAP|    z |    z |    z |
+|               0 |       1 |       0 |       0 |    z |    z |    z | VCTAP|    z |    z |
+|               0 |       0 |       1 |       1 |    z |    z |    z |    z | VCTAP|    z |
+|               0 |       0 |       1 |       0 |    z |    z |    z |    z |    z | VCTAP|
+|               1 |       x |       x |       x |    z |    z |    z |    z |    z |    z |
 
-(VT is 0.86 * VHS. VCTAP in the table is actually VCTAP - 0.25V.)
+(VCTAP in the table is actually VCTAP - 0.25V.)
 
 Unselected heads are driven to VHS * 0.86. There may be an internal voltage divider but this is buffered with a low (0.3 ohm) impedance driver before being switched onto the head output.
 
-The voltage provided to VCTAP must be higher than the voltage provided to VHS.
+VHS (Voltage Head Safe) uses a resistor network to aggregate the voltages on all the head center tap connections. The adjacent read/write channel LSI monitors this voltage with comparators. If the voltage is too high, that indicates that multiple heads have been selected for writing, which triggers a write fault. A voltage that is too low indicates that no heads are selected for writing, which also triggers a write fault.
 
 The chip also includes a very simple two-transistor driver for the write current selection. This is used for up to 4-zone recording.
 
@@ -370,8 +370,8 @@ This device incorporates the read channel and the write amplifier circuitry.
 | 23  | WRT\_GATE# | Input | Active low write enable. Connect to MFM bus. |
 | 24  | WRT\_FAULT# | Output | Active low write fault indicator. Asserted if a fault occurs during a write, may deassert during reads. |
 | 25  | DC\_UNSAFE# | Output | Active low DC unsafe indicator. Asserts if 5V or 12V rail fall below minimum thresholds. |
-| 26  | VHS   |           | Head selected monitoring connection to the head steering matrix. |
-| 27  | VCTAP | Output    | Head center tap driver. Driven to 12V during a write and about 5.3V during a read. |
+| 26  | VHS   | Input     | Voltage Head Safe. Monitoring connection to the head steering matrix. |
+| 27  | VCTAP | Output    | Voltage Center Tap. Head center tap driver; driven to 12V during a write and about 5.3V during a read. |
 | 1   | DI+   | Input     | Preamp signal input (positive). |
 | 2   | DI-   | Input     | Preamp signal input (negative). |
 | 3   | -GAIN |           | Preamp gain pin 1. |
@@ -411,8 +411,8 @@ The 10206-501 comes in the 44-pin PLCC package while the 10206-002 comes in the 
 | 37       | 35      | WRT\_GATE# | Input | Active low write enable. Connect to MFM bus. |
 | 39       | 36      | WRT\_FAULT# | Output | Active low write fault indicator. Asserted if a fault occurs during a write, may deassert during reads. |
 | 40       | 37      | DC\_UNSAFE# | Output | Active low DC unsafe indicator. Asserts if 5V or 12V rail fall below minimum thresholds. |
-| 42       | 38      | VHS   |           | Head selected monitoring connection to the head steering matrix. |
-| 43       | 39      | VCTAP | Output    | Head center tap driver. Driven to 12V during a write and about 5.3V during a read. |
+| 42       | 38      | VHS   | Input     | Voltage Head Safe. Monitoring connection to the head steering matrix. |
+| 43       | 39      | VCTAP | Output    | Voltage Center Tap. Head center tap driver; driven to 12V during a write and about 5.3V during a read. |
 | 1        | 1       | DI+   | Input     | Preamp signal input (positive). |
 | 2        | 2       | DI-   | Input     | Preamp signal input (negative). |
 | 3        | 3       | -GAIN |           | Preamp gain pin 1. |
@@ -438,9 +438,9 @@ The 10206-501 comes in the 44-pin PLCC package while the 10206-002 comes in the 
 
 The write drive circuit takes differential digital data from the WDATA\_IN pins and outputs it (with a current set by the WRITE\_CUR pin) on the WDO pins during write mode. Write mode is entered when DC\_UNSAFE# is deasserted, WRT\_OK is asserted, and WRT\_GATE# is asserted (DRV\_SEL# is ignored).
 
-VHS senses when the voltage in the heads exceeds a limit of about 3.5V, and when this happens, WRT\_FAULT# asserts.
+Voltage Head Safe (VHS) senses when the average center tap voltage of the heads exceeds a limit of about 3.5V, and when this happens, WRT\_FAULT# asserts, because this indicates that multiple heads have been selected. If the voltage is below some minimum threshold (indicated that no heads are selected) it may also trigger a write fault.
 
-VCTAP is driven to 12V in write mode and otherwise goes to 5.3V. It is controlled by WRT\_GATE# alone, for some reason.
+VCTAP is driven to 12V in write mode and otherwise goes to 5.3V (for reads). It is controlled by WRT\_GATE# alone, for some reason. This drives the center tap voltage of the currently-selected head.
 
 The power supply monitor asserts DC\_UNSAFE# when the 5V rail falls below 4.2V (rising threshold is 4.23) or when the 12V rail falls below 9.54V (rising threshold is 9.67V).
 
@@ -715,8 +715,42 @@ The ring detector is a window comparator that examines one of five possible diff
 
 The window threshold is controlled by the voltage applied to the RING\_SET pin. It seems to be a percentage of that voltage. The output of the window comparator goes to a digitally-timed counter state machine which is incompletely understood but clocked by the SYS\_CLK input. The output of this is passed along to the RING\_DET output (which must be pulled up externally). In typical operation, this pin toggles on every edge of the ringing signal generated by the back EMF of the stepper motor winding.
 
+### 11695-002 "SPEED CONTROL"
 
-# License
+This custom LSI chip controls and regulates the speed of the spindle motor.
+
+**Pin Description**
+
+| Pin | Name  | Direction | Description                                     |
+|-----|-------|-----------|-------------------------------------------------|
+| 8   | +12V  | Power     | 12V power input. |
+| 4   | GND   | Ground    | Connect to ground. |
+| 1   | FREF  | Input     | 2MHz input frequency reference. |
+| 2   | H-OUT | Output    |
+| 3   | H-IN  | Input     | Input from hall effect sensor. |
+| 5   | SENSE | Input     | Analog current sense input. |
+| 6   | COILA | Output    | Controls an external transistor that drives a motor coil. |
+| 7   | COILB | Output    | Controls an external transistor that drives a motor coil. |
+
+
+**Function Description**
+
+This device generates commutated coil output control signals based on the hall effect sensor input. It regulates the speed by measuring the hall effect input against the 2MHz input reference clock frequency. The device assumes that there are two hall pulses per revolution and that the motor is to be regulated to 3600 RPM, or 120 hall pulses per second.
+
+The device also monitors the number of reference clock pulses, and if hall effect pulses aren't received for a certain number of cycles, both COILA and COILB outputs are disabled (locked rotor protection).
+
+The sense input is externally tied to a current sense resistor in series with the ground path of the driver transistors. The chip cuts off the COILA/COILB signal early when the current reaches a set limit.
+
+When the 12V power supply falls below a threshold, the motor coil back EMF causes the COILA and COILB inputs to turn on simultaneously, braking the motor.
+
+## More Information
+
+A large amount of Seagate drive information can be found on [Bitsavers](https://bitsavers.org/pdf/seagate/).
+
+Some operational clues for the ST-225 are available in the [ST-225 OEM Manual](https://www.minuszerodegrees.net/manuals/Seagate/Seagate%20ST225%20-%20OEM%20Manual%20-%20Oct85.pdf).
+
+
+## License
 This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
 International License. See [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/).
 

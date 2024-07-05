@@ -4989,6 +4989,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 31879361-f2cd-4ec0-889b-5643aa378da1)
   )
+  (text "RD_DATA DC: PA7 = low\nRD_DATA f < 1.4MHz: PA7 = pulsing\nRD_DATA 1.4MHz < f < 2.6MHz: PA7 = high\nRD_DATA f > 2.6MHz: PA7 = low"
+    (at 50.8 146.05 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 4e21aef9-bcd3-4dac-9237-09eab993d92f)
+  )
   (text "_↑‾" (at 81.28 171.45 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 4e44deee-f8de-4687-a285-ac563fb1af19)
