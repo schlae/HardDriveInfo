@@ -30,6 +30,71 @@ The control boards are typically held to the drive by three screws. Two of the s
 
 Early ST-225 boards have an 18-pin header going to the read/write heads, but the flex cable has a 16-pin connector. It should be plugged in offset to the pin 1 end of the header, allowing pins 17 and 18 on the header to hang outside the connector.
 
+## Platter Layout
+
+### ST-225
+
+For a stepper-motor hard drive, the motor phase is rather important because the rotor will "clock" to the phase you drive it with. The firmware uses this while searching for the index tracks so it can jump 8 tracks at a time, since it knows the inner index track is aligned to phase 5 and the outer to phase 7.
+
+The "Track" column indicates the track as visible to the user (the controller card in the PC). From this layout, you can see that the data area contains 615 total tracks. The landing zone is specified at track 670 which is safely outside the data area and away from the inner index marker track.
+
+The "Firmware Track" column is offset by 2 because this is how the drive's firmware numbers them; it limits the MFM controller from track 2 to track 672. This implies that there is no protection against the controller overwriting the inner index track -- you must enter the drive parameters in the BIOS correctly! The outer index track is inaccessible during normal operation.
+
+| Track | Firmware Track | Description          | Motor Phase |
+|-------|----------------|----------------------|-------------|
+|    -1 |              1 | Index marker track   | 7 |
+|     0 |              2 | Outermost data track | 6 |
+|   ... |            ... | Data                 | ... |
+|   614 |            616 | Innermost data track | 0 |
+|   615 |            617 | DC Erased            | 7 |
+|   616 |            618 | DC Erased            | 6 |
+|   617 |            619 | Index marker track   | 5 |
+|   618 |            620 | DC Erased            | 4 |
+|   ... |            621 | ...                  | 3 |
+|   670 |            672 | Landing zone         | 0 |
+|  ~694 |           ~696 | Inner hard stop      | - |
+
+*Note: Motor phase count is 0-7 since the motor is half-stepped.*
+
+The index marker track contains the following repeating information:
+
+| 0 - 4ms        | 4 - 16.67ms |
+|----------------|-------------|
+| 1.75MHz DC=17% | 5MHz DC=50% |
+
+When the MCU PA7 is set as an input (logic 1), the drive will hold the hall-effect signal divider in reset as long as the 1.75MHz marker signal is present.
+
+The index marker tracks are present only on head 0; none of the other surfaces contain this information.
+
+### ST-251
+
+| Track | Description        | Motor Phase |
+|-------|--------------------|-------------|
+|    -4 | (End of outer crash stop) |   |
+|    -3 | DC Erased                 | 7 |
+|    -2 | Index marker track        | 8 |
+|    -1 | DC Erased                 | 9 |
+|     0 | Outermost data track      | 0 |
+|   ... | Data                      |   |
+|   819 | Innermost data track      | 9 |
+|   820 | DC Erased                 | 0 |
+|   821 | DC Erased                 | 1 |
+|   822 | DC Erased                 | 2 |
+|   823 | 1.75MHz                   | 3 |
+|   824 | DC Erased                 | 4 |
+|   825 | DC Erased                 | 5 |
+|   826 | 1.75MHz                   | 6 |
+|   827 | DC erased on odd tracks to inner crash stop. | |
+|   ... | After track 827, 1.75MHz on all tracks with motor phases 0 and 6 to inner crash stop. All other even tracks DC erased. | |
+|   910 | Landing zone              | |
+
+Index marker track:
+
+| 0 - 4ms        | 4 - 16.67ms |
+|----------------|-------------|
+| 2F             | 1.75MHz     |
+
+
 ## Driver boards
 
 ### 20301 "225 CONTROL", 20527
