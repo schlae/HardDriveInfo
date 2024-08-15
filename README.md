@@ -14,6 +14,7 @@ Below is a table linking specific drive models with the part numbers of their ma
 | Seagate      | ST-412    | MFM       | ASSY 20201  | 4-Wire       |         85ms | Oxide, 00253 | 130/40mm |
 | Seagate      | ST-419    | MFM       | ASSY 20225  | 4-Wire       |         85ms | Oxide, 00252 | 130/40mm |
 | Seagate      | ST-225    | MFM       | ASSY 20301, 20527 | 4-Wire |         65ms | Oxide Coated | 130/40mm |
+| Seagate      | ST-225N   | SCSI      | ASSY 20427  | 4-Wire       |         65ms | Oxide Coated | 130/40mm |
 | Seagate      | ST-238    | MFM       | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated | 130/40mm |
 | Seagate      | ST-238R   | MFM/RLL   | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated | 130/40mm |
 | Seagate      | ST-251    | MFM       | ASSY 20629  | 10-Wire      |         40ms | Thin Film    | 130/40mm |
@@ -65,6 +66,12 @@ The index marker track contains the following repeating information:
 When the MCU PA7 is set as an input (logic 1), the drive will hold the hall-effect signal divider in reset as long as the 1.75MHz marker signal is present.
 
 The index marker tracks are present only on head 0; none of the other surfaces contain this information.
+
+### ST-225N (SCSI)
+
+This drive has firmware and bad sector information recorded on tracks -1 and -2, presumably multiple copies located on each surface.
+
+More information to come at a later date.
 
 ### ST-251
 
@@ -141,6 +148,32 @@ There appears to be a clear evolution between the 20527 ST-225 board and the ear
 * A new LSI incorporates the MCU read channel one-shot devices along with a bunch of discrete buffers.
 * The MCU's external ROM chip is back. Presumably this was used extensively for internal firmware development and left in the shipping product until mask ROM MCUs became available.
 
+### 20427 "225N INTELLIGENT"
+
+The PCB schematic and layout for 20427 are available, see st225n/20427. This board is used in the ST-225N.
+
+This board has a read/write channel similar to the plain ST-225, but the rest of it is quite different. All of the chips are now surface mount, including the Seagate custom devices.
+
+The stepper motor driver has been replaced with a simple off-the-shelf MC3479.
+
+An on-board data separator (DP8455) has been added, along with an Adaptec chipset for SCSI:
+
+* AIC-250L - MFM encoder/decoder
+* AIC-010L - Programmable mass storage controller
+* AIC-300 - Dual port buffer controller
+
+The 6500/1 microcontroller has been replaced with an 8051. The 8051 has much more intelligence than the old design which
+only implemented seek buffering and the index track search. The firmware hasn't been completely analyzed yet but it
+
+* Programs and manages the Adaptec chipset to implement the SCSI interface
+* Handles the stepper motor seek
+* Loads extra firmware into its dedicated SRAM chip from "hidden" tracks on the drive surface
+
+Some of the custom chips seem to share functionality with the ST-251, which may have been under development at the same time.
+
+* The 11647-501 was used on the ST-251 as the MFM interface, but on this board it performs housekeeping functions and is wired differently.
+* The 11695-502 has been repackaged into SMD (unlike the older 11695-002) and was also used on the ST-251 to control the spindle driver.
+
 ### 20629, 20938, 21020 "251 CONTROL"
 
 Unlike the earlier ST-225 and ST-412 generations, drives with this board use 5-phase steppers and can seek nearly twice as fast as the ST-412. A lot of discrete logic and analog circuitry has been integrated into several LSI chips.
@@ -150,6 +183,7 @@ The PCB schematic and layout for 20629 are available, see st251/20629. This boar
 The PCB schematic and layout for 20938 are available, see st251/20938. This board is used in the ST-251-1 as well as the ST-277R (-300 version).
 
 The PCB schematic and layout for 21020 are available, see st251/21020. This board is used in the ST-277R-1.
+
 
 
 **20629 to 20938 changes**
@@ -216,17 +250,21 @@ ROM contains code that uses this external EPROM as a lookup table of 1 byte per 
 a custom "defect map" for a single-platter drive, using the stepper to avoid bad areas on the platter.
 * An undocumented "pause mode" appears in the firmware. By pulling PA4 low (pin 34 of the MCU), it enters a state where it allows all GPIO pins to go high/float. Presumable this was useful for debugging.
 
+### ST-225N
+
+TBD, stay tuned.
 
 ## Chips
 
 | Part Number | Nicknames     | Where Used | Description |
 |-------------|---------------|------------|-------------|
 | 10014-002   |               | 20527 | Head center tap driver, write current selector. |
-| 10188-501   | SSI257.2, V10096BQZ | 20629, 20938, 21020, 20867, 20829, 20948, 20741 | Head center tap driver, write current selector. |
+| 10188-501   | SSI257.2, V10096BQZ | 20629, 20938, 21020, 20867, 20829, 20948, 20741, 20427 | Head center tap driver, write current selector. |
 | 10189-521   | SSI257        | 20629, 20938, 20829 | Steering diodes and head preamp, NE592 equivalent. |
 | 10189-501   |               | 20867 | Steering diodes and head preamp, NE592 equivalent. |
 | 10189-502   |               | 21020, 20741  | Steering diodes and head preamp, NE592 equivalent. |
 | SSI 280     |               | 20301 | Read channel and write amplifier. |
+| SSI 280.2   |               | 20427 | Read channel and write amplifier. |
 | 10206-501   | SSI296        | 20629, 20938, 21020, 20867, 20741 | Read channel and write amplifier. |
 | 10206-502   |               | 20829, 20948 | Read channel and write amplifier. |
 | 10206-002   |               | 20527 | Read channel and write amplifier. |
@@ -234,10 +272,12 @@ a custom "defect map" for a single-platter drive, using the stepper to avoid bad
 | 10223-502   | RETURN        | 20629, 20938, 21020, 20829, 20948, 20741 | Retracts stepper motor on power-down. |
 | 11468       |               | 21020 | Controls H-Bridge enables based on phase state. |
 | 11642-001   |               | 20301, 20527  | Steering diodes and head preamp, NE592 equivalent. See 10189.|
+| 11642-501   |               | 20427 | Steering diodes and head preamp, NE592 equivalent. |
+| 11647-501   |               | 20427 | Miscellaneous logic. Seems similar to 11647-502 but used in another mode. |
 | 11647-502   | STEP LOGIC    | 20629, 20938, 21020, 20867, 20829 | MFM interface logic. |
 | 11665-001   |               | 20301, 20527 | Stepper motor control and driver chip (4 phase). |
 | 11695-002   |               | 20301, 20257 | Spindle speed control chip. |
-| 11695-502   | SPEED CONTROL | 20629 | Spindle speed control chip. |
+| 11695-502   | SPEED CONTROL | 20629, 20427 | Spindle speed control chip. |
 | 11721-501   |               | 20938, 21020, 20741 | Similar to the L293 H-bridge driver |
 | 11738-002   |               | 21020 | Similar to 11791 but in a different package. |
 | 11738-502   |               | 20741 | Similar to 11791 but in a different package. |
@@ -264,7 +304,8 @@ a custom "defect map" for a single-platter drive, using the stepper to avoid bad
 
 ### 11647-502 "STEP LOGIC"
 
-This device interfaces with the MFM control cable.
+This device interfaces with the MFM control cable. In the ST-225N, a similar device provides glue logic but seems to be used
+in a different operating mode.
 
 **Pin Description**
 
@@ -854,7 +895,7 @@ The window threshold is controlled by the voltage applied to the RING\_SET pin. 
 
 ### 11695-002 "SPEED CONTROL"
 
-This custom LSI chip controls and regulates the speed of the spindle motor.
+This custom LSI chip controls and regulates the speed of the spindle motor. It seems to be nearly identical to the SSI 32M5901.
 
 **Pin Description**
 

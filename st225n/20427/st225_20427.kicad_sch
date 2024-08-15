@@ -1,0 +1,65 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid ab051101-9873-4946-8bd3-ad87d2c27dee)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 106.68 121.92) (size 58.42 36.83) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 1a016fd1-713c-4465-85c1-58d91bf29690)
+    (property "Sheetname" "Analog and Interface" (at 106.68 121.2084 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Analog.kicad_sch" (at 106.68 159.3346 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "st225_20427"
+        (path "/ab051101-9873-4946-8bd3-ad87d2c27dee" (page "3"))
+      )
+    )
+  )
+
+  (sheet (at 168.91 72.39) (size 41.91 40.64) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 9bad01b0-dabc-4c14-91d1-3d4625d171ca)
+    (property "Sheetname" "SCSI" (at 168.91 71.6784 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "SCSI.kicad_sch" (at 168.91 113.6146 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "st225_20427"
+        (path "/ab051101-9873-4946-8bd3-ad87d2c27dee" (page "4"))
+      )
+    )
+  )
+
+  (sheet (at 106.68 72.39) (size 58.42 40.64) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid dbd0d083-2822-4cc9-a670-4535f72ba9e6)
+    (property "Sheetname" "Digital and Stepper" (at 106.68 71.6784 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "DigitalStepper.kicad_sch" (at 106.68 113.6146 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "st225_20427"
+        (path "/ab051101-9873-4946-8bd3-ad87d2c27dee" (page "2"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
