@@ -1,6 +1,6 @@
 (kicad_sch (version 20230121) (generator eeschema)
 
-  (uuid 39819aa8-d94f-4520-9a13-5c7a62f5aa8e)
+  (uuid e61bcd30-07d9-43f8-85f7-4079d0c97dd7)
 
   (paper "A3")
 
@@ -3951,6 +3951,7 @@
   (no_connect (at 373.38 195.58) (uuid 03134b43-8e62-4ccf-a92e-c7e0672bb2ad))
   (no_connect (at 109.22 170.18) (uuid 0753e1f5-afc9-45c5-98f5-8c770555b072))
   (no_connect (at 220.98 260.35) (uuid 259214fd-7652-4eca-a465-ae3d2ccb7cc6))
+  (no_connect (at 373.38 208.28) (uuid 2c57d65c-d57a-445c-92bf-ca449df71e79))
   (no_connect (at 195.58 270.51) (uuid 3d3ed796-8535-46cf-95c5-9e2610b18e7b))
   (no_connect (at 134.62 167.64) (uuid 4112aed2-0e3d-46a6-80c4-e73329c5997b))
   (no_connect (at 134.62 165.1) (uuid 5bcf7f57-8c97-4b8c-84b7-4d8639144f22))
@@ -4922,6 +4923,11 @@
     (stroke (width 0) (type default))
     (uuid 54f8ad69-532e-4b3c-853d-8daf069fba29)
   )
+  (polyline (pts (xy 374.65 205.74) (xy 374.65 213.36))
+    (stroke (width 0) (type default) (color 255 0 255 1))
+    (uuid 563aa453-1db0-4812-ae81-663514ca435f)
+  )
+
   (wire (pts (xy 121.92 189.23) (xy 121.92 191.77))
     (stroke (width 0) (type default))
     (uuid 56c3383e-0aee-402f-91e7-5246a7b82500)
@@ -6085,6 +6091,11 @@
     (stroke (width 0) (type default))
     (uuid fdf72d3f-dc60-474d-984a-e94a0c42fabf)
   )
+  (polyline (pts (xy 373.38 205.74) (xy 374.65 205.74))
+    (stroke (width 0) (type default) (color 255 0 255 1))
+    (uuid fe21caee-60ef-411a-b856-f6a826b31d08)
+  )
+
   (wire (pts (xy 373.38 200.66) (xy 384.81 200.66))
     (stroke (width 0) (type default))
     (uuid fe28e006-86a0-4031-b471-fb8b81567b53)
@@ -6106,6 +6117,10 @@
     (at 242.57 283.21 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 20f8c02c-23df-4d19-8cdd-d7208893de08)
+  )
+  (text "(BODGE)" (at 374.65 208.28 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 24633ac2-e311-4b36-ba1d-ddd0162fa53f)
   )
   (text "ASSY 20427" (at 302.26 262.89 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
