@@ -69,9 +69,67 @@ The index marker tracks are present only on head 0; none of the other surfaces c
 
 ### ST-225N (SCSI)
 
-This drive has firmware and bad sector information recorded on tracks -1 and -2, presumably multiple copies located on each surface.
+This drive has firmware and bad sector information recorded on tracks -1 and -2, presumably multiple copies located on each surface. Each sector is 256 bytes.
 
-More information to come at a later date.
+| Track | Head | Sector  | Description                       | Motor Phase |
+|-------|------|---------|-----------------------------------|-------------|
+|    -2 |   0  | 0 - 31  | Primary Operating System (copy 1) | 8 |
+|    -2 |   1  | 0 - 31  | Primary Operating System (copy 2) | 8 |
+|    -2 |   2  | 0 - 31  | Primary Operating System (copy 3) | 8 |
+|    -2 |   3  | 0 - 31  | Primary Operating System (copy 4) | 8 |
+|    -1 |   0  | 0       | Seagate copyright notice          | 7 |
+|    -1 |   0  | 0 - 12  | Program overlay #1                | 7 |
+|    -1 |   0  | 13 - 15 | Drive params?                     | 7 |
+|    -1 |   0  | 16 - 17 | Defect map                        | 7 |
+|    -1 |   0  | 19      | Drive serial number               | 7 |
+|    -1 |   1  | 0 - 31  | Copy of track -1 head 0           | 7 |
+|    -1 |   2  | 0 - 12  | Program overlay #2                | 7 |
+|    -1 |   2  | 13 - 15 | Mfg defect map? Drive params?     | 7 |
+|    -1 |   2  | 16 - 28 | Program overlay #3                | 7 |
+|    -1 |   2  | 29      | Drive params? Identical to sector 13?     | 7 |
+|    -1 |   3  | 0 - 31  | Copy of track -1 head 2           | 7 |
+
+|     0 |      |         | Outermost data track | 6 |
+|   ... |      |         | Data                 | ... |
+|   614 |      |         | Innermost data track | 0 |
+|   ... |      |         | ...                  |   |
+|   670 |      |         | Landing zone         | 0 |
+|  ~694 |      |         | Inner hard stop      | - |
+
+*Note: Motor phase count is 0-7 since the motor is half-stepped.*
+
+Data on track -2 is the primary operating system loaded in the 8051 at 0x4000, length of 0x1CFF. The MCU's ROM just contains enough code to load this operating system into memory and jump to it. All the ROM functions are reimplemented/duplicated in the firmware stored on track -2. 
+
+Data on track -1 head 0, 2, and 3 is extra code loaded in the 8051 at 0x5000 (length = 0xD00) as an overlay that is swapped in and out as needed. RAM from 0x5D00 to 0x5FFF just contains data tables. Overlay code can call functions in the base OS using a dispatch function at 0x4BA1.
+
+Binary dumps are included in the st225n/firmware directory. To calculate the file offset for a particular sector, multiple the sector number by 256.
+
+Unused sectors contain the data 0x6C (01101100).
+
+The defect map at track -1 heads 0/1 sectors 16-17 uses the following format:
+
+Header:
+
+| Byte | Content |
+|------|---------|
+|    0 | 0xBE    |
+|    1 | 0xED    |
+|    2 | Number of defects |
+|    3 | Reserved (0xFE) |
+|    4 | Reserved (0xED) |
+
+Following the header is a list of defects, where each defect has the following format:
+
+| Byte | Content |
+|------|---------|
+|  0   | Cylinder number, MSB |
+|  1   | Cylinder number, LSB |
+|  2   | Head number |
+|  3   | Bytes |
+|  4   | From index |
+
+The last entry in the table contains 0xFF.
+
 
 ### ST-251
 
