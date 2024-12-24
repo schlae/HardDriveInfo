@@ -288,6 +288,10 @@ The electrical changes here are fairly minor. The layout has some moderate chang
 * The steering diode IC is now the 10189-502 (not the 10189-521).
 * The H-bridge enable controller is now the 11468 instead of the 11743-501.
 
+### 20741 ST-296N Control Board
+
+TBD
+
 ## Firmware
 
 ### ST-251
@@ -337,6 +341,7 @@ TBD, stay tuned.
 | 11695-002   |               | 20301, 20257 | Spindle speed control chip. |
 | 11695-502   | SPEED CONTROL | 20629, 20427 | Spindle speed control chip. |
 | 11721-501   |               | 20938, 21020, 20741 | Similar to the L293 H-bridge driver |
+| 11734-501   |               | 20741 | SCSI bus transceiver. |
 | 11738-002   |               | 21020 | Similar to 11791 but in a different package. |
 | 11738-502   |               | 20741 | Similar to 11791 but in a different package. |
 | 11741-502   |               | 20948, 20741 | SSI 2,7 RLL codec/data separator. Similar to 32D5321. |
@@ -792,9 +797,10 @@ This device controls the H-bridge enable lines for each phase of the stepper mot
 | Pin | Name  | Direction | Description                                     |
 |-----|-------|-----------|-------------------------------------------------|
 | 28  | VCC   | Power     | +5V power input. |
-| 1, 17  | GND | Ground   | Connect to ground. |
+| 17  | GND | Ground   | Connect to ground. |
 | 16  | DIS#  | Input     | Active low disable input. Pull low to make all outputs go low. |
 | 15  | ALLON | Input     | Forces all motor phase output enables high. |
+| 1   | S0?   | Input     | Unknown input. |
 | 2   | S1    | Input     | Output mask select mux input. |
 | 3   | S2    | Input     | Output mask select mux input. |
 | 4   | S3    | Input     | Output mask select mux input. |
@@ -813,7 +819,12 @@ This device controls the H-bridge enable lines for each phase of the stepper mot
 | 22  | EN\_C | Output    | Phase C output enable. |
 | 20  | EN\_D | Output    | Phase D output enable. |
 | 18  | EN\_E | Output    | Phase E output enable. |
-| 19, 21, 23, 25, 27 | NC | No connect. | Leave unconnected. |
+
+| 27  | A\_U  | Output    | Phase A alternate driver output. |
+| 25  | B\_U  | Output    | Phase B alternate driver output. |
+| 23  | C\_U  | Output    | Phase C alternate driver output. |
+| 21  | D\_U  | Output    | Phase D alternate driver output. |
+| 19  | E\_U  | Output    | Phase E alternate driver output. |
 
 **Detailed Description**
 
