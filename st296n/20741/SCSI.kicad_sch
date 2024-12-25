@@ -15027,7 +15027,7 @@
 				)
 			)
 		)
-		(property "Value" "100"
+		(property "Value" "1K"
 			(at 278.13 81.28 90)
 			(effects
 				(font
@@ -15163,7 +15163,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "10a1f751-c232-4477-bb1f-4c0fc994ada6")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR078"
 			(at 90.17 123.19 0)
 			(effects
 				(font
@@ -15598,7 +15598,7 @@
 				)
 			)
 		)
-		(property "Value" "51"
+		(property "Value" "162"
 			(at 306.07 72.39 90)
 			(effects
 				(font
@@ -15731,7 +15731,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "35f969fb-206b-4409-9d49-0af181298218")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR0101"
 			(at 90.17 171.45 0)
 			(effects
 				(font
@@ -15943,7 +15943,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3c6a28db-86a8-4ab8-becc-7810bd98a3d4")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR084"
 			(at 358.14 115.57 0)
 			(effects
 				(font
@@ -16085,7 +16085,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "40343810-dec0-4975-bb85-55462172a8de")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR034"
 			(at 359.41 165.1 0)
 			(effects
 				(font
@@ -16318,7 +16318,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5627de8a-095c-47f3-a055-35cd1d2e5eca")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR094"
 			(at 90.17 134.62 0)
 			(effects
 				(font
@@ -16769,7 +16769,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "65c835a9-745a-4061-a4c9-6bf1bc7b3c26")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR0116"
 			(at 374.65 223.52 0)
 			(effects
 				(font
@@ -16913,7 +16913,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6871333a-a366-4538-a596-9405ce3334e0")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR0103"
 			(at 228.6 220.98 0)
 			(effects
 				(font
@@ -17605,7 +17605,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9a9ca54a-01ef-4966-b2f8-9ef8dcac74eb")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR069"
 			(at 228.6 172.72 0)
 			(effects
 				(font
@@ -17785,7 +17785,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a03b8841-c346-4426-a357-e639eecbf323")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR063"
 			(at 358.14 41.91 0)
 			(effects
 				(font
@@ -18018,7 +18018,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ae31259f-fa65-4a38-b7bd-9afe5d465711")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR089"
 			(at 90.17 97.79 0)
 			(effects
 				(font
@@ -18238,7 +18238,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c7a922ac-a096-4ca1-be21-d627627de912")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR076"
 			(at 90.17 160.02 0)
 			(effects
 				(font
@@ -18509,7 +18509,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ce49c593-d90c-4a35-b2f2-4b5d3844a2e8")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR0106"
 			(at 312.42 71.12 0)
 			(effects
 				(font
@@ -18655,19 +18655,19 @@
 			(uuid "b1dc80f8-8027-45a6-a409-836c480bc94c")
 		)
 		(pin "11"
-			(uuid "bba91113-09a2-424c-80da-e959e4eb5eb8")
+			(uuid "bba91113-09a2-424c-80da-e959e4eb5eb9")
 		)
 		(pin "12"
-			(uuid "38d316eb-0a3a-435d-b462-4eb10698032c")
+			(uuid "38d316eb-0a3a-435d-b462-4eb10698032d")
 		)
 		(pin "13"
-			(uuid "7072058f-bdc0-4dd5-848c-b36147c76906")
+			(uuid "7072058f-bdc0-4dd5-848c-b36147c76907")
 		)
 		(pin "14"
-			(uuid "6f105e65-1c79-445d-af37-dc270c56ff76")
+			(uuid "6f105e65-1c79-445d-af37-dc270c56ff77")
 		)
 		(pin "7"
-			(uuid "0c31b29d-7903-44b6-a036-1e1fd431cb1e")
+			(uuid "0c31b29d-7903-44b6-a036-1e1fd431cb1f")
 		)
 		(instances
 			(project "st296n_20741"
@@ -18688,7 +18688,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d13ba76e-5b2e-4535-9676-2d923ff83fac")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR035"
 			(at 359.41 237.49 0)
 			(effects
 				(font
@@ -18766,7 +18766,7 @@
 		(fields_autoplaced yes)
 		(uuid "d729d550-4172-4670-b18e-b4a5b54dce3d")
 		(property "Reference" "C40"
-			(at 46.99 93.5482 0)
+			(at 46.99 93.5481 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18774,8 +18774,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22uF 25V"
-			(at 46.99 96.0882 0)
+		(property "Value" "22uF 20V"
+			(at 46.99 96.0881 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19060,7 +19060,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e1fde49c-1f53-43c0-9df0-08f859f66eaf")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR082"
 			(at 90.17 196.85 0)
 			(effects
 				(font
@@ -19586,43 +19586,43 @@
 			(uuid "401f14fe-0746-4a98-b934-b166a39797d5")
 		)
 		(pin "11"
-			(uuid "691ecb99-1c3c-455d-a5fa-9bab6863c085")
+			(uuid "691ecb99-1c3c-455d-a5fa-9bab6863c086")
 		)
 		(pin "3"
 			(uuid "eb11cbc7-a57b-4ba9-a50f-82cae1ffdc53")
 		)
 		(pin "8"
-			(uuid "cf167dc3-2036-43e2-a121-59eaa6e20a29")
+			(uuid "cf167dc3-2036-43e2-a121-59eaa6e20a2a")
 		)
 		(pin "10"
-			(uuid "5a8c772b-739d-4e21-a9fe-ee4f41c3a647")
+			(uuid "5a8c772b-739d-4e21-a9fe-ee4f41c3a648")
 		)
 		(pin "1"
-			(uuid "d8fbdcd7-9bbf-4d39-9c25-fe6d04916b40")
+			(uuid "d8fbdcd7-9bbf-4d39-9c25-fe6d04916b41")
 		)
 		(pin "13"
-			(uuid "2ddfd7a4-4ab2-4e9c-b8e9-f1c3a5fa2ad2")
+			(uuid "2ddfd7a4-4ab2-4e9c-b8e9-f1c3a5fa2ad3")
 		)
 		(pin "14"
-			(uuid "19f9c62b-acbe-4fd1-a2a1-2e23425a4d7a")
+			(uuid "19f9c62b-acbe-4fd1-a2a1-2e23425a4d7b")
 		)
 		(pin "7"
-			(uuid "748c1e9e-b133-4270-a23a-bb5d4b488f09")
+			(uuid "748c1e9e-b133-4270-a23a-bb5d4b488f0a")
 		)
 		(pin "5"
 			(uuid "acb9d069-7caf-4210-a122-59a33e1ef2fc")
 		)
 		(pin "2"
-			(uuid "f77194d6-2605-46ce-8b8b-9236f4da52ee")
+			(uuid "f77194d6-2605-46ce-8b8b-9236f4da52ef")
 		)
 		(pin "4"
 			(uuid "49856d6a-3daa-4678-ade7-601eff75693a")
 		)
 		(pin "12"
-			(uuid "37fa8d52-eeed-4112-bf4b-5a2f0c80febe")
+			(uuid "37fa8d52-eeed-4112-bf4b-5a2f0c80febf")
 		)
 		(pin "9"
-			(uuid "88d7626f-1751-43db-a5b4-4bc7c580c288")
+			(uuid "88d7626f-1751-43db-a5b4-4bc7c580c289")
 		)
 		(instances
 			(project "st296n_20741"
