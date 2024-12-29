@@ -13648,10 +13648,10 @@
 		)
 		(uuid "fe0ab785-f686-4520-814b-a3813862fcd3")
 	)
-	(text_box "(FIXME, UPDATE)\nMEMORY MAP (DATA MEMORY. PROG MEMORY HAS 0x1000 OFFSET)\n0x2000 to 0x2FFF = Output port U4 (All addresses)\n0x4000 to 0x5FFF = SRAM\n0x806E to 0x80FF = AIC-010\n0x8050 to 0x8051 = AIC-010 and AIC-300\n0x8052 to 0x805F = AIC-300"
+	(text_box "MEMORY MAP (DATA MEMORY. PROG MEMORY HAS 0x1000 OFFSET)\n0x4000 to 0x5FFF = SRAM\n0x806E to 0x80FF = AIC-010\n0x8050 to 0x8051 = AIC-010 and AIC-300\n0x8052 to 0x805F = AIC-300\n0x2000 = PORT0 (wr)\n0xA000 = PORT1 (wr)\n0x6000 = PORT2 (wr)\n0xE000 = WSL   (wr)\n0xC000 = status, SCSI address (read)\n\n"
 		(exclude_from_sim no)
-		(at 171.45 152.4 0)
-		(size 62.23 16.51)
+		(at 209.55 147.32 0)
+		(size 62.23 24.13)
 		(stroke
 			(width 0)
 			(type default)
@@ -13722,6 +13722,16 @@
 		)
 		(uuid "380b20ca-8fb7-4247-b13f-e9730f32a959")
 	)
+	(text "WINDOW SHIFT LATCH (RLL ENC/DEC)"
+		(exclude_from_sim no)
+		(at 287.782 212.598 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6109e261-2332-41f9-98d6-e752c8c6f995")
+	)
 	(text "8051 MICROCONTROLLER\nAND SRAM"
 		(exclude_from_sim no)
 		(at 157.48 83.82 0)
@@ -13777,7 +13787,7 @@
 	)
 	(text "RIWRx CONTROLS WRITE CURRENT"
 		(exclude_from_sim no)
-		(at 65.278 121.412 0)
+		(at 64.77 120.142 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13852,7 +13862,7 @@
 		)
 		(uuid "0a104441-1f46-4521-9251-f0a55c8216bc")
 	)
-	(label "PORT_CE"
+	(label "PORT_A13"
 		(at 153.67 134.62 180)
 		(fields_autoplaced yes)
 		(effects
@@ -14072,7 +14082,7 @@
 		)
 		(uuid "3ce78025-9be2-402d-95f5-b599476665d0")
 	)
-	(label "PORT_A0"
+	(label "PORT_A15"
 		(at 153.67 139.7 180)
 		(fields_autoplaced yes)
 		(effects
@@ -14248,7 +14258,7 @@
 		)
 		(uuid "6932f22c-b985-45fb-bc7a-ae885943e9b8")
 	)
-	(label "PORT_A1"
+	(label "PORT_A14"
 		(at 153.67 137.16 180)
 		(fields_autoplaced yes)
 		(effects
@@ -14369,7 +14379,7 @@
 		)
 		(uuid "7ed65fdf-f277-464a-b462-a5e834588ca4")
 	)
-	(label "PORT_CE"
+	(label "PORT_A13"
 		(at 224.79 204.47 0)
 		(fields_autoplaced yes)
 		(effects
@@ -14743,7 +14753,7 @@
 		)
 		(uuid "c5175df1-1888-4412-ae13-33d4cc7d9135")
 	)
-	(label "PORT_A0"
+	(label "PORT_A15"
 		(at 224.79 212.09 0)
 		(fields_autoplaced yes)
 		(effects
@@ -14776,7 +14786,7 @@
 		)
 		(uuid "c6eb9940-b977-410c-860f-587349708cfd")
 	)
-	(label "PORT_A1"
+	(label "PORT_A14"
 		(at 224.79 214.63 0)
 		(fields_autoplaced yes)
 		(effects
@@ -14853,7 +14863,7 @@
 		)
 		(uuid "d39c213e-d3f9-40a3-99dd-368a1141b6a3")
 	)
-	(label "PORT_CE"
+	(label "PORT_A13"
 		(at 219.71 222.25 0)
 		(fields_autoplaced yes)
 		(effects
@@ -15315,7 +15325,7 @@
 			)
 		)
 	)
-	(global_label "P1.6"
+	(global_label "MLOWSIDE_MUX1"
 		(shape output)
 		(at 110.49 124.46 180)
 		(fields_autoplaced yes)
@@ -15381,7 +15391,7 @@
 			)
 		)
 	)
-	(global_label "P1.7"
+	(global_label "MLOWSIDE_MUX2"
 		(shape output)
 		(at 110.49 127 180)
 		(fields_autoplaced yes)
@@ -15447,7 +15457,7 @@
 			)
 		)
 	)
-	(global_label "MYST_CONFIG2"
+	(global_label "~{INDEX_CLEAR}"
 		(shape output)
 		(at 166.37 255.27 0)
 		(fields_autoplaced yes)
@@ -15469,7 +15479,7 @@
 			)
 		)
 	)
-	(global_label "MYST_CONFIG"
+	(global_label "MLOWSIDE_LATCH"
 		(shape output)
 		(at 166.37 252.73 0)
 		(fields_autoplaced yes)
@@ -15558,7 +15568,7 @@
 		)
 	)
 	(global_label "~{INDEX_SYNC}"
-		(shape input)
+		(shape output)
 		(at 166.37 257.81 0)
 		(fields_autoplaced yes)
 		(effects
@@ -15755,7 +15765,7 @@
 			)
 		)
 	)
-	(global_label "P1.5"
+	(global_label "MLOWSIDE_MUX0"
 		(shape output)
 		(at 110.49 121.92 180)
 		(fields_autoplaced yes)
@@ -19237,10 +19247,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "458204a0-642c-4f56-af11-17140592d655")
 		(property "Reference" "U3"
-			(at 278.13 210.82 0)
+			(at 279.4 224.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19248,7 +19257,7 @@
 			)
 		)
 		(property "Value" "74LS14"
-			(at 278.13 213.36 0)
+			(at 279.4 227.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
