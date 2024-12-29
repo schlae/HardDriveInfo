@@ -350,7 +350,7 @@ Click the part number for more information on that particular device.
 | [11743-521](chips/11743-521.md)   |               | 20938-300 | Controls H-Bridge enables based on phase state. |
 | [11744-501](chips/11744-502.md)   | RING DETECTOR | 20867 | Stepper motor seek settling chip - adaptive ringout. |
 | [11744-502](chips/11744-502.md)   | RING DETECTOR | 20629, 20938, 21020, 20741 | Stepper motor seek settling chip - adaptive ringout. |
-| 11747-501   |               | 20948, 20741 | Unknown. |
+| [11747-501](chips/11747-501.md)   |               | 20948, 20741 | Index pulse divider and 5-phase stepper motor low-side driver. |
 | [11782-501](chips/11782-501.md)   | STEP SEQR     | 20938, 21020, 20867, 20741 | 5-Phase stepper motor controller. |
 | 11789-502   |               | 20829 | Unknown. Maybe a stepper motor controller with built-in driver transistors. |
 | 11789-504   |               | 20829, 20948 | Unknown. Maybe a stepper motor controller with built-in driver transistors. |
