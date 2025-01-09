@@ -19,6 +19,7 @@ Below is a table linking specific drive models with the part numbers of their ma
 | Seagate      | ST-238R   | MFM/RLL   | ASSY 20527  | 4-Wire       |         65ms | Oxide Coated | 130/40mm |
 | Seagate      | ST-251    | MFM       | ASSY 20629  | 10-Wire      |         40ms | Thin Film    | 130/40mm |
 | Seagate      | ST-251-1  | MFM       | ASSY 20938  | 10-Wire      |         30ms | Thin Film    | 130/40mm |
+| Seagate      | ST-251N   | SCSI      | ASSY 20603  | 10-Wire      |         40ms | Thin Film    | 130/40mm |
 | Seagate      | ST-277R-1 | MFM/RLL   | ASSY 21020, 20938-300 | 10-Wire |    28ms | Thin Film    | 130/40mm |
 | Seagate      | ST-296N   | SCSI      | ASSY 20741  | 10-Wire      |         28ms | Thin Film    | 130/40mm |
 | Seagate      | ST-125    | MFM       | ASSY 20867  | 6-Wire       |         30ms | Thin Film    | 95/25mm  |
@@ -241,8 +242,6 @@ The PCB schematic and layout for 20938 are available, see st251/20938. This boar
 
 The PCB schematic and layout for 21020 are available, see st251/21020. This board is used in the ST-277R-1.
 
-
-
 **20629 to 20938 changes**
 
 Changes to the stepper motor circuits:
@@ -287,9 +286,38 @@ The electrical changes here are fairly minor. The layout has some moderate chang
 * The steering diode IC is now the 10189-502 (not the 10189-521).
 * The H-bridge enable controller is now the 11468 instead of the 11743-501.
 
+### 20603 ST-251N Control Board
+
+The ST-251N is based on the ST-251 platform. It uses a SCSI controller design similar to that of the ST-225N but with several major improvements:
+
+* Encoding is now RLL 2,7 for improved data density, using the DP8462 + AIC-270L instead of the old DP8455 + AIC250L combination.
+* Discrete SCSI bus buffers 2x 74LS240, 74LS373, and 4x 74F38 have been replaced by an LSI, the 11734-501.
+* The Adaptec AIC-300L controller has been upgraded to the AIC-301L controller.
+
+
 ### 20741 ST-296N Control Board
 
-TBD
+The ST-296N is based on the ST-251 platform. It's very similar to the ST-251N SCSI design but it has a different 2,7 RLL encoder/decoder. 
+
+The PCB schematic and layout for 20741 are available, see st296n/20741.
+
+This board is very similar to the ST-251N board 20603. Changes are as follows:
+
+* A new 2,7 RLL encoder/decoder IC, the 11741-502, has been added to replace the old DP8462 + AIC-270L combination.
+* A new RLL enc/dec window control register has been added to the 8051 at 0xE000.
+* The SCSI buffer has been doubled, from 1K to 2K bytes.
+* A new halfstep mode has been added to head actuator. It is controlled by bit 2 of 8051 register 0xA000.
+
+Minor changes include:
+
+* The read channel filter components have been adjusted slightly.
+* The read channel pulse networks have been adjusted slightly.
+* Spindle motor RC balancing network has been incorporated into the board (was a bodge).
+* Several diodes are now surface mount.
+* The write current now has a jumper to allow external control over write current (at the factory).
+* Write path test points have been added to allow the factory to write to the platters.
+* The head retract signal has been disconnected from the 10223-502 chip. It uses the DC\_UNSAFE comparator from the 10206-501 chip instead.
+* The SCSI ID header has been increased to 10 pins by adding two no-connect pins.
 
 ## Firmware
 
@@ -315,6 +343,14 @@ a custom "defect map" for a single-platter drive, using the stepper to avoid bad
 
 TBD, stay tuned.
 
+### ST-251N
+
+TBD, stay tuned.
+
+### ST-296N
+
+TBD, stay tuned
+
 ## Chips
 
 Click the part number for more information on that particular device.
@@ -322,17 +358,18 @@ Click the part number for more information on that particular device.
 | Part Number | Nicknames     | Where Used | Description |
 |-------------|---------------|------------|-------------|
 | [10014-002](chips/10188-501.md)   |               | 20527 | Head center tap driver, write current selector. |
-| [10188-501](chips/10188-501.md)   | SSI257.2, V10096BQZ | 20629, 20938, 21020, 20867, 20829, 20948, 20741, 20427 | Head center tap driver, write current selector. |
+| [10188-501](chips/10188-501.md)   | SSI257.2, V10096BQZ | 20603, 20629, 20938, 21020, 20867, 20829, 20948, 20741, 20427 | Head center tap driver, write current selector. |
 | [10189-521](chips/10189-521.md)   | SSI257        | 20629, 20938, 20829 | Steering diodes and head preamp, NE592 equivalent. |
 | [10189-501](chips/10189-521.md)   |               | 20867 | Steering diodes and head preamp, NE592 equivalent. |
-| [10189-502](chips/10189-521.md)   |               | 21020, 20741  | Steering diodes and head preamp, NE592 equivalent. |
+| [10189-502](chips/10189-521.md)   |               | 21020, 20603, 20741  | Steering diodes and head preamp, NE592 equivalent. |
 | [SSI 280](chips/SSI280.md)     |               | 20301 | Read channel and write amplifier. |
 | [SSI 280.2](chips/SSI280.md)   |               | 20427 | Read channel and write amplifier. |
-| [10206-501](chips/10206-501.md)   | SSI296        | 20629, 20938, 21020, 20867, 20741 | Read channel and write amplifier. |
+| [10206-501](chips/10206-501.md)   | SSI296        | 20629, 20938, 21020, 20603, 20867, 20741 | Read channel and write amplifier. |
 | [10206-502](chips/10206-501.md)   |               | 20829, 20948 | Read channel and write amplifier. |
 | [10206-002](chips/10206-002.md)   |               | 20527 | Read channel and write amplifier. |
+| [10210-501](chips/11782-501.md)   |               | 20603 | 5-Phase stepper motor controller. |
 | [10223-501](chips/10223-502.md)   | RETURN        | 20867 | Retracts stepper motor on power-down. |
-| [10223-502](chips/10223-502.md)   | RETURN        | 20629, 20938, 21020, 20829, 20948, 20741 | Retracts stepper motor on power-down. |
+| [10223-502](chips/10223-502.md)   | RETURN        | 20603, 20629, 20938, 21020, 20829, 20948, 20741 | Retracts stepper motor on power-down. |
 | 11468       |               | 21020 | Controls H-Bridge enables based on phase state. |
 | [11642-001](chips/10189-521.md)   |               | 20301, 20527  | Steering diodes and head preamp, NE592 equivalent. See 10189.|
 | [11642-501](chips/10189-521.md)   |               | 20427 | Steering diodes and head preamp, NE592 equivalent. |
@@ -341,16 +378,16 @@ Click the part number for more information on that particular device.
 | [11665-001](chips/11665-001.md)   |               | 20301, 20527 | Stepper motor control and driver chip (4 phase). |
 | [11695-002](chips/11695-002.md)   |               | 20301, 20257 | Spindle speed control chip. |
 | [11695-502](chips/11695-002.md)   | SPEED CONTROL | 20629, 20427 | Spindle speed control chip. |
-| 11721-501   |               | 20938, 21020, 20741 | Similar to the L293 H-bridge driver |
-| 11734-501   |               | 20741 | SCSI bus transceiver. |
+| 11721-501   |               | 20603, 20938, 21020, 20741 | Similar to the L293 H-bridge driver |
+| 11734-501   |               | 20603, 20741 | SCSI bus transceiver. |
 | 11738-002   |               | 21020 | Similar to 11791 but in a different package. |
-| 11738-502   |               | 20741 | Similar to 11791 but in a different package. |
+| 11738-502   | IP3M05AW      | 20603, 20741 | Similar to 11791 but in a different package. |
 | 11741-502   |               | 20948, 20741 | SSI 2,7 RLL codec/data separator. Similar to 32D5321. |
-| [11743-501](chips/11743-501.md)   |               | 20938, 20741 | Controls H-Bridge enables based on phase state. |
+| [11743-501](chips/11743-501.md)   |               | 20603, 20938, 20741 | Controls H-Bridge enables based on phase state. |
 | [11743-521](chips/11743-521.md)   |               | 20938-300 | Controls H-Bridge enables based on phase state. |
 | [11744-501](chips/11744-502.md)   | RING DETECTOR | 20867 | Stepper motor seek settling chip - adaptive ringout. |
-| [11744-502](chips/11744-502.md)   | RING DETECTOR | 20629, 20938, 21020, 20741 | Stepper motor seek settling chip - adaptive ringout. |
-| [11747-501](chips/11747-501.md)   |               | 20948, 20741 | Index pulse divider and 5-phase stepper motor low-side driver. |
+| [11744-502](chips/11744-502.md)   | RING DETECTOR | 20603, 20629, 20938, 21020, 20741 | Stepper motor seek settling chip - adaptive ringout. |
+| [11747-501](chips/11747-501.md)   |               | 20603, 20948, 20741 | Index pulse divider and 5-phase stepper motor low-side driver. |
 | [11782-501](chips/11782-501.md)   | STEP SEQR     | 20938, 21020, 20867, 20741 | 5-Phase stepper motor controller. |
 | 11789-502   |               | 20829 | Unknown. Maybe a stepper motor controller with built-in driver transistors. |
 | 11789-504   |               | 20829, 20948 | Unknown. Maybe a stepper motor controller with built-in driver transistors. |
@@ -361,6 +398,7 @@ Click the part number for more information on that particular device.
 | R6518AJ     | R1113-18      | 20629 | Rockwell R6518 6502-core microcontroller. Requires external ROM. |
 | 80118-502   | R1512-12      | 20938 | Rockwell R6518(?) 6502-core microcontroller. |
 | 80118-505   | R1818-11      | 21020 | Rockwell R6518(?) 6502-core microcontroller. |
+| 80044-401   | SAB8051A-N    | 20603 | Intel 8051 microcontroller. |
 | 80049-501   | SCN8051HCCA44 | 20867 | Intel 8051 microcontroller. |
 | 80074-504   | SAB8052A-N    | 20741 | Intel 8052 microcontroller. |
 | 80084-508   | SAB8052A-N    | 20829 | Intel 8052 microcontroller. |

@@ -9107,6 +9107,12 @@
 		(uuid "84d462af-1d7c-43cb-8f12-06ad407349b8")
 	)
 	(junction
+		(at 151.13 193.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8a3d25cf-5784-4d45-a600-08cc8940e3ce")
+	)
+	(junction
 		(at 351.79 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9805,6 +9811,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 255 0 255 1)
 		)
 		(uuid "142fe079-09a5-478c-b6cc-aebc1ec7b7d9")
 	)
@@ -10415,6 +10422,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 255 0 255 1)
 		)
 		(uuid "40046185-4a04-420f-ba9a-2f825ac6c4f4")
 	)
@@ -11027,6 +11035,16 @@
 			(type default)
 		)
 		(uuid "60e03fb6-d022-4e51-816d-b95ae09e1741")
+	)
+	(wire
+		(pts
+			(xy 151.13 193.04) (xy 148.59 193.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "612293ec-e05a-43b3-948e-e7842fbdfbc2")
 	)
 	(bus
 		(pts
@@ -12570,11 +12588,12 @@
 	)
 	(wire
 		(pts
-			(xy 274.32 67.31) (xy 318.77 67.31)
+			(xy 274.32 67.31) (xy 306.07 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 255 0 255 1)
 		)
 		(uuid "c48320a9-a0aa-4906-8f97-643608b723e5")
 	)
@@ -13005,6 +13024,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 255 0 255 1)
 		)
 		(uuid "dc251101-c5b8-48f3-b1e6-3fea32d5cfce")
 	)
@@ -13150,7 +13170,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 193.04) (xy 148.59 193.04)
+			(xy 154.94 193.04) (xy 151.13 193.04)
 		)
 		(stroke
 			(width 0)
@@ -13648,6 +13668,32 @@
 		)
 		(uuid "fe0ab785-f686-4520-814b-a3813862fcd3")
 	)
+	(rectangle
+		(start 318.77 63.5)
+		(end 406.4 175.26)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 255 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 21329eec-a080-4be8-bc6d-cd0b64c541c0)
+	)
+	(rectangle
+		(start 128.27 205.74)
+		(end 143.51 208.28)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 255 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 8e132024-78c1-4599-8675-1f0b4e2e1fc6)
+	)
 	(text_box "MEMORY MAP (DATA MEMORY. PROG MEMORY HAS 0x1000 OFFSET)\n0x4000 to 0x5FFF = SRAM\n0x806E to 0x80FF = AIC-010\n0x8050 to 0x8051 = AIC-010 and AIC-300\n0x8052 to 0x805F = AIC-300\n0x2000 = PORT0 (wr)\n0xA000 = PORT1 (wr)\n0x6000 = PORT2 (wr)\n0xE000 = WSL   (wr)\n0xC000 = status, SCSI address (read)\n\n"
 		(exclude_from_sim no)
 		(at 209.55 147.32 0)
@@ -13689,12 +13735,24 @@
 		)
 		(uuid "1914b08e-9821-4de6-9783-7a86425b9700")
 	)
+	(text "NO LONGER USED"
+		(exclude_from_sim no)
+		(at 391.414 236.728 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "20e8a864-783d-4a1a-98f6-861b633c512d")
+	)
 	(text "2,7 RLL ENCODER/DECODER"
 		(exclude_from_sim no)
 		(at 343.662 68.58 0)
 		(effects
 			(font
 				(size 2.54 2.54)
+				(color 255 0 255 1)
 			)
 			(justify left bottom)
 		)
@@ -13722,15 +13780,27 @@
 		)
 		(uuid "380b20ca-8fb7-4247-b13f-e9730f32a959")
 	)
-	(text "WINDOW SHIFT LATCH (RLL ENC/DEC)"
+	(text "WINDOW SHIFT LATCH (RLL ENC/DEC) (NEW)"
 		(exclude_from_sim no)
-		(at 287.782 212.598 0)
+		(at 291.084 211.836 0)
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 255 0 255 1)
 			)
 		)
 		(uuid "6109e261-2332-41f9-98d6-e752c8c6f995")
+	)
+	(text "NEW"
+		(exclude_from_sim no)
+		(at 369.316 70.358 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "81a4ca67-d067-41fd-a2a6-bbd7d2f3e61f")
 	)
 	(text "8051 MICROCONTROLLER\nAND SRAM"
 		(exclude_from_sim no)
@@ -13785,6 +13855,17 @@
 		)
 		(uuid "c9454af0-38ee-4248-b83f-2d37c407a7a2")
 	)
+	(text "NEW"
+		(exclude_from_sim no)
+		(at 135.89 207.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "d3ea68fc-244e-4942-b708-e488d066cd6d")
+	)
 	(text "RIWRx CONTROLS WRITE CURRENT"
 		(exclude_from_sim no)
 		(at 64.77 120.142 0)
@@ -13795,6 +13876,17 @@
 			(justify left bottom)
 		)
 		(uuid "d999242e-2c41-4c2a-bc5a-1ba310fbf4a7")
+	)
+	(text "NEW"
+		(exclude_from_sim no)
+		(at 114.3 191.008 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "f6e88361-fc07-43b1-9c30-398d2f831859")
 	)
 	(label "A6"
 		(at 198.12 114.3 0)
@@ -14000,6 +14092,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 255 0 255 1)
 			)
 			(justify left bottom)
 		)
@@ -14946,6 +15039,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 255 0 255 1)
 			)
 			(justify right bottom)
 		)
@@ -15061,7 +15155,7 @@
 			)
 		)
 	)
-	(global_label "MYST1"
+	(global_label "SM_DV_EN"
 		(shape input)
 		(at 104.14 248.92 0)
 		(fields_autoplaced yes)
@@ -15073,7 +15167,7 @@
 		)
 		(uuid "04ede51c-0349-492f-9efc-e4c36569d893")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 113.0518 248.92 0)
+			(at 116.5594 248.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16119,7 +16213,7 @@
 	)
 	(global_label "~{RETRACT}"
 		(shape passive)
-		(at 318.77 67.31 0)
+		(at 306.07 67.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16129,7 +16223,7 @@
 		)
 		(uuid "de702e64-408d-4a44-afc6-7aeabc5c0676")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 328.6267 67.31 0)
+			(at 315.9267 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19552,7 +19646,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4a56b93a-6943-4343-aee0-d03bfcb643a7")
 		(property "Reference" "#PWR0136"
 			(at 309.88 222.25 0)
@@ -19564,7 +19657,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 309.88 213.36 0)
+			(at 309.626 214.376 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19876,6 +19969,72 @@
 			(project "st296n_20741"
 				(path "/f29784b7-b8b8-488c-8543-989c9e3b7621/6eebd973-f5b1-4c2e-8b65-8af8189537eb"
 					(reference "TPE3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 151.13 193.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "583413eb-d662-45a4-93f7-d4efb0d6c250")
+		(property "Reference" "#PWR0159"
+			(at 151.13 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 151.13 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 151.13 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 151.13 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d815c515-2562-46f8-803f-12fad0fba0d3")
+		)
+		(instances
+			(project "st296n_20741"
+				(path "/f29784b7-b8b8-488c-8543-989c9e3b7621/6eebd973-f5b1-4c2e-8b65-8af8189537eb"
+					(reference "#PWR0159")
 					(unit 1)
 				)
 			)
@@ -20202,7 +20361,7 @@
 		(fields_autoplaced yes)
 		(uuid "6440605e-7a45-41d1-bcd3-2f3a98d663f9")
 		(property "Reference" "U9"
-			(at 364.1441 95.25 0)
+			(at 364.1441 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20211,10 +20370,11 @@
 			)
 		)
 		(property "Value" "11741-502"
-			(at 364.1441 97.79 0)
+			(at 364.1441 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 				(justify left)
 			)
@@ -20362,6 +20522,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -21336,6 +21497,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 				(justify right)
 			)

@@ -8293,12 +8293,6 @@
 		(uuid "4a6958a2-8d39-4b34-9908-6f0207632ee2")
 	)
 	(junction
-		(at 278.13 196.85)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4fa9f724-cdf5-4cd1-aa40-6fe759147b6e")
-	)
-	(junction
 		(at 29.21 124.46)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9202,16 +9196,6 @@
 		)
 		(uuid "0e252481-7b1f-43ea-a2a6-6f113f5009c1")
 	)
-	(wire
-		(pts
-			(xy 275.59 196.85) (xy 278.13 196.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0fcfa4d4-7d06-48f3-9ff9-1522d9159a41")
-	)
 	(bus
 		(pts
 			(xy 316.23 157.48) (xy 316.23 182.88)
@@ -10111,16 +10095,6 @@
 			(type default)
 		)
 		(uuid "5019672e-a24e-40b8-bd72-0c97803bda7c")
-	)
-	(wire
-		(pts
-			(xy 278.13 204.47) (xy 278.13 196.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5024af42-533d-4970-8e0d-d29fd0db53c5")
 	)
 	(wire
 		(pts
@@ -11222,16 +11196,6 @@
 		)
 		(uuid "a92f3e6f-0263-4c00-ac8a-8db4e81763ff")
 	)
-	(wire
-		(pts
-			(xy 278.13 196.85) (xy 285.75 196.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a99d0fd1-6a6e-4ef3-a158-79d3b5378a7e")
-	)
 	(bus
 		(pts
 			(xy 382.27 91.44) (xy 382.27 93.98)
@@ -11484,7 +11448,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 204.47) (xy 278.13 204.47)
+			(xy 241.3 204.47) (xy 254 204.47)
 		)
 		(stroke
 			(width 0)
@@ -13017,6 +12981,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 255 0 255 1)
 			)
 			(justify left bottom)
 		)
@@ -13342,7 +13307,7 @@
 		(uuid "6ca5d8c1-5fc6-4a21-b8f9-b1d97bfdff09")
 	)
 	(label "~{SRAM_WE}"
-		(at 285.75 196.85 180)
+		(at 254 204.47 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13974,6 +13939,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 255 0 255 1)
 			)
 			(justify left bottom)
 		)

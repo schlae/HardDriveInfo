@@ -20382,6 +20382,30 @@
 		)
 		(uuid "fffd788c-5ad3-4ef8-9ff9-c61a78a86a08")
 	)
+	(rectangle
+		(start 229.87 152.4)
+		(end 252.73 182.88)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 255 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 0bc63437-aedb-47d2-b4a5-c3b88fa17835)
+	)
+	(text "NOW PD\nWAS PU"
+		(exclude_from_sim no)
+		(at 395.732 70.866 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "071af2d8-189e-44e3-9f63-c6799e934323")
+	)
 	(text "HEAD CENTER\nTAP CONNS"
 		(exclude_from_sim no)
 		(at 146.05 38.1 0)
@@ -20414,6 +20438,17 @@
 			(justify left bottom)
 		)
 		(uuid "115741dd-5109-4e2e-91e1-82431f212d2f")
+	)
+	(text "NEW"
+		(exclude_from_sim no)
+		(at 238.76 151.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "13ee9cdf-bc9a-420b-b650-bd45899d9fb2")
 	)
 	(text "TBDKHz to TBDMHz BPF"
 		(exclude_from_sim no)
@@ -20469,6 +20504,17 @@
 		)
 		(uuid "219c7119-fdce-439f-9271-9cbe6dfa8c2f")
 	)
+	(text "NEW"
+		(exclude_from_sim no)
+		(at 183.134 107.696 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "21a83d22-ba71-4665-b151-235497f1c570")
+	)
 	(text "47ns"
 		(exclude_from_sim no)
 		(at 361.95 40.64 0)
@@ -20502,6 +20548,27 @@
 		)
 		(uuid "3e76fdc0-56b0-4c25-9e1c-68bce2a0e60a")
 	)
+	(text "(REMOVED)"
+		(exclude_from_sim no)
+		(at 240.284 218.186 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "47d3f7ab-5038-4c05-8c21-b58dde24d347")
+	)
+	(text "1N4148"
+		(exclude_from_sim no)
+		(at 350.774 202.184 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4e51b343-2119-45bc-9f7b-dd55134d95b0")
+	)
 	(text "Reverse Engineered by Tube Time"
 		(exclude_from_sim no)
 		(at 302.26 266.7 0)
@@ -20523,6 +20590,28 @@
 			(justify left bottom)
 		)
 		(uuid "4f8aa04e-da84-4f9b-8bc8-c51aba4884fc")
+	)
+	(text "ADDED\nPIN STRAP\nOPTION"
+		(exclude_from_sim no)
+		(at 344.932 88.392 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "51d012fe-9cbe-4860-b58b-c26abe44434c")
+	)
+	(text "NO LONGER USED"
+		(exclude_from_sim no)
+		(at 363.982 163.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "63f094f1-c4c1-42f9-926c-a9c2deff4ab6")
 	)
 	(text "5V POWERDOWN\nRAIL"
 		(exclude_from_sim no)
@@ -20579,6 +20668,17 @@
 		)
 		(uuid "889939a0-572e-42a9-83ed-8c106b966927")
 	)
+	(text "NOW\nSMD"
+		(exclude_from_sim no)
+		(at 393.446 226.822 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "8e23bc1b-424e-4781-ae3b-c60161cbd718")
+	)
 	(text "5V POWERDOWN\nRAIL"
 		(exclude_from_sim no)
 		(at 111.76 196.85 0)
@@ -20600,6 +20700,17 @@
 			(justify left bottom)
 		)
 		(uuid "ad755199-49c3-4df5-bd4e-c512f74f9f3b")
+	)
+	(text "NEW"
+		(exclude_from_sim no)
+		(at 237.998 236.728 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "afc4e3b6-623f-4b6f-8e79-e25e1344259b")
 	)
 	(text "66ns"
 		(exclude_from_sim no)
@@ -20623,6 +20734,17 @@
 		)
 		(uuid "b8911c15-1c02-4be7-bc9a-3fe25815dde6")
 	)
+	(text "NEW"
+		(exclude_from_sim no)
+		(at 178.308 92.456 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "d5e42cbe-065d-4244-8926-11bb2d385470")
+	)
 	(text "CENTER\nTAP\nDRIVER"
 		(exclude_from_sim no)
 		(at 129.54 58.42 0)
@@ -20643,6 +20765,17 @@
 			)
 		)
 		(uuid "e267ed6b-a431-4796-a624-163518cc107b")
+	)
+	(text "NEW"
+		(exclude_from_sim no)
+		(at 124.46 77.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "e4fd464d-12f6-4deb-83fc-0dcb6782e90d")
 	)
 	(text "This work is licensed under a Creative Commons\nAttribution-ShareAlike 4.0 International License.\nSee https://creativecommons.org/licenses/by-sa/4.0/.\n"
 		(exclude_from_sim no)
@@ -20676,6 +20809,17 @@
 			(justify left bottom)
 		)
 		(uuid "ff981ed4-f16f-40c5-b3c4-5ca2deb8dc8f")
+	)
+	(text "NOW\nSMD"
+		(exclude_from_sim no)
+		(at 276.86 220.726 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 255 1)
+			)
+		)
+		(uuid "ffe93f59-16a5-4949-80cc-c70dc7cd5d8c")
 	)
 	(label "MOTD-"
 		(at 73.66 177.8 180)
@@ -21876,7 +22020,7 @@
 			)
 		)
 	)
-	(global_label "MYST1"
+	(global_label "SM_DV_EN"
 		(shape input)
 		(at 90.17 250.19 180)
 		(fields_autoplaced yes)
@@ -21888,7 +22032,7 @@
 		)
 		(uuid "026f7b69-5933-4330-af02-a01f3707f0c0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 81.2582 250.19 0)
+			(at 77.7506 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26386,7 +26530,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-					(color 255 0 255 1)
 				)
 			)
 		)
@@ -28887,6 +29030,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -28956,6 +29100,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 				(justify left)
 			)
@@ -29167,6 +29312,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 				(justify right)
 			)
@@ -29580,6 +29726,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -30058,6 +30205,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -30530,6 +30678,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -33630,6 +33779,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -34892,6 +35042,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -35878,6 +36029,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -37451,7 +37603,7 @@
 		(dnp no)
 		(uuid "9a2ea220-43cf-4796-b71c-85f8904ebec3")
 		(property "Reference" "C17"
-			(at 227.076 215.9 0)
+			(at 228.346 221.996 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37460,11 +37612,10 @@
 			)
 		)
 		(property "Value" "1uF 35V"
-			(at 227.076 218.44 0)
+			(at 228.346 224.536 0)
 			(effects
 				(font
 					(size 1.27 1.27)
-					(color 255 0 255 1)
 				)
 				(justify left)
 			)
@@ -38150,7 +38301,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-					(color 255 0 255 1)
 				)
 			)
 		)
@@ -38685,6 +38835,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -41058,6 +41209,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -42044,6 +42196,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -42350,6 +42503,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -42358,6 +42512,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -43248,6 +43403,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -43631,7 +43787,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-					(color 255 0 255 1)
 				)
 			)
 		)
@@ -45171,7 +45326,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-					(color 255 0 255 1)
 				)
 				(justify right)
 			)
@@ -45928,6 +46082,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 				(justify right)
 			)
@@ -46134,6 +46289,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)
@@ -46541,6 +46697,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 0 255 1)
 				)
 			)
 		)

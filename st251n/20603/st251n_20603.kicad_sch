@@ -1,0 +1,127 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "f29784b7-b8b8-488c-8543-989c9e3b7621")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 176.53 109.22)
+		(size 30.48 16.51)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "09a0e488-b331-48b8-a354-7267fafe65a6")
+		(property "Sheetname" "Analog"
+			(at 176.53 108.5084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "analog.kicad_sch"
+			(at 176.53 126.3146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "st251n_20603"
+				(path "/f29784b7-b8b8-488c-8543-989c9e3b7621"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 212.09 82.55)
+		(size 35.56 19.05)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5ecb7d5c-7464-4d55-bf8b-9f962abdcdd1")
+		(property "Sheetname" "SCSI"
+			(at 212.09 81.8384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SCSI.kicad_sch"
+			(at 212.09 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "st251n_20603"
+				(path "/f29784b7-b8b8-488c-8543-989c9e3b7621"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 176.53 82.55)
+		(size 30.48 19.05)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6eebd973-f5b1-4c2e-8b65-8af8189537eb")
+		(property "Sheetname" "Digital"
+			(at 176.53 81.8384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "digital.kicad_sch"
+			(at 176.53 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "st251n_20603"
+				(path "/f29784b7-b8b8-488c-8543-989c9e3b7621"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)

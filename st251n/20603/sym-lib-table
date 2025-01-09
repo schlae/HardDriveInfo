@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "st251")(type "KiCad")(uri "C:/Data/Computers/Hard Drive Repair/st251/20938/st251.kicad_sym")(options "")(descr ""))
+  (lib (name "st225")(type "KiCad")(uri "C:/Data/Computers/Hard Drive Repair/st225/20301/st225.kicad_sym")(options "")(descr ""))
+  (lib (name "st296")(type "KiCad")(uri "${KIPRJMOD}/st296.kicad_sym")(options "")(descr ""))
+)
